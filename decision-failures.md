@@ -111,6 +111,50 @@ prevention: Require source verification for strategic decisions; audit AI summar
 
 ---
 
+### (2026) AI Pilots Fail Due to Integration Complexity
+
+```yaml
+---
+type: decision
+cause: incentives
+stage: scale
+impact: [money, morale]
+severity:
+  level: high
+  score: 8
+  financial: Pilot investment losses
+tags: [pilot-failure, integration-complexity, scale-failure, legacy-systems, ai-deployment]
+evidence-type: repeated-pattern
+sources:
+  - https://www.linkedin.com/pulse/gemini-3-continually-hallucinates-gaslights-face-rag-errors-jesse-vyete
+supporting-entities: [Composio, Various AI Vendors]
+---
+
+**What happened:** The "2025 AI Agent Report" via Composio found that AI pilots succeed on curated data but fail to scale due to legacy system friction. Integration complexity is the primary blocker for pilot-to-production transitions.
+
+**Impact:** Teams discouraged by the "pilot-to-production gap" after significant capital investment; wasted resources on pilots that cannot be deployed at scale; delayed digital transformation initiatives.
+
+**Root cause:** 
+- Pilots ignore legacy API unreliability during controlled testing
+- Data format mismatches that work with small datasets become fatal at production scale
+- Lack of infrastructure team involvement in pilot planning
+- Success on curated, clean data creates false confidence for production deployment
+
+**Lessons:**
+- Include infrastructure teams in the pilot phase from day one
+- Test agents on real, messy production data early, not just curated datasets
+- Map all integration dependencies before declaring pilot success
+- Plan for legacy system friction and edge cases in pilot design
+- "Pilot success" on clean data is not predictive of production success
+
+**Related failure patterns:**
+- Pilot Failure
+- Integration Complexity
+- Scale Failure
+```
+
+---
+
 ## Incentive Mismatch
 
 ## Incentive Mismatch
