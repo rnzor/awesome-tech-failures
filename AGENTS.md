@@ -1,3 +1,8 @@
+<!--
+AGENTS.md: Operating policy for AI agents consuming this repo.
+For human-readable pre-flight guidance, see ai-agent-checklist.md
+-->
+
 # AGENTS.md — How to Use This Repo Safely
 
 This document is the operating policy for any AI agent consuming the awesome-tech-failures repository.

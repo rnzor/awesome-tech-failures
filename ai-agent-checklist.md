@@ -1,3 +1,8 @@
+<!--
+ai-agent-checklist.md: Human-readable pre-flight guide for deploying AI agents.
+For machine-readable agent policies, see AGENTS.md and agent/policies/
+-->
+
 ---
 type: guide
 tags: [ai-agent, automation, safety, checklist, pre-flight]

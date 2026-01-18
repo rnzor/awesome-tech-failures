@@ -10,19 +10,20 @@ We explicitly distinguish between the two.
 
 ## Evidence Types
 
-- **Direct incident**  
+- **direct-incident**  
   A specific event with a clear timeline and public write-up.
 
-- **Repeated pattern**  
+- **repeated-pattern**  
   Multiple independent write-ups describing the same failure mode.
-  Common in AI, automation, and decision failures where companies avoid postmortems.
+   Common in AI, automation, and decision failures where companies avoid postmortems.
 
 ---
 
 ## AI Slop & Automation Failures
 
 ### AI Agents with Destructive Tool Access
-**Evidence type:** Repeated pattern
+
+**Evidence type:** repeated-pattern
 
 **Sources:**
 - LangChain blog & docs: agent safety and tool misuse
@@ -36,7 +37,8 @@ even when companies avoid naming incidents.
 ---
 
 ### Runaway AI Agents / Token Cost Explosions
-**Evidence type:** Direct incidents (multiple)
+
+**Evidence type:** direct-incident
 
 **Sources:**
 - LangChain GitHub issues documenting infinite agent loops
@@ -46,7 +48,8 @@ even when companies avoid naming incidents.
 ---
 
 ### AI-Generated SEO Content Causing Ranking Drops
-**Evidence type:** Direct incidents (aggregated)
+
+**Evidence type:** direct-incident
 
 **Sources:**
 - Google Search Central blog (Helpful Content updates)
@@ -56,7 +59,8 @@ even when companies avoid naming incidents.
 ---
 
 ### LLM-Written Code Breaking Production
-**Evidence type:** Repeated pattern
+
+**Evidence type:** repeated-pattern
 
 **Sources:**
 - GitHub Copilot discussions & blog posts
@@ -66,7 +70,8 @@ even when companies avoid naming incidents.
 ---
 
 ### Prompt Injection & Tool Abuse
-**Evidence type:** Direct incidents
+
+**Evidence type:** direct-incident
 
 **Sources:**
 - OWASP Top 10 for LLM Applications
@@ -76,7 +81,8 @@ even when companies avoid naming incidents.
 ---
 
 ### AI Summaries Replacing Understanding (Decision Failures)
-**Evidence type:** Repeated pattern
+
+**Evidence type:** repeated-pattern
 
 **Sources:**
 - Research on automation bias
@@ -86,7 +92,8 @@ even when companies avoid naming incidents.
 ---
 
 ### "Vibe Coding" → Unmaintainable Systems
-**Evidence type:** Repeated pattern (emerging)
+
+**Evidence type:** repeated-pattern
 
 **Sources:**
 - Indie Hacker shutdown posts
@@ -96,7 +103,8 @@ even when companies avoid naming incidents.
 ---
 
 ### Over-Automated Customer Support Destroying Trust
-**Evidence type:** Direct incidents
+
+**Evidence type:** direct-incident
 
 **Sources:**
 - Air Canada chatbot incident (2024)
@@ -108,19 +116,22 @@ even when companies avoid naming incidents.
 ## Production & Security Incidents
 
 ### GitHub Database Outage (2018)
-**Evidence type:** Direct incident
+
+**Evidence type:** direct-incident
 **Source:** GitHub Engineering Blog
 
 ---
 
 ### AWS us-east-1 S3 Outage (2017)
-**Evidence type:** Direct incident
+
+**Evidence type:** direct-incident
 **Source:** AWS Postmortem
 
 ---
 
 ### Capital One Data Breach (2019)
-**Evidence type:** Direct incident
+
+**Evidence type:** direct-incident
 **Sources:** DOJ filings, public disclosures
 
 ---
