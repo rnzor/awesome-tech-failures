@@ -286,6 +286,9 @@ tags: [authentication-bypass, oauth-parameter-injection, account-takeover, token
 
 **Root cause:** Insufficient validation of the `returnURL` parameter; trust in user-supplied redirect targets without verification.
 
+**Evidence type:** Direct incident
+Researcher-discovered OAuth vulnerability with documented exploitation path; specific incident with identified attack vector and named service.
+
 **Lessons:**
 - Return URL validation must be as strict as redirect URI validation
 - OAuth proxies introduce additional validation requirements
