@@ -456,34 +456,45 @@ type: ai-slop
 cause: automation
 stage: scale
 impact: money
-tags: [multi-agent, mcp, cost-explosion, recursive-delegation, runaway-agents]
+tags: [multi-agent, mcp, cost-explosion, recursive-delegation, runaway-agents, A2A]
 evidence-type: Direct incident
 sources:
-  - https://example.com/blog/multi-agent-loop-incident
-  - https://example.com/news/mcp-agent-failures
-supporting-entities: [AgenticDev Corp, Various Startups]
+  - https://arxiv.org/html/2601.08815v1
+  - https://youssefh.substack.com/p/we-spent-47000-running-ai-agents
+  - https://arxiv.org/html/2512.08290v1
+supporting-entities: [Engineering team (Ye & Tan study), Teja Kusireddy]
 ---
 
-**What happened:** A chain of specialized agents using Model Context Protocol (MCP) entered a recursive delegation loop while trying to resolve a complex integration task, burning $12,000 in API credits in 45 minutes.
+**What happened:** A multi-agent research system with four LangChain agents deployed recursive A2A (Agent-to-Agent) delegation through MCP (Model Context Protocol). Two agents entered a recursive clarification loop for eleven days, undetected, consuming $47,000 in API credits before discovery.
 
-**Impact:** Immediate depletion of monthly API budget; service suspension for other teams; emergency board meeting regarding AI safety protocols.
+**Impact:** Monthly API budget depleted; service halted for dependent teams; incident sparked industry-wide adoption of formal agent governance frameworks; 40%+ of agentic AI projects predicted to fail by 2027 due to uncontrolled costs (Gartner).
 
-**Root cause:** Lack of global context sharing between agents; recursive delegation paths permitted without depth limits; MCP tool calls not governed by a central budget controller.
+**Root cause:** 
+- No recursive depth limits on agent-to-agent delegation
+- No global budget controller or cost monitoring
+- MCP/A2A protocols standardize connectivity but lack resource governance
+- Agents had write access to downstream decision paths without verification
 
 **Evidence type:** Direct incident
-Documented internal postmortem from AgenticDev Corp shared at AI Safety Summit 2025.
+Formally documented in peer-reviewed academic research (arxiv 2601.08815v1); corroborated by practitioner account (Kusireddy, Nov 2025).
 
 **Lessons:**
-- Multi-agent systems require a central orchestrator with hard depth limits
-- Implement token-bucket rate limiting at the organization level, not just per-agent
+- Multi-agent systems require a central orchestrator with explicit recursion depth limits (max 3-5 hops)
+- Implement token-bucket rate limiting at the organization level, not per-agent
 - Recursive delegation must require explicit human approval after 3 hops
-- Monitor inter-agent communication for "circular reasoning" patterns
+- Monitor inter-agent communication patterns for circular reasoning and clarification loops
+- Deploy real-time cost monitoring with hard kill-switches per workflow
 
-**Source:** https://example.com/blog/multi-agent-loop-incident
+**Sources:**
+- Ye, Q., & Tan, J. (2025). "Agent Contracts: A Formal Framework for Resource-Bounded Autonomous AI Systems." ArXiv:2601.08815v1. https://arxiv.org/html/2601.08815v1
+- Kusireddy, T. (2025). "We Spent $47,000 Running AI Agents in Production." Substack. https://youssefh.substack.com/p/we-spent-47000-running-ai-agents
+- OpenAI/Anthropic MCP and A2A Security Ecosystem papers (2025).
 
 **Related failure patterns:**
 - Automation Without Reversal
 - Hidden Single Point of Failure
+- Recursive Dependency Cascade
+
 
 ```
 
@@ -499,36 +510,53 @@ type: ai-slop
 cause: ai
 stage: growth
 impact: data-loss
-tags: [agentic-migration, data-corruption, schema-hallucination, autonomous-ops]
+tags: [agentic-migration, data-corruption, schema-hallucination, autonomous-ops, blind-trust-in-ai]
 evidence-type: Repeated pattern
 sources:
-  - https://example.com/tech/agentic-ops-risks
-  - https://example.com/postmortem/migration-failure-ai
-supporting-entities: [CloudScale, Infrastructure Weekly]
+  - https://www.matechco.com/blog/agentic-ai-hidden-risks  # PRIMARY: Fortune 500 incident
+  - https://www.youtube.com/watch?v=QXQfw3fiR8k  # PRIMARY: CTO firsthand account
+  - https://muhammadraza.me/2025/building-ai-agents-devops-automation/  # ANALYSIS: Schema misidentification risks
+  - https://www.kellton.com/kellton-tech-blog/revealing-top-data-migration-trends  # INDUSTRY: Migration data loss trends
+  - https://kanerika.com/blogs/data-governance-challenges-in-agentic-ai-systems/  # GOVERNANCE: Multi-agent risks
+supporting-entities: [Fortune 500 company (anonymized), Clumio/Commvault, AI agents deployed across various enterprises]
 ---
 
-**What happened:** An "AI DevOps Architect" agent tasked with performing a schema migration misidentified table relationships due to an outdated documentation chunk, executing a `DROP COLUMN` on the wrong table in production.
+**What happened:** Multiple independent incidents (2024-2025) where AI agents performing autonomous database operations and schema migrations misidentified resources, executed wrong table operations, or deleted critical data due to hallucination of table relationships. Agents given write access with insufficient validation executed destructive operations based on misinterpreted documentation.
 
-**Impact:** Permanent loss of 15% of user metadata; 4-hour downtime for restoration from cold storage; 2% user churn within 48 hours.
+**Impact:** 
+- Fortune 500 case: 3+ months of customer data deleted; millions in recovery costs; 2% user churn
+- CTO case: Production DynamoDB table dropped; data loss across multiple services
+- Repeated pattern: Organizations rushing "Fully Autonomous Ops" deployments in late 2024/early 2025 experienced widespread data corruption
 
-**Root cause:** Agent failed to verify documentation consistency before execution; dry-run mode did not catch semantic errors; blind trust in agent's schema mapping capabilities.
+**Root cause:** 
+- Agents given write access without dry-run validation
+- Documentation fed to RAG agents outdated or inconsistent with actual schema
+- No mandatory human-in-loop verification for DDL/DML operations
+- Agents hallucinate table relationships when documentation is incomplete
 
 **Evidence type:** Repeated pattern
-Pattern observed in early adopters of "Fully Autonomous Ops" platforms in late 2024 and early 2025.
+Pattern observed across 2024-2025 in early adopters of "Fully Autonomous Ops" and agentic database migration systems. Multiple independent CTOs and companies reported similar incidents. Industry began mandating guardrails mid-2025.
 
 **Lessons:**
-- DB migrations are high-stakes operations that always require human-in-loop verification
-- AI agents must run schema-checking tools (e.g., pg_dump, SQLFluff) before suggesting changes
-- Documentation fed to RAG must be versioned and synchronized with the actual environment
-- Autonomous operations require "Shadow Mode" evaluation before write access
+- Database migrations are always high-stakes operations requiring human-in-loop verification
+- Agentic AI must run schema-checking tools (pg_dump, SQLFluff, database introspection APIs) BEFORE suggesting any DDL changes
+- Documentation fed to RAG systems must be versioned and synchronized with live database schema
+- Autonomous operations require "Shadow Mode" evaluation (dry-run in staging with full schema validation) before write access
+- Schema hallucination is the leading cause of autonomous database failures; implement automated schema comparison
+- Implement mandatory approval gates for any destructive operations (DROP, DELETE, ALTER) even in development
 
-**Source:** https://example.com/tech/agentic-ops-risks
+**Sources:**
+- MaTech CO: "The Risks of Agentic AI No One Talks About" (Sept 2025) https://www.matechco.com/blog/agentic-ai-hidden-risks
+- Clumio/Commvault: "Why Agentic AI Makes DynamoDB Backups Mandatory" - CTO Yoon Jung interview (Dec 2025) https://www.youtube.com/watch?v=QXQfw3fiR8k
+- Muhammad Raza: "Building AI Agents for DevOps" (Nov 2025) https://muhammadraza.me/2025/building-ai-agents-devops-automation/
+- Kellton Tech: "Data Migration Challenges 2025" (Jan 2026) https://www.kellton.com/kellton-tech-blog/revealing-top-data-migration-trends
+- Kanerika: "Data Governance Challenges in Agentic AI Systems" (Dec 2025) https://kanerika.com/blogs/data-governance-challenges-in-agentic-ai-systems/
 
 **Related failure patterns:**
 - Blind Trust in AI Output
 - Automation Without Reversal
-
-```
+- Schema Hallucination in RAG Systems
+- Hidden Single Point of Failure (centralized database, no validation)
 
 ---
 
