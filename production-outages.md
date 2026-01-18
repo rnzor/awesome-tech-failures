@@ -40,7 +40,7 @@ tags: [free-form, tags]
 type: outage
 cause: architecture
 stage: scale
-impact: users
+impact: [users]
 tags: [hidden-dependency, rollback-failure, observability-gap, mysql, replication]
 ---
 
@@ -71,7 +71,7 @@ tags: [hidden-dependency, rollback-failure, observability-gap, mysql, replicatio
 type: outage
 cause: human-error
 stage: scale
-impact: users
+impact: [users]
 tags: [blast-radius, control-plane, region-dependency, s3, typo]
 ---
 
@@ -102,7 +102,7 @@ tags: [blast-radius, control-plane, region-dependency, s3, typo]
 type: outage
 cause: automation
 stage: scale
-impact: money
+impact: [money]
 tags: [no-rollback, deployment-failure, trading-automation, dead-code, kill-switch]
 ---
 
@@ -132,7 +132,7 @@ tags: [no-rollback, deployment-failure, trading-automation, dead-code, kill-swit
 type: outage
 cause: architecture
 stage: scale
-impact: trust
+impact: [trust]
 tags: [regex, backtracking, cpu-exhaustion, waf, global-impact, cascade]
 ---
 
@@ -167,7 +167,7 @@ tags: [regex, backtracking, cpu-exhaustion, waf, global-impact, cascade]
 type: outage
 cause: human-error
 stage: scale
-impact: data-loss
+impact: [data-loss]
 tags: [data-loss, backup-failure, human-error, postgresql, replication]
 ---
 
@@ -200,7 +200,7 @@ tags: [data-loss, backup-failure, human-error, postgresql, replication]
 type: outage
 cause: architecture
 stage: scale
-impact: users
+impact: [users]
 tags: [vcl, global-outage, cascading-failure, edge-computing, hidden-sop]
 ---
 
@@ -231,7 +231,7 @@ tags: [vcl, global-outage, cascading-failure, edge-computing, hidden-sop]
 type: outage
 cause: automation
 stage: scale
-impact: users
+impact: [users]
 severity:
   level: high
   score: 9
@@ -265,7 +265,7 @@ tags: [cascading-failure, config-propagation, global-outage, feature-file-poison
 type: outage
 cause: architecture
 stage: scale
-impact: users
+impact: [users]
 severity:
   level: high
   score: 8
@@ -301,7 +301,7 @@ tags: [cascading-failure, shared-dependency, global-outage, social-media, 2024-m
 type: outage
 cause: architecture
 stage: scale
-impact: visibility-loss
+impact: [visibility-loss]
 severity:
   level: high
   score: 8
@@ -337,7 +337,7 @@ tags: [observability-gap, architecture, visibility-loss, regional-outage, 2025-c
 type: outage
 cause: deployment-validation
 stage: scale
-impact: systemic-outage
+impact: [systemic-outage]
 severity:
   level: critical
   score: 10
@@ -371,7 +371,7 @@ tags: [rollback-failure, cause:deployment-validation, systemic-outage, endpoint-
 type: outage
 cause: latent-bug
 stage: scale
-impact: error-spike
+impact: [error-spike]
 severity:
   level: medium
   score: 7
