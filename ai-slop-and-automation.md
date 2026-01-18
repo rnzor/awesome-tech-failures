@@ -579,6 +579,49 @@ supporting-entities: [HyperSense Software, Gartner, Multiple AI Vendors]
 - Over-Hyped Technology
 ```
 
+### (2025) Galileo AI — 40% of Agentic AI Projects Fail
+
+```yaml
+---
+type: ai-slop
+cause: automation
+stage: scale
+impact: [money, trust]
+severity:
+  level: high
+  score: 8
+  financial: 10-100x budget overruns
+tags: [agentic-ai, cost-explosion, guardrails, context-loss, integration-failure]
+evidence-type: repeated-pattern
+sources:
+  - https://dsn2024uq.github.io/Proceedings/pdfs/DSN2024-6rvE3SSpzFYmysif75Dkid/410500a001/410500a001.pdf
+  - https://kubernetes.io/blog/2025/10/20/seven-kubernetes-pitfalls-and-how-to-avoid/
+supporting-entities: [Galileo AI, DSN 2024, Kubernetes Blog]
+---
+
+**What happened:** Galileo AI research on "Hidden Costs of Agentic AI" found that 40% of agentic AI projects fail primarily due to cost explosion and guardrail issues. Projects fail despite successful POCs because agent loops on simple tasks cause costs to spiral 10-100x higher than predicted.
+
+**Impact:** Failed deployments after significant POC investment; 10-100x budget overruns; organizations abandoning agentic AI initiatives; wasted engineering resources on non-production-ready systems.
+
+**Root cause:**
+- **Cost Explosion (Primary):** No rate limiting; API calls exceed budget; agents enter infinite loops on simple tasks
+- **Guardrails Insufficient:** Runaway agents take unintended actions without approval gates or rollback mechanisms
+- **Context/Hallucination:** Agents lose context between steps in long workflows, leading to cascading errors
+- **Integration Failures:** Lack of circuit breakers leads to cascading workflow failures across systems
+
+**Lessons:**
+- Rate limiting and cost monitoring are mandatory for any agentic deployment
+- Test long-running workflows specifically for context management and drift
+- Implement approval gates for any action with cost or side-effect implications
+- Build circuit breakers at the integration layer to prevent cascading failures
+- "Shadow mode" evaluation must include cost analysis, not just functionality
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Blind Trust in AI Output
+- Overconfidence From Past Success
+```
+
 ### (2025) FutureAGI / Dev.to — RAG System Hallucination Failures (10+ Modes)
 
 ```yaml
