@@ -42,6 +42,10 @@ cause: timing
 stage: growth
 impact: trust
 tags: [premature, privacy, fashion, user-acceptance, enterprise-pivot]
+evidence-type: direct-incident
+sources:
+  - https://www.investopedia.com/articles/investing/052115/how-why-google-glass-failed.asp
+supporting-entities: [Google]
 ---
 
 **What happened:** Google launched Glass as a consumer product in 2014 for $1,500. Pulled from market in 2015. Eventually pivoted to enterprise, then discontinued entirely in 2023.
@@ -55,8 +59,6 @@ tags: [premature, privacy, fashion, user-acceptance, enterprise-pivot]
 - Social acceptance is as important as technical readiness
 - Privacy concerns are product risks, not edge cases
 - "Cool" can't be bought through influencer marketing
-
-**Source:** https://www.investopedia.com/articles/investing/052115/how-why-google-glass-failed.asp
 
 **Related failure patterns:**
 - Timing Blindness (technology ahead of society)
@@ -72,6 +74,10 @@ cause: incentives
 stage: growth
 impact: users
 tags: [ux-mismatch, wrong-market, documentation-heavy, collaboration-complexity]
+evidence-type: direct-incident
+sources:
+  - https://googleblog.blogspot.com/2012/08/update-on-google-wave.html
+supporting-entities: [Google]
 ---
 
 **What happened:** Google Wave launched as a "revolutionary" collaboration tool combining email, chat, and documents. Despite technical innovation, users couldn't understand its value proposition.
@@ -85,8 +91,6 @@ tags: [ux-mismatch, wrong-market, documentation-heavy, collaboration-complexity]
 - If users need tutorials, you're already in trouble
 - Value proposition must be obvious within seconds
 - Technical excellence ≠ product success
-
-**Source:** https://googleblog.blogspot.com/2012/08/update-on-google-wave.html
 
 **Related failure patterns:**
 - Ecosystem Neglect
@@ -108,6 +112,10 @@ cause: incentives
 stage: scale
 impact: users
 tags: [ecosystem-failure, platform-risk, developer-trust, late-entry, app-gap]
+evidence-type: direct-incident
+sources:
+  - https://www.theverge.com/2017/10/8/16437700/microsoft-windows-phone-dead
+supporting-entities: [Microsoft]
 ---
 
 **What happened:** Windows Phone launched with a strong, innovative OS but failed to attract app developers. By 2017, the platform was abandoned, leaving users without support or apps.
@@ -121,8 +129,6 @@ tags: [ecosystem-failure, platform-risk, developer-trust, late-entry, app-gap]
 - Developer trust is non-renewable — once burned, they won't return
 - Late entry requires 10x better, not 10% better
 - App ecosystem gap is a death spiral, not a temporary problem
-
-**Source:** https://www.theverge.com/2017/10/8/16437700/microsoft-windows-phone-dead
 
 **Related failure patterns:**
 - Ecosystem Neglect

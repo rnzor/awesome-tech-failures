@@ -2,10 +2,13 @@
 """
 Validate markdown entries in the repo.
 Checks for:
-- Required sections (What happened, Impact, Root cause, Lessons, Source)
+- Required sections (What happened, Impact, Root cause, Lessons)
 - At least 2 lessons listed
-- Source URL present and valid format
 - Tags present
+- YAML header contains: sources:, supporting-entities:
+- evidence-type is lowercase kebab-case
+- Source URLs are valid http/https format
+- Related failure patterns section present
 """
 
 import re
@@ -26,36 +29,55 @@ def validate_entry(file_path, content):
         errors.append(f"Missing '**Root cause:**' section")
     if "**Lessons:**" not in content:
         errors.append(f"Missing '**Lessons:**' section")
-    if "**Source:**" not in content:
-        errors.append(f"Missing '**Source:**' section")
 
     # Count lessons (look for bullet points)
     lessons_count = len(re.findall(r"^\s*-\s+", content, re.MULTILINE))
     if lessons_count < 2:
         errors.append(f"Only {lessons_count} lessons found. Minimum 2 required.")
 
-    # Check source URL format
-    source_match = re.search(r"\*\*Source:\*\*\s*(https?://[^\s]+)", content)
-    if not source_match:
-        errors.append(f"Missing or invalid source URL")
-
-    # Check for tags array (at minimum)
+    # Check for tags array in YAML header
     if "tags:" not in content.lower():
         errors.append(f"Missing 'tags:' in entry")
+
+    # Check for sources array in YAML header
+    if "sources:" not in content.lower():
+        errors.append(f"Missing 'sources:' in YAML header")
+
+    # Check for supporting-entities array in YAML header
+    if "supporting-entities:" not in content.lower():
+        errors.append(f"Missing 'supporting-entities:' in YAML header")
 
     # Check for related failure patterns section
     if "**Related failure patterns:**" not in content:
         errors.append(f"Missing '**Related failure patterns:**' section")
 
-    # Check for evidence-type field (only required for ai-slop entries in ai-slop-and-automation.md)
-    if "ai-slop-and-automation.md" in str(file_path):
-        if (
-            "evidence-type:" not in content.lower()
-            and "**Evidence type:**" not in content
-        ):
+    # Check evidence-type format (lowercase kebab-case only)
+    evidence_type_match = re.search(r"evidence-type:\s*(\S+)", content, re.IGNORECASE)
+    if evidence_type_match:
+        evidence_type = evidence_type_match.group(1)
+        # Remove any trailing punctuation or markdown
+        evidence_type = re.sub(r"[`\s\]]+$", "", evidence_type)
+        if evidence_type not in ["direct-incident", "repeated-pattern"]:
             errors.append(
-                f"Missing 'Evidence type:' field (Direct incident or Repeated pattern)"
+                f"Invalid evidence-type: '{evidence_type}'. Must be 'direct-incident' or 'repeated-pattern'"
             )
+
+    # Check source URLs in YAML header
+    source_urls = re.findall(r"^\s*-\s+(https?://[^\s]+)", content, re.MULTILINE)
+    if not source_urls:
+        errors.append(f"No source URLs found in YAML header")
+
+    # Check markdown body does NOT have **Source:** section
+    if "**Source:**" in content:
+        errors.append(
+            f"Found '**Source:**' in markdown body - should be moved to YAML header sources: array"
+        )
+
+    # Check markdown body does NOT have **Evidence type:** section
+    if "**Evidence type:**" in content:
+        errors.append(
+            f"Found '**Evidence type:**' in markdown body - should be in YAML header evidence-type field"
+        )
 
     return errors
 

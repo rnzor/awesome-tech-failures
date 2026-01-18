@@ -42,6 +42,10 @@ cause: incentives
 stage: growth
 impact: money
 tags: [no-pmf, timing, distribution, wrong-assumptions, premium-content]
+evidence-type: direct-incident
+sources:
+  - https://www.theinformation.com/articles/quibi-the-rise-and-fall-of-a-1-75-billion-failure
+supporting-entities: [Quibi, The Information]
 ---
 
 **What happened:** Quibi raised $1.75B to build "Netflix for your phone" with premium short-form content. Launched April 2020, shut down October 2020. Burned through nearly $2B in under 7 months.
@@ -55,8 +59,6 @@ tags: [no-pmf, timing, distribution, wrong-assumptions, premium-content]
 - "Premium" means nothing without habit
 - Timing assumptions must be tested, not assumed
 - Content differentiation must be obvious, not explained
-
-**Source:** https://www.theinformation.com/articles/quibi-the-rise-and-fall-of-a-1-75-billion-failure
 
 **Related failure patterns:**
 - Money ≠ Product-Market Fit

@@ -42,6 +42,10 @@ cause: incentives
 stage: scale
 impact: money
 tags: [innovators-dilemma, fear-of-cannibalization, short-term-incentives, missed-opportunity]
+evidence-type: direct-incident
+sources:
+  - https://quartr.com/insights/edge/the-dilemma-that-brought-down-kodak
+supporting-entities: [Kodak]
 ---
 
 **What happened:** Kodak engineer Steve Sasson invented the digital camera in 1975. Kodak filed the patent and buried it for 20+ years, afraid it would destroy their film business. Filed for bankruptcy in 2012.
@@ -55,8 +59,6 @@ tags: [innovators-dilemma, fear-of-cannibalization, short-term-incentives, misse
 - Cannibalization fear without action just delays the inevitable
 - Innovation requires ownership and metrics separate from legacy business
 - Market disruption doesn't wait for comfortable transitions
-
-**Source:** https://quartr.com/insights/edge/the-dilemma-that-brought-down-kodak
 
 **Related failure patterns:**
 - The Innovator's Dilemma
@@ -80,6 +82,10 @@ cause: ai
 stage: scale
 impact: morale
 tags: [blind-trust, decision-degradation, ai-slop, delegation-thinking, leadership-failure]
+evidence-type: repeated-pattern
+sources:
+  - https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries
+supporting-entities: [McKinsey, Various Organizations]
 ---
 
 **What happened:** Teams across multiple organizations began relying on AI-generated summaries instead of reading source data, leading to cascading bad strategic decisions based on incomplete understanding.
@@ -93,8 +99,6 @@ tags: [blind-trust, decision-degradation, ai-slop, delegation-thinking, leadersh
 - Leaders must still read the source for critical decisions
 - Summary is a starting point, not the endpoint of reasoning
 - Verify AI output against source material for high-stakes decisions
-
-**Source:** https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries
 
 **Related failure patterns:**
 - Decision-Making by Proxy

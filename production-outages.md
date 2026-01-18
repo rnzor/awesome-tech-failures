@@ -46,6 +46,9 @@ severity:
   score: 7
   financial: N/A
 tags: [hidden-dependency, rollback-failure, observability-gap, mysql, replication]
+sources:
+  - https://github.blog/2018-10-30-october-incident-report/
+supporting-entities: [GitHub]
 ---
 
 **What happened:** A routine maintenance operation triggered a large-scale MySQL replication failure, causing hours of downtime across GitHub's platform.
@@ -59,8 +62,6 @@ tags: [hidden-dependency, rollback-failure, observability-gap, mysql, replicatio
 - "We've done this before" is not a safety guarantee
 - Understand failure modes before they happen
 - Operational confidence ≠ operational safety
-
-**Source:** https://github.blog/2018-10-30-october-incident-report/
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
@@ -81,6 +82,9 @@ severity:
   score: 9
   financial: N/A
 tags: [blast-radius, control-plane, region-dependency, s3, typo]
+sources:
+  - https://aws.amazon.com/message/41926/
+supporting-entities: [AWS]
 ---
 
 **What happened:** A typo during debugging commands took down S3 in the us-east-1 region, cascading into major internet outages for thousands of services.
@@ -94,8 +98,6 @@ tags: [blast-radius, control-plane, region-dependency, s3, typo]
 - Region-level dependencies are silent killers
 - Debugging in production requires extreme caution
 - Recovery procedures must be tested and resilient
-
-**Source:** https://aws.amazon.com/message/41926/
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
@@ -116,6 +118,9 @@ severity:
   score: 10
   financial: $440M
 tags: [no-rollback, deployment-failure, trading-automation, dead-code, kill-switch]
+sources:
+  - https://www.sec.gov/spotlight/equity-markets-structure-committee/knight-capital-report.pdf
+supporting-entities: [Knight Capital, SEC]
 ---
 
 **What happened:** A faulty deployment activated dead code paths in Knight Capital's trading system, triggering uncontrolled trading that lost approximately $440M in under an hour.
@@ -129,8 +134,6 @@ tags: [no-rollback, deployment-failure, trading-automation, dead-code, kill-swit
 - Old code is still production code — audit and remove dead paths
 - Deployments during critical operations require extreme caution
 - Every automated system needs a tested emergency stop
-
-**Source:** https://www.sec.gov/spotlight/equity-markets-structure-committee/knight-capital-report.pdf
 
 **Related failure patterns:**
 - Automation Without Reversal
@@ -150,6 +153,9 @@ severity:
   score: 8
   financial: N/A
 tags: [regex, backtracking, cpu-exhaustion, waf, global-impact, cascade]
+sources:
+  - https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/
+supporting-entities: [Cloudflare]
 ---
 
 **What happened:** A single regex rule deployed to Cloudflare's WAF caused CPU exhaustion across all HTTP/HTTPS servers worldwide, resulting in 30+ minutes of 502 errors for sites using Cloudflare.
@@ -163,8 +169,6 @@ tags: [regex, backtracking, cpu-exhaustion, waf, global-impact, cascade]
 - Any change to safety mechanisms requires review and rollback plan
 - Monitor CPU usage in test suites, not just functionality
 - Single points of failure in safety systems are catastrophic
-
-**Source:** https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/
 
 **Related failure patterns:**
 - Automation Without Reversal
@@ -185,6 +189,9 @@ cause: human-error
 stage: scale
 impact: [data-loss]
 tags: [data-loss, backup-failure, human-error, postgresql, replication]
+sources:
+  - https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/
+supporting-entities: [GitLab]
 ---
 
 **What happened:** During a routine maintenance window to resolve replication lag, a tired system administrator accidentally deleted 300GB of live production data by running `rm -rf` on the wrong directory.
@@ -198,8 +205,6 @@ tags: [data-loss, backup-failure, human-error, postgresql, replication]
 - Implement guardrails for destructive commands (e.g., alias `rm` to interactive mode)
 - Monitor backup size and completion — don't assume success
 - Engineer systems to be resilient to human error at 2 AM
-
-**Source:** https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/
 
 **Related failure patterns:**
 - Automation Without Reversal
@@ -218,6 +223,9 @@ cause: architecture
 stage: scale
 impact: [users]
 tags: [vcl, global-outage, cascading-failure, edge-computing, hidden-sop]
+sources:
+  - https://www.fastly.com/blog/summary-of-june-8-incident
+supporting-entities: [Fastly]
 ---
 
 **What happened:** A single valid configuration change by one customer triggered a software bug in Fastly's edge cloud, causing 85% of their network to return 503 errors within minutes.
@@ -231,8 +239,6 @@ tags: [vcl, global-outage, cascading-failure, edge-computing, hidden-sop]
 - Implement "cell-based architecture" to limit blast radius
 - Dormant bugs in critical path code are time bombs — fuzzing matters
 - Fast rollbacks are the best defense against unknown-condition triggers
-
-**Source:** https://www.fastly.com/blog/summary-of-june-8-incident
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
@@ -253,6 +259,9 @@ severity:
   score: 9
   financial: Significant
 tags: [cascading-failure, config-propagation, global-outage, feature-file-poisoning, 2025-active]
+sources:
+  - https://blog.cloudflare.com/outage-report-november-18-2025/
+supporting-entities: [Cloudflare]
 ---
 
 **What happened:** A database permission change caused the Bot Management feature file to double in size. This oversized file exceeded the size limits of routing software deployed across Cloudflare's global network.
@@ -265,8 +274,6 @@ tags: [cascading-failure, config-propagation, global-outage, feature-file-poison
 - Configuration changes can have exponential downstream effects; test at scale before global rollout
 - Size limits and capacity checks must be enforced at the source, not at consumption
 - Distinguish DDoS attack signatures from internal cascading failures early
-
-**Source:** https://blog.cloudflare.com/outage-report-november-18-2025/
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
@@ -287,6 +294,9 @@ severity:
   score: 8
   financial: Significant
 tags: [cascading-failure, shared-dependency, global-outage, social-media, 2024-major]
+sources:
+  - https://www.cnbc.com/2024/12/11/metas-facebook-instagram-go-down.html
+supporting-entities: [Meta, CNBC]
 ---
 
 **What happened:** A technical issue in Meta's infrastructure caused cascading failures across Facebook, Instagram, Threads, WhatsApp, and Messenger.
@@ -299,8 +309,6 @@ tags: [cascading-failure, shared-dependency, global-outage, social-media, 2024-m
 - Shared infrastructure creates cascading risk; failures in one service ripple to others
 - Complex interdependencies are invisible until they fail
 - Long MTTR indicates poor incident detection or response coordination
-
-**Source:** https://www.cnbc.com/2024/12/11/metas-facebook-instagram-go-down.html
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
@@ -323,6 +331,9 @@ severity:
   score: 8
   financial: Indirect
 tags: [observability-gap, architecture, visibility-loss, regional-outage, 2025-critical]
+sources:
+  - https://www.linkedin.com/pulse/when-observability-fails-what-we-can-learn-from-aws-outage/
+supporting-entities: [AWS, LinkedIn]
 ---
 
 **What happened:** An AWS outage in US-East-1 took down production workloads and simultaneously took down the observability stack (CloudWatch, Health Dashboard) hosted in the same region.
@@ -335,8 +346,6 @@ tags: [observability-gap, architecture, visibility-loss, regional-outage, 2025-c
 - Observability must be external to the systems being monitored
 - Regional failures require monitoring in separate regions or managed third-party services
 - AI and automation cannot help if you are blind during the incident
-
-**Source:** https://www.linkedin.com/pulse/when-observability-fails-what-we-can-learn-from-aws-outage/
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
@@ -359,6 +368,9 @@ severity:
   score: 10
   financial: $5B+
 tags: [rollback-failure, cause:deployment-validation, systemic-outage, endpoint-security, 2024-worst]
+sources:
+  - https://www.crowdstrike.com/blog/falcon-content-update-remediation-and-guidance-hub/
+supporting-entities: [CrowdStrike]
 ---
 
 **What happened:** CrowdStrike deployed a faulty update to its Falcon sensor, triggering system crashes on millions of Windows devices globally. Rollback required physical access to machines.
@@ -371,8 +383,6 @@ tags: [rollback-failure, cause:deployment-validation, systemic-outage, endpoint-
 - Endpoint agent updates require the most rigorous testing; global blast radius is total
 - Canary deployments are non-negotiable for critical infrastructure
 - Rollbacks that require physical access are not rollbacks; they are disasters
-
-**Source:** https://www.crowdstrike.com/blog/falcon-content-update-remediation-and-guidance-hub/
 
 **Related failure patterns:**
 - Automation Without Reversal
@@ -393,6 +403,9 @@ severity:
   score: 7
   financial: Significant
 tags: [rollback-failure, cause:latent-bug, error-spike, ddos-rule, 2024-major]
+sources:
+  - https://blog.cloudflare.com/incident-report-june-20-2024/
+supporting-entities: [Cloudflare]
 ---
 
 **What happened:** A new DDoS mitigation rule triggered a latent bug in the rate-limiting system, causing HTTP request handling processes to use excessive CPU globally.
@@ -405,8 +418,6 @@ tags: [rollback-failure, cause:latent-bug, error-spike, ddos-rule, 2024-major]
 - Latent bugs in stable code can be triggered by new code paths; interaction testing is essential
 - Gradual global rollout is good practice, but must include staged failure detection
 - Distinguish internal cascades from external attacks immediately
-
-**Source:** https://blog.cloudflare.com/incident-report-june-20-2024/
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
