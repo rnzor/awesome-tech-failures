@@ -1,0 +1,27 @@
+{
+    "name": "awesome-tech-failures",
+    "version": "1.1.0",
+    "description": "A machine-readable index of technology failures, patterns, and postmortems for AI agents.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "files": [
+        "agent/*.ndjson",
+        "agent/*.json",
+        "agent/*.yaml"
+    ],
+    "keywords": [
+        "failures",
+        "dataset",
+        "ai",
+        "postmortem",
+        "sre"
+    ],
+    "author": "Antigravity",
+    "license": "CC0-1.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rnzor/awesome-tech-failures.git"
+    }
+}

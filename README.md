@@ -58,7 +58,26 @@ Modern systems fail in modern ways. This repository provides the structured inte
 
 ---
 
-## 🛠️ Interactive Tools
+## 🗺️ Failure Taxonomy
+
+```mermaid
+graph TD
+    Root[Total Failures] --> Tech[Technical Failures]
+    Root[Total Failures] --> Biz[Business Failures]
+    
+    Tech --> AI[AI Slop & Automation]
+    Tech --> Prod[Production Outages]
+    Tech --> Sec[Security Incidents]
+    
+    Biz --> Start[Startup Failures]
+    Biz --> ProdFail[Product Failures]
+    Biz --> Dec[Decision Failures]
+    
+    AI --> Pat1[Pattern: Blind Trust]
+    AI --> Pat2[Pattern: Infinite Loops]
+```
+
+## 🧠 Operational Frameworks
 - 🩺 [**Failure Diagnosis Flowchart**](docs/diagnosis-flowchart.md) — Identify patterns in real-time.
 - ⚖️ [**Severity Scoring System**](docs/severity-system.md) — Standardized risk assessment.
 - ✅ [**AI Agent Pre-Flight Checklist**](docs/ai-agent-checklist.md) — **Essential before deploying any AI agent.**
