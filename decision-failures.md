@@ -10,13 +10,21 @@ Incentive misalignment, ownership gaps, and the quiet killers of organizations.
 ```yaml
 ---
 type: decision
-cause: [incentives|no-owner|incentive-mismatch]
+cause: [incentives|no-owner|ai]
 stage: [early|growth|scale|decline]
 impact: [morale|money|trust]
 tags: [free-form, tags]
+evidence-type: [direct-incident|repeated-pattern]
+severity:
+  level: [critical|high|medium|low]
+  score: [1-10]
+  financial: [Description or N/A]
+sources:
+  - https://...
+supporting-entities: [Entity1, Entity2]
 ---
 
-**What happened:** [1-2 lines]
+**What happened:** [1-2 lines describing the incident]
 
 **Impact:** [who/what got hit]
 
@@ -26,7 +34,9 @@ tags: [free-form, tags]
 - [Actionable lesson 1]
 - [Actionable lesson 2]
 
-**Source:** [URL]
+**Related failure patterns:**
+- [Pattern 1]
+- [Pattern 2]
 ```
 
 ---
@@ -62,11 +72,6 @@ supporting-entities: [Kodak]
 
 **Related failure patterns:**
 - The Innovator's Dilemma
-
-```yaml
-severity: critical
-recurrence: single
-prevention: Separate innovation metrics from legacy business metrics; create competing internal units
 ```
 
 ---
@@ -102,11 +107,6 @@ supporting-entities: [McKinsey, Various Organizations]
 
 **Related failure patterns:**
 - Decision-Making by Proxy
-
-```yaml
-severity: high
-recurrence: recurring
-prevention: Require source verification for strategic decisions; audit AI summary accuracy regularly
 ```
 
 ---

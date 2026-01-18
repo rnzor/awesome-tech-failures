@@ -10,13 +10,21 @@ and the postmortems that made them useful.
 ```yaml
 ---
 type: outage
-cause: [automation|architecture|human-error|incentives]
+cause: [automation|architecture|human-error]
 stage: [early|growth|scale|decline]
 impact: [data-loss|money|trust|users]
 tags: [free-form, tags]
+evidence-type: [direct-incident|repeated-pattern]
+severity:
+  level: [critical|high|medium|low]
+  score: [1-10]
+  financial: [Description or N/A]
+sources:
+  - https://...
+supporting-entities: [Entity1, Entity2]
 ---
 
-**What happened:** [1-2 lines]
+**What happened:** [1-2 lines describing the incident]
 
 **Impact:** [who/what got hit]
 
@@ -26,7 +34,9 @@ tags: [free-form, tags]
 - [Actionable lesson 1]
 - [Actionable lesson 2]
 
-**Source:** [URL]
+**Related failure patterns:**
+- [Pattern 1]
+- [Pattern 2]
 ```
 
 ---

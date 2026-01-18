@@ -14,27 +14,29 @@ cause: [ai|automation|human-error]
 stage: [early|growth|scale|decline]
 impact: [trust|money|users|morale]
 tags: [free-form, tags]
-evidence-type: [Direct incident|Repeated pattern]
+evidence-type: [direct-incident|repeated-pattern]
+severity:
+  level: [critical|high|medium|low]
+  score: [1-10]
+  financial: [Description or N/A]
 sources:
-  - https://...
   - https://...
 supporting-entities: [Entity1, Entity2]
 ---
 
-**What happened:** [1-2 lines]
+**What happened:** [1-2 lines describing the incident]
 
 **Impact:** [who/what got hit]
 
 **Root cause:** [best-known explanation]
 
-**Evidence type:** [Direct incident|Repeated pattern]
-[Supporting context for evidence classification]
-
 **Lessons:**
 - [Actionable lesson 1]
 - [Actionable lesson 2]
 
-**Source:** [URL]
+**Related failure patterns:**
+- [Pattern 1]
+- [Pattern 2]
 ```
 
 ---
