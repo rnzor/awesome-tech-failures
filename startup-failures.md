@@ -61,6 +61,10 @@ tags: [no-pmf, timing, distribution, wrong-assumptions, premium-content]
 **Related failure patterns:**
 - Money ≠ Product-Market Fit
 
+```yaml
+severity: high
+recurrence: single
+prevention: Validate distribution assumptions before raising; test habit formation before premium pricing
 ```
 
 ---

@@ -91,6 +91,12 @@ tags: [ux-mismatch, wrong-market, documentation-heavy, collaboration-complexity]
 **Related failure patterns:**
 - Ecosystem Neglect
 
+```yaml
+severity: medium
+recurrence: single
+prevention: Test value proposition on naive users without documentation; simplicity before features
+```
+
 ```
 
 ### (2017) Windows Phone — Ecosystem Neglect
@@ -120,6 +126,12 @@ tags: [ecosystem-failure, platform-risk, developer-trust, late-entry, app-gap]
 
 **Related failure patterns:**
 - Ecosystem Neglect
+
+```yaml
+severity: critical
+recurrence: single
+prevention: Launch ecosystems before products; developer trust is non-renewable
+```
 
 ```
 

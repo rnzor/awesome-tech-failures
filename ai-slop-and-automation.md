@@ -49,6 +49,10 @@ type: ai-slop
 cause: ai
 stage: growth
 impact: trust
+severity:
+  level: high
+  score: 6
+  financial: N/A
 tags: [prompt-injection, adversarial, no-guardrails, brand-damage, twitter]
 evidence-type: Direct incident
 sources:
@@ -92,6 +96,10 @@ type: ai-slop
 cause: automation
 stage: scale
 impact: data-loss
+severity:
+  level: high
+  score: 8
+  financial: N/A
 tags: [no-guardrails, blind-trust, agent-failure, write-access, autonomous-systems]
 evidence-type: Repeated pattern
 sources:
@@ -136,6 +144,10 @@ type: ai-slop
 cause: automation
 stage: growth
 impact: money
+severity:
+  level: high
+  score: 7
+  financial: $7k+
 tags: [runaway-costs, token-explosion, agent-loops, no-limits]
 evidence-type: Direct incident
 sources:

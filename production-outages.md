@@ -41,6 +41,10 @@ type: outage
 cause: architecture
 stage: scale
 impact: [users]
+severity:
+  level: high
+  score: 7
+  financial: N/A
 tags: [hidden-dependency, rollback-failure, observability-gap, mysql, replication]
 ---
 
@@ -72,6 +76,10 @@ type: outage
 cause: human-error
 stage: scale
 impact: [users]
+severity:
+  level: critical
+  score: 9
+  financial: N/A
 tags: [blast-radius, control-plane, region-dependency, s3, typo]
 ---
 
@@ -103,6 +111,10 @@ type: outage
 cause: automation
 stage: scale
 impact: [money]
+severity:
+  level: critical
+  score: 10
+  financial: $440M
 tags: [no-rollback, deployment-failure, trading-automation, dead-code, kill-switch]
 ---
 
@@ -133,6 +145,10 @@ type: outage
 cause: architecture
 stage: scale
 impact: [trust]
+severity:
+  level: high
+  score: 8
+  financial: N/A
 tags: [regex, backtracking, cpu-exhaustion, waf, global-impact, cascade]
 ---
 

@@ -61,6 +61,10 @@ tags: [innovators-dilemma, fear-of-cannibalization, short-term-incentives, misse
 **Related failure patterns:**
 - The Innovator's Dilemma
 
+```yaml
+severity: critical
+recurrence: single
+prevention: Separate innovation metrics from legacy business metrics; create competing internal units
 ```
 
 ---
@@ -95,6 +99,10 @@ tags: [blind-trust, decision-degradation, ai-slop, delegation-thinking, leadersh
 **Related failure patterns:**
 - Decision-Making by Proxy
 
+```yaml
+severity: high
+recurrence: recurring
+prevention: Require source verification for strategic decisions; audit AI summary accuracy regularly
 ```
 
 ---
