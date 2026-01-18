@@ -75,6 +75,44 @@ The CI workflow checks:
 - [ ] Source URL is valid
 - [ ] At least 2 lessons listed
 - [ ] No markdown formatting errors
+- [ ] Evidence type field present (for AI slop entries)
+
+---
+
+## Evidence & Sources (Important)
+
+Every entry must clearly state its **evidence type**:
+
+- **Direct incident** — a specific event with a public write-up
+- **Repeated pattern** — observed across multiple credible sources
+
+### For Direct Incidents
+
+You must provide:
+- At least one primary source (postmortem, filing, official blog)
+- Or two reputable secondary sources
+
+### For Repeated Patterns
+
+You must provide:
+- At least two independent sources describing the same failure mode
+- Sources may include:
+  - Engineering blogs
+  - Security research
+  - Conference talks
+  - Tool vendor retrospectives
+
+### What is NOT Allowed
+
+- "Everyone knows this happened"
+- Pure speculation
+- AI-generated claims without sources
+- Fictional or hypothetical incidents
+
+### Why This Rule Exists
+
+This repo documents **real failures**, not vibes.
+Patterns are labeled honestly so readers (and AI agents) can reason correctly.
 
 ---
 
