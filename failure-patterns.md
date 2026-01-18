@@ -1,181 +1,283 @@
-# Failure Patterns Index 🧩
+# Failure Patterns Index 🧠
 
-Cross-category patterns that appear repeatedly across failures.
-Use this index to find similar failures and learn from the patterns.
+This index extracts **recurring failure patterns** across outages, startups, products, security incidents, and AI/automation failures.
 
----
+Patterns matter more than incidents.
+Different systems fail in the same ways.
 
-## Pattern: Automation Without Reversibility
-
-**Definition:** Deploying automation (scripts, agents, CI/CD, AI) without the ability to quickly reverse course when things go wrong.
-
-**Appears in:**
-- Cloudflare 2019 (regex deployment without rollback testing)
-- AI agent runaway scenarios
-- CI/CD pipeline failures without rollback
-
-**Risk Indicators:**
-- "It will only take a day to deploy"
-- "If it breaks, we'll fix it"
-- No rollback procedure documented
-
-**Prevention:**
-- Every automated deployment must have a tested rollback
-- Time-bound canaries with automatic rollback triggers
-- Maintain "last known good" state at all times
+Each pattern links multiple real failures so you can reason by analogy:
+> "This looks familiar — where have we seen this break before?"
 
 ---
 
-## Pattern: The Innovator's Dilemma
+## 1. Automation Without Reversal
 
-**Definition:** Established companies with successful products fail to invest in disruptive alternatives because it threatens their current revenue.
+**Description**
+Automation or agents are given power without clear rollback, kill-switches, or blast-radius limits.
 
-**Appears in:**
-- Kodak (invented digital camera, buried it)
-- Blockbuster (passed on Netflix)
-- Nokia (dismissed iPhone)
+**Seen in**
+- Knight Capital trading incident
+- AI agent deleting production data
+- CI/CD pipelines pushing bad configs globally
 
-**Risk Indicators:**
-- "Our core product is doing great"
-- "This new thing won't affect us"
-- Innovation teams lack real authority
+**Why it happens**
+- Automation optimized for speed, not safety
+- Rollbacks considered "edge cases"
+- Humans assume automation is safer than it is
 
-**Prevention:**
-- Separate innovation metrics from legacy metrics
-- Give disruptive projects real budget and authority
-- Incentivize cannibalization
+**Lessons**
+- Every automated action needs a *cheap undo*
+- Kill switches must be faster than execution
+- Autonomous ≠ unsupervised
 
----
-
-## Pattern: Blind Trust in AI
-
-**Definition:** Treating AI output as authoritative without verification, especially for high-stakes decisions.
-
-**Appears in:**
-- Microsoft Tay (trusted user input to train without filtering)
-- AI summarization replacing source reading
-- AI-generated content without human review
-
-**Risk Indicators:**
-- "AI said it, so it must be right"
-- No human-in-loop for AI decisions
-- Output goes straight to production
-
-**Prevention:**
-- AI is always wrong until proven right
-- Human review for anything user-facing or high-stakes
-- Maintain source of truth; AI is a summary, not the truth
+**Common tags**
+`automation` `no-rollback` `agent-failure` `blast-radius`
 
 ---
 
-## Pattern: Single Points of Failure in Safety Systems
+## 2. Blind Trust in AI Output ("AI Slop")
 
-**Definition:** Critical safety mechanisms (circuit breakers, rate limiters, kill switches) are single points of failure themselves.
+**Description**
+AI-generated outputs are treated as correct by default and shipped or acted on without verification.
 
-**Appears in:**
-- Cloudflare 2019 (CPU limiter removed "by mistake")
-- Any system where safety is maintained by a single component
+**Seen in**
+- AI-generated SEO content tanking traffic
+- AI summaries replacing human understanding
+- LLM-written code deployed without review
 
-**Risk Indicators:**
-- "This mechanism is so simple it can't fail"
-- Safety system not tested regularly
-- Changes to safety systems don't require review
+**Why it happens**
+- AI output sounds confident
+- Time pressure rewards speed over understanding
+- People confuse fluency with correctness
 
-**Prevention:**
-- Defense in depth for safety systems
-- Test safety mechanisms regularly
-- Changes to safety systems require signoff
+**Lessons**
+- AI is a generator, not a validator
+- Require human review at decision boundaries
+- Replace *toil*, not *thinking*
 
----
-
-## Pattern: Timing Blindness
-
-**Definition:** Building a product for a use case that doesn't exist in the current market context.
-
-**Appears in:**
-- Quibi (on-the-go viewing during COVID lockdown)
-- Google Glass (AR before social acceptance)
-- Any "too early" product
-
-**Risk Indicators:**
-- Use case assumes a specific user behavior
-- Market conditions have changed recently
-- "People will want this eventually"
-
-**Prevention:**
-- Test use case assumptions with minimal spend
-- Build for current market, not theoretical future market
-- Accept that "too early" is the same as "wrong" for startups
+**Common tags**
+`ai-slop` `blind-trust` `hallucination-in-prod` `decision-degradation`
 
 ---
 
-## Pattern: Patching Debt
+## 3. Hidden Single Point of Failure
 
-**Definition:** Delaying security patches due to operational complexity, only to be exploited.
+**Description**
+A system assumed to be redundant depends on a shared component that silently becomes a global SPOF.
 
-**Appears in:**
-- Equifax 2017 (Apache Struts patch delayed 2 months)
-- Many breach postmortems
+**Seen in**
+- AWS us-east-1 S3 outage
+- GitHub database replication failure
+- Control-plane outages taking down "independent" services
 
-**Risk Indicators:**
+**Why it happens**
+- Partial migrations
+- Shared control planes
+- Logical coupling masked as physical separation
+
+**Lessons**
+- Map dependencies explicitly
+- Test *absence*, not just failure
+- Control planes deserve paranoia
+
+**Common tags**
+`architecture` `hidden-dependency` `control-plane` `blast-radius`
+
+---
+
+## 4. Overconfidence From Past Success
+
+**Description**
+"We've done this before" replaces active risk assessment.
+
+**Seen in**
+- GitHub maintenance causing outage
+- Repeated AWS regional failures
+- Teams skipping dry-runs or game days
+
+**Why it happens**
+- Familiarity breeds complacency
+- Success rewrites memory of near-misses
+- Risk decays invisibly
+
+**Lessons**
+- Past success increases future risk
+- Rehearse failure paths regularly
+- Institutional memory must be written, not assumed
+
+**Common tags**
+`human-error` `complacency` `rollback-failure`
+
+---
+
+## 5. Ecosystem Neglect
+
+**Description**
+A technically solid product fails because developers, partners, or users don't adopt it.
+
+**Seen in**
+- Windows Phone
+- Google Wave
+- Multiple internal platform rewrites
+
+**Why it happens**
+- Focus on core product over ecosystem
+- Underestimating switching costs
+- Assuming "they will come"
+
+**Lessons**
+- Platforms are social systems
+- Developers are customers
+- Adoption beats elegance
+
+**Common tags**
+`ecosystem-failure` `platform-risk` `wrong-market`
+
+---
+
+## 6. Money ≠ Product-Market Fit
+
+**Description**
+Capital and talent are used to compensate for missing demand.
+
+**Seen in**
+- Quibi shutdown
+- Well-funded startups with no retention
+- Enterprise products nobody actually wants
+
+**Why it happens**
+- Validation skipped due to confidence
+- Distribution assumptions go untested
+- Prestige replaces feedback
+
+**Lessons**
+- PMF is discovered, not declared
+- Distribution is part of the product
+- Users vote with behavior, not praise
+
+**Common tags**
+`no-pmf` `distribution` `burn-rate`
+
+---
+
+## 7. Misconfigured Trust Boundaries
+
+**Description**
+Systems assume internal access is safe.
+
+**Seen in**
+- Capital One breach
+- Cloud IAM misconfigurations
+- Internal tools exposed via SSRF
+
+**Why it happens**
+- "Internal" treated as "trusted"
+- IAM complexity grows faster than understanding
+- Security reviews lag infra changes
+
+**Lessons**
+- Zero trust is a mindset, not a product
+- Internal access must be hostile by default
+- Permissions should decay, not accumulate
+
+**Common tags**
+`security` `misconfiguration` `iam` `ssrf`
+
+---
+
+## 8. Decision-Making by Proxy
+
+**Description**
+Leaders or teams stop engaging with raw data and rely on summaries, dashboards, or AI outputs.
+
+**Seen in**
+- AI summaries replacing analysis
+- KPI dashboards hiding real user behavior
+- Delegated decision-making without context
+
+**Why it happens**
+- Scale increases cognitive load
+- Tools promise clarity
+- Reading source material feels "slow"
+
+**Lessons**
+- Compression removes nuance
+- Leaders must touch reality regularly
+- Tools support judgment — they don't replace it
+
+**Common tags**
+`decision` `ai-slop` `incentive-mismatch`
+
+---
+
+## 9. The Innovator's Dilemma
+
+**Description**
+Successful companies with profitable legacy products fail to invest in disruptive alternatives because it threatens current revenue.
+
+**Seen in**
+- Kodak invented digital camera, buried it for 20 years
+- Blockbuster passed on Netflix
+- Nokia dismissed iPhone
+
+**Why it happens**
+- Leadership incentives tied to short-term profits
+- Fear of cannibalizing successful products
+- No ownership of disruptive transition
+
+**Lessons**
+- Incentives that reward defending the past will destroy the future
+- Innovation requires separate metrics and authority
+- Market disruption doesn't wait for comfortable transitions
+- Cannibalization fear without action just delays the inevitable
+
+**Common tags**
+`incentives` `innovators-dilemma` `fear-of-cannibalization` `missed-opportunity`
+
+---
+
+## 10. Patching Debt
+
+**Description**
+Security patches are delayed due to operational complexity, only to be exploited while waiting.
+
+**Seen in**
+- Equifax breach (Apache Struts patch delayed 2 months)
+- Many other breach postmortems
+- Legacy systems that can't be patched without downtime
+
+**Why it happens**
 - "Patch would require downtime"
-- "We need to test in staging first"
-- Patching process takes weeks/months
+- Complex testing requirements
+- Change management overhead
 
-**Prevention:**
+**Lessons**
 - Critical patches deployed within 24-48 hours
-- Automated testing and deployment pipelines
-- Accept that unpatched systems are breach-waiting-to-happen
+- Unpatched systems are breach-waiting-to-happen
+- Accept that maintenance windows are part of security
+- Automated testing pipelines reduce patch friction
+
+**Common tags**
+`security` `unpatched` `vulnerability` `change-management`
 
 ---
 
-## Pattern: The Halo Effect
+## How to Use This Index
 
-**Definition:** Over-valuing a team or individual's past success as an indicator of future success.
+**Humans:**
+Before shipping automation, agents, rewrites, or strategy shifts — scan patterns, not incidents.
 
-**Appears in:**
-- Quibi (Katzenberg + Whitman = success)
-- Many "all-star team" failures
-
-**Risk Indicators:**
-- "These people have done it before"
-- Less scrutiny on assumptions due to reputation
-- Market validation skipped
-
-**Prevention:**
-- Past success ≠ future success
-- Market validation is mandatory regardless of team
-- Apply same rigor to all opportunities
+**AI agents:**
+Use patterns as *negative priors*:
+"This plan resembles past failures with these tags."
 
 ---
 
-## Pattern: Over-Automation
+## Contributing New Patterns
 
-**Definition:** Automating processes that require human judgment or oversight.
+A pattern should:
+- Appear in **multiple categories**
+- Explain *why*, not just *what*
+- Be reusable across domains (infra, AI, startup, product)
 
-**Appears in:**
-- AI summary replacing analysis
-- Automated customer service without escalation
-- Auto-deployment without human approval
-
-**Risk Indicators:**
-- "Humans are the bottleneck"
-- "The process is straightforward"
-- No human review checkpoints
-
-**Prevention:**
-- Automate tasks, not decisions
-- Maintain human-in-loop for irreversible actions
-- Measure automation quality, not just speed
-
----
-
-## Adding New Patterns
-
-When adding a pattern:
-1. Define the pattern clearly (2-3 sentences)
-2. List 2-3 real examples from this repo
-3. Identify risk indicators (how to spot it coming)
-4. Provide prevention strategies (how to avoid it)
-
-Patterns should be actionable and specific, not vague observations.
+If it only fits one incident, it's not a pattern yet.
