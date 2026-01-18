@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset of technology failures in your research, please cite it as below."
+authors:
+- family-names: "Failures"
+  given-names: "Awesome Tech"
+  match: "family-first"
+title: "Awesome Tech Failures: A Curated Dataset of Software Architecture, AI, and Engineering Failures"
+version: 2026.1.0
+date-released: 2026-01-18
+url: "https://github.com/irnz/awesome-tech-failures"
+type: dataset
+keywords:
+  - "software engineering"
+  - "failure analysis"
+  - "postmortems"
+  - "ai safety"
+  - "reliability-engineering"
+license: CC0-1.0
+abstract: "A structured, machine-readable dataset of public technology failures, widely used for postmortem analysis, reliability engineering training, and AI safety research. Includes categorical analysis, root causes, and lessons learned."

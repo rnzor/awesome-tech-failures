@@ -1,0 +1,58 @@
+name: New Failure Entry
+description: Propose a new real-world tech failure for the repository.
+title: "[ENTRY]: <Company Name> — <Brief Description>"
+labels: ["new-entry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Please follow the structured format below to ensure high signal-to-noise ratio.
+  - type: input
+    id: year
+    attributes:
+      label: Year of Incident
+      placeholder: "e.g., 2025"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - ai-slop
+        - outage
+        - security
+        - startup
+        - product
+        - decision
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: 1-2 sentences describing the core failure.
+    validations:
+      required: true
+  - type: textarea
+    id: lessons
+    attributes:
+      label: Actionable Lessons
+      description: List at least 2 actionable takeaways.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: quality
+    attributes:
+      label: Quality Check
+      options:
+        - label: I have verified this is a real-world incident or documented pattern.
+        - label: I have included primary sources where possible.
+        - label: I am not using AI to generate this entire entry without review.

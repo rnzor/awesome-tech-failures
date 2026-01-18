@@ -160,8 +160,240 @@ tags: [regex, backtracking, cpu-exhaustion, waf, global-impact, cascade]
 
 ## Data Loss & Corruption
 
+### (2017) GitLab — Sysadmin Deletes Database during Maintenance
+
+```yaml
+---
+type: outage
+cause: human-error
+stage: scale
+impact: data-loss
+tags: [data-loss, backup-failure, human-error, postgresql, replication]
+---
+
+**What happened:** During a routine maintenance window to resolve replication lag, a tired system administrator accidentally deleted 300GB of live production data by running `rm -rf` on the wrong directory.
+
+**Impact:** 18 hours of downtime for GitLab.com; loss of project metadata, comments, and bug reports; git repositories themselves were safe but database state was lost.
+
+**Root cause:** Human error due to fatigue and lack of guardrails; five different levels of backups and replication failed or were found to be empty; backup verification process was non-existent.
+
+**Lessons:**
+- Backups are only as good as your last successful restore test
+- Implement guardrails for destructive commands (e.g., alias `rm` to interactive mode)
+- Monitor backup size and completion — don't assume success
+- Engineer systems to be resilient to human error at 2 AM
+
+**Source:** https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Overconfidence From Past Success
+
+```
+
 ## Cascading Failures
+
+### (2021) Fastly — Single Customer Config Triggering Global Outage
+
+```yaml
+---
+type: outage
+cause: architecture
+stage: scale
+impact: users
+tags: [vcl, global-outage, cascading-failure, edge-computing, hidden-sop]
+---
+
+**What happened:** A single valid configuration change by one customer triggered a software bug in Fastly's edge cloud, causing 85% of their network to return 503 errors within minutes.
+
+**Impact:** Major websites like Reddit, Twitch, and NYT went dark globally for approximately an hour; significant traffic drop across the internet.
+
+**Root cause:** A dormant bug in the VCL (Varnish Configuration Language) compiler was triggered by a specific set of configuration parameters; failure to isolate service-wide impacts from individual customer changes.
+
+**Lessons:**
+- Individual customer actions should never be able to trigger global infrastructure failures
+- Implement "cell-based architecture" to limit blast radius
+- Dormant bugs in critical path code are time bombs — fuzzing matters
+- Fast rollbacks are the best defense against unknown-condition triggers
+
+**Source:** https://www.fastly.com/blog/summary-of-june-8-incident
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Automation Without Reversal
+
+```
+
+### (2025) Cloudflare — Bot Management Feature File Corruption
+
+```yaml
+---
+type: outage
+cause: automation
+stage: scale
+impact: users
+severity:
+  level: high
+  score: 9
+  financial: Significant
+tags: [cascading-failure, config-propagation, global-outage, feature-file-poisoning, 2025-active]
+---
+
+**What happened:** A database permission change caused the Bot Management feature file to double in size. This oversized file exceeded the size limits of routing software deployed across Cloudflare's global network.
+
+**Impact:** Thousands of sites unreachable including X, ChatGPT, Spotify, and Discord for 30-90 minutes. Millions of users affected globally.
+
+**Root cause:** A change to database system permissions unexpectedly multiplied feature file entries. The software had a hard limit on file size that was not enforced upstream. No size-limit validation caught the problem before propagation.
+
+**Lessons:**
+- Configuration changes can have exponential downstream effects; test at scale before global rollout
+- Size limits and capacity checks must be enforced at the source, not at consumption
+- Distinguish DDoS attack signatures from internal cascading failures early
+
+**Source:** https://blog.cloudflare.com/outage-report-november-18-2025/
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Automation Without Reversal
+
+```
+
+### (2024) Meta — Shared Infrastructure Cascading Failure
+
+```yaml
+---
+type: outage
+cause: architecture
+stage: scale
+impact: users
+severity:
+  level: high
+  score: 8
+  financial: Significant
+tags: [cascading-failure, shared-dependency, global-outage, social-media, 2024-major]
+---
+
+**What happened:** A technical issue in Meta's infrastructure caused cascading failures across Facebook, Instagram, Threads, WhatsApp, and Messenger.
+
+**Impact:** Hundreds of millions of users unable to communicate; major business disruption for advertisers and creators. Peak complaints exceeded 170k globally.
+
+**Root cause:** Infrastructure-level issue cascaded across multiple services due to shared backend dependencies.
+
+**Lessons:**
+- Shared infrastructure creates cascading risk; failures in one service ripple to others
+- Complex interdependencies are invisible until they fail
+- Long MTTR indicates poor incident detection or response coordination
+
+**Source:** https://www.cnbc.com/2024/12/11/metas-facebook-instagram-go-down.html
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Overconfidence From Past Success
+
+```
 
 ## Observability Failures
 
+### (2025) AWS — CloudWatch & Health Dashboard Co-Located Failure
+
+```yaml
+---
+type: outage
+cause: architecture
+stage: scale
+impact: visibility-loss
+severity:
+  level: high
+  score: 8
+  financial: Indirect
+tags: [observability-gap, architecture, visibility-loss, regional-outage, 2025-critical]
+---
+
+**What happened:** An AWS outage in US-East-1 took down production workloads and simultaneously took down the observability stack (CloudWatch, Health Dashboard) hosted in the same region.
+
+**Impact:** Engineers were blind and unable to diagnose the root cause in real time. Delayed root cause analysis and extended incident response time.
+
+**Root cause:** Architectural decision to co-locate monitoring infrastructure with production workloads. Observability systems lacked geographic redundancy.
+
+**Lessons:**
+- Observability must be external to the systems being monitored
+- Regional failures require monitoring in separate regions or managed third-party services
+- AI and automation cannot help if you are blind during the incident
+
+**Source:** https://www.linkedin.com/pulse/when-observability-fails-what-we-can-learn-from-aws-outage/
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Decision-Making by Proxy
+
+```
+
 ## Rollback Failures
+
+### (2024) CrowdStrike — Faulty Falcon Sensor Update
+
+```yaml
+---
+type: outage
+cause: deployment-validation
+stage: scale
+impact: systemic-outage
+severity:
+  level: critical
+  score: 10
+  financial: $5B+
+tags: [rollback-failure, cause:deployment-validation, systemic-outage, endpoint-security, 2024-worst]
+---
+
+**What happened:** CrowdStrike deployed a faulty update to its Falcon sensor, triggering system crashes on millions of Windows devices globally. Rollback required physical access to machines.
+
+**Impact:** $5+ billion in direct losses; hospitals, airlines, and banks grounded globally. Largest IT outage in history.
+
+**Root cause:** Insufficient pre-deployment testing or staged rollout. The update was deployed globally without canary validation. Rollback required human intervention at scale.
+
+**Lessons:**
+- Endpoint agent updates require the most rigorous testing; global blast radius is total
+- Canary deployments are non-negotiable for critical infrastructure
+- Rollbacks that require physical access are not rollbacks; they are disasters
+
+**Source:** https://www.crowdstrike.com/blog/falcon-content-update-remediation-and-guidance-hub/
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Overconfidence From Past Success
+
+```
+
+### (2024) Cloudflare — DDoS Rule Deployment Failure
+
+```yaml
+---
+type: outage
+cause: latent-bug
+stage: scale
+impact: error-spike
+severity:
+  level: medium
+  score: 7
+  financial: Significant
+tags: [rollback-failure, cause:latent-bug, error-spike, ddos-rule, 2024-major]
+---
+
+**What happened:** A new DDoS mitigation rule triggered a latent bug in the rate-limiting system, causing HTTP request handling processes to use excessive CPU globally.
+
+**Impact:** Significant global error spike (1-3%) and 3x latency increase for hours. Engineers initially misdiagnosed as an external attack.
+
+**Root cause:** New DDoS rule contained a broken cookie validation check that triggered an exception. Latent interaction was not exercised during pre-deployment testing.
+
+**Lessons:**
+- Latent bugs in stable code can be triggered by new code paths; interaction testing is essential
+- Gradual global rollout is good practice, but must include staged failure detection
+- Distinguish internal cascades from external attacks immediately
+
+**Source:** https://blog.cloudflare.com/incident-report-june-20-2024/
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Overconfidence From Past Success
+
+```

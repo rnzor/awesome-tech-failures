@@ -61,8 +61,9 @@ tags: [free-form, tags, here]
 
 1. Fork this repo
 2. Add your entry to the appropriate category file
-3. Run the validation script: `python validate.py`
-4. Submit a PR with:
+3. Run the validation script: `python .github/validate_entries.py`
+4. Run the sync script: `python .github/sync_entries.py`
+5. Submit a PR with:
    - Entry description
    - Source verification
    - Why this adds signal, not noise

@@ -1,0 +1,53 @@
+name: Sync Entries to NDJSON
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ai-slop-and-automation.md'
+      - 'production-outages.md'
+      - 'security-incidents.md'
+      - 'startup-failures.md'
+      - 'product-failures.md'
+      - 'decision-failures.md'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run sync script
+        run: python .github/sync_entries.py
+
+      - name: Check for changes
+        id: check
+        run: |
+          if git diff --quiet agent/entries.ndjson; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add agent/entries.ndjson
+          git commit -m "chore: auto-sync entries.ndjson from markdown files"
+          git push

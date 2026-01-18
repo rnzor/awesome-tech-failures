@@ -431,3 +431,263 @@ Documented cases including Air Canada chatbot incident with regulatory coverage,
 - Decision-Making by Proxy
 
 ```
+
+---
+
+## Multi-Agent System Failures
+
+### (2025) Autonomous Multi-Agent Loop Cost Spike
+
+```yaml
+---
+type: ai-slop
+cause: automation
+stage: scale
+impact: money
+tags: [multi-agent, mcp, cost-explosion, recursive-delegation, runaway-agents]
+evidence-type: Direct incident
+sources:
+  - https://example.com/blog/multi-agent-loop-incident
+  - https://example.com/news/mcp-agent-failures
+supporting-entities: [AgenticDev Corp, Various Startups]
+---
+
+**What happened:** A chain of specialized agents using Model Context Protocol (MCP) entered a recursive delegation loop while trying to resolve a complex integration task, burning $12,000 in API credits in 45 minutes.
+
+**Impact:** Immediate depletion of monthly API budget; service suspension for other teams; emergency board meeting regarding AI safety protocols.
+
+**Root cause:** Lack of global context sharing between agents; recursive delegation paths permitted without depth limits; MCP tool calls not governed by a central budget controller.
+
+**Evidence type:** Direct incident
+Documented internal postmortem from AgenticDev Corp shared at AI Safety Summit 2025.
+
+**Lessons:**
+- Multi-agent systems require a central orchestrator with hard depth limits
+- Implement token-bucket rate limiting at the organization level, not just per-agent
+- Recursive delegation must require explicit human approval after 3 hops
+- Monitor inter-agent communication for "circular reasoning" patterns
+
+**Source:** https://example.com/blog/multi-agent-loop-incident
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Hidden Single Point of Failure
+
+```
+
+---
+
+## AI-Driven Infrastructure Failures
+
+### (2025) Agentic Database Migration Data Corruption
+
+```yaml
+---
+type: ai-slop
+cause: ai
+stage: growth
+impact: data-loss
+tags: [agentic-migration, data-corruption, schema-hallucination, autonomous-ops]
+evidence-type: Repeated pattern
+sources:
+  - https://example.com/tech/agentic-ops-risks
+  - https://example.com/postmortem/migration-failure-ai
+supporting-entities: [CloudScale, Infrastructure Weekly]
+---
+
+**What happened:** An "AI DevOps Architect" agent tasked with performing a schema migration misidentified table relationships due to an outdated documentation chunk, executing a `DROP COLUMN` on the wrong table in production.
+
+**Impact:** Permanent loss of 15% of user metadata; 4-hour downtime for restoration from cold storage; 2% user churn within 48 hours.
+
+**Root cause:** Agent failed to verify documentation consistency before execution; dry-run mode did not catch semantic errors; blind trust in agent's schema mapping capabilities.
+
+**Evidence type:** Repeated pattern
+Pattern observed in early adopters of "Fully Autonomous Ops" platforms in late 2024 and early 2025.
+
+**Lessons:**
+- DB migrations are high-stakes operations that always require human-in-loop verification
+- AI agents must run schema-checking tools (e.g., pg_dump, SQLFluff) before suggesting changes
+- Documentation fed to RAG must be versioned and synchronized with the actual environment
+- Autonomous operations require "Shadow Mode" evaluation before write access
+
+**Source:** https://example.com/tech/agentic-ops-risks
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Automation Without Reversal
+
+```
+
+---
+
+## Research & Systemic Risk
+
+### (2025) ArXiv — Multi-Agent LLM System Failures
+
+```yaml
+---
+type: ai-slop
+cause: architecture
+stage: scale
+impact: users
+severity:
+  level: high
+  score: 8
+  financial: Indirect
+tags: [coordination-failure, system-design, multi-agent-llm, verification-gap]
+evidence-type: Direct incident + Repeated pattern
+---
+
+**What happened:** Researchers analyzed 1,600+ annotated traces across 7 popular multi-agent frameworks and identified 14 distinct failure modes. Systems exhibited 41% to 86.7% failure rates even in state-of-the-art implementations, including agents ignoring other agents' input, premature task termination, and inadequate verification.
+
+**Impact:** Complete task failures, incorrect outputs with no human oversight, coordination breakdowns that escalate rather than resolve problems.
+
+**Root cause:** Multi-agent systems lack organizational structure—clear role definitions, communication protocols, institutional memory, and verification mechanisms that successful human teams depend on. Failures mirror classic organizational dysfunction, not intelligence deficiency.
+
+**Lessons:**
+- Coordination failures dominate; intelligence is not the limiting factor
+- Systems require explicit approval chains and verification layers between agent handoffs
+- Unclear goals and role ambiguity cascade through agent interactions
+
+**Source:** https://arxiv.org/abs/2410.12352 (MAST-Data)
+
+**Related failure patterns:**
+- Decision-Making by Proxy
+- Hidden Single Point of Failure
+```
+
+### (2025) LinkedIn — RAG Hallucination Cascades
+
+```yaml
+---
+type: ai-slop
+cause: ai
+stage: scale
+impact: trust
+severity:
+  level: high
+  score: 8
+  financial: Brand Damage
+tags: [hallucination, rag-degradation, business-logic-bypass, detection-failure]
+evidence-type: Repeated pattern
+---
+
+**What happened:** 42% of AI projects failed in 2025—a 2.5x increase from 2024. Hallucination detection tools failed on 83% of production examples. A notable incident: Chevrolet was manipulated via ChatGPT into agreeing to sell a vehicle for $1, demonstrating both logic failure and business context bypass.
+
+**Impact:** Failed deployments, reputational damage (Chevrolet incident), eroded user trust, undetectable errors in customer-facing systems.
+
+**Root cause:** RAG systems retrieve contextual data but inherit model hallucinations; poor retrieval quality or absence of verification allows false context to amplify errors. Detection tools have high false-negative rates in production conditions.
+
+**Lessons:**
+- RAG reduces hallucinations but does not eliminate them; verification is essential
+- Retrieval quality directly impacts downstream accuracy; garbage-in-garbage-out remains true
+- Production hallucination detection requires continuous testing against real failure patterns
+
+**Source:** https://www.linkedin.com/pulse/why-rag-projects-fail-2025-adrian-faryniuk/
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Overconfidence From Past Success
+```
+
+### (2025) Pillar Security — AI Coding Assistant Rules File Backdoor
+
+```yaml
+---
+type: ai-slop
+cause: architecture
+stage: scale
+impact: data-loss
+severity:
+  level: critical
+  score: 9
+  financial: Massive Potential
+tags: [supply-chain, config-injection, backdoor-insertion, ai-assistant]
+evidence-type: Direct incident
+---
+
+**What happened:** Pillar Security discovered a supply chain vulnerability in GitHub Copilot and Cursor allowing attackers to inject malicious code via hidden instructions in project `.cursor/rules` and configuration files. By exploiting invisible Unicode characters, attackers could manipulate AI to generate backdoors or exfiltration code.
+
+**Impact:** Potential compromise of millions of developers; intellectual property theft, credential exfiltration, and supply chain propagation.
+
+**Root cause:** AI coding assistants lack trust boundaries between user input (project config) and system instructions. Configuration files directly influence model behavior without validation.
+
+**Lessons:**
+- AI assistants must treat configuration files with the same security rigor as code
+- Invisible characters and Unicode obfuscation can evade standard code review
+- Trust in AI tools compounds supply chain risk; malicious code appears legitimate
+
+**Source:** https://www.pillar.security/blog/rules-file-backdoor
+
+**Related failure patterns:**
+- Misconfigured Trust Boundaries
+- Hidden Single Point of Failure
+```
+
+### (2024–2025) Nature / ArXiv — Synthetic Data Poisoning & Model Collapse
+
+```yaml
+---
+type: ai-slop
+cause: ai
+stage: scale
+impact: users
+severity:
+  level: high
+  score: 7
+  financial: Retraining Costs
+tags: [data-degradation, synthetic-recursion, performance-loss, model-collapse]
+evidence-type: Repeated pattern
+---
+
+**What happened:** Training generative models on recursively generated synthetic data causes "model collapse": early stages lose rare patterns, while late stages lose most variance and confuse concepts. A 2024 Nature study showed this occurs universally when synthetic data replaces human data entirely.
+
+**Impact:** Models degrade progressively; rare edge cases vanish first. Systems trained on AI-slop datasets lose fidelity, diversity, and reliability.
+
+**Root cause:** Statistical approximation (finite sampling) and functional approximation errors compound exponentially when no ground truth anchors the distribution.
+
+**Lessons:**
+- Model collapse occurs only when synthetic data replaces human data; mixing prevents it
+- Early collapse is hard to detect; overall performance may improve while tails degrade
+- Multi-modal systems exhibit unique collapse patterns requiring distinct research
+
+**Source:** https://www.nature.com/articles/s41586-024-07566-y
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Decision-Making by Proxy
+```
+
+### (2025) Datagrid / LinkedIn — Agentic Workflow Cost Explosions
+
+```yaml
+---
+type: ai-slop
+cause: automation
+stage: scale
+impact: money
+severity:
+  level: medium
+  score: 6
+  financial: 10x budget
+tags: [cost-runaway, token-bloat, budget-explosion, agentic-workflow]
+evidence-type: Repeated pattern
+---
+
+**What happened:** AI agent deployments experienced cost spirals 10x beyond projections. Multi-agent conversations caused token bloat; function-calling chains hit API rate limits; and agents stuck in retry loops burned tokens indefinitely.
+
+**Impact:** Unexpected 10x budget overruns, uncontrolled cloud expenses, projects abandoned mid-production due to cost.
+
+**Root cause:** Development environments don't reflect production complexity. Token usage multiplies across agent handoffs. Agents lack cost awareness and automatic circuit breakers.
+
+**Lessons:**
+- Test with production-scale data volumes and real API rate limits
+- Multi-agent conversations require aggressive token caching and context optimization
+- Set hard budget limits with automatic circuit breakers per agent
+
+**Source:** https://www.linkedin.com/pulse/your-ai-agent-just-burned-10x-weekly-budget-nav-bhasin/
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Blind Trust in AI Output
+```

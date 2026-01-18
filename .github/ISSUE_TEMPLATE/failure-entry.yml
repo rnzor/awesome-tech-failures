@@ -1,0 +1,69 @@
+name: New Failure Entry
+description: Submit a new tech failure to the dataset
+title: "[New Entry]: <Title of Failure>"
+labels: ["new-entry", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to Awesome Tech Failures!
+  - type: input
+    id: title
+    attributes:
+      label: Failure Title
+      description: e.g. "Knight Capital Trading Loss"
+      placeholder: Company Name — Failure Description
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: 2024
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - outage
+        - security
+        - ai-slop
+        - product
+        - decision
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened? (1-2 sentences)
+    validations:
+      required: true
+  - type: textarea
+    id: root_cause
+    attributes:
+      label: Root Cause
+      description: Why did it happen? Technical or organizational reason.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Who was affected? Cost?
+  - type: textarea
+    id: lessons
+    attributes:
+      label: Lessons Learned
+      description: Bullet points of actionable takeaways.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary Source URL
+      placeholder: https://...
+    validations:
+      required: true

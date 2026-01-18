@@ -1,0 +1,379 @@
+openapi: 3.0.3
+info:
+  title: Awesome Tech Failures API
+  description: |
+    A hypothetical API specification for programmatically querying the Awesome Tech Failures repository.
+    
+    This specification is provided as a reference for building integrations. The actual API implementation
+    is left to the consumer — this could be a serverless function, a FastAPI service, or a GraphQL layer.
+  version: 1.0.0
+  contact:
+    name: Repository Maintainers
+    url: https://github.com/your-org/awesome-tech-failures
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: https://api.example.com/v1
+    description: Production server (hypothetical)
+
+tags:
+  - name: Entries
+    description: Operations on failure entries
+  - name: Patterns
+    description: Operations on failure patterns
+  - name: Risk Check
+    description: Pre-flight risk assessment
+
+paths:
+  /entries:
+    get:
+      tags:
+        - Entries
+      summary: List all failure entries
+      description: Returns a paginated list of all failure entries in the repository.
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+            enum: [ai-slop, outage, security, startup, product, decision]
+          description: Filter by failure category
+        - name: severity
+          in: query
+          schema:
+            type: string
+            enum: [critical, high, medium, low]
+          description: Filter by severity level
+        - name: cause
+          in: query
+          schema:
+            type: string
+            enum: [human-error, automation, architecture, incentives, ai]
+          description: Filter by primary cause
+        - name: year_min
+          in: query
+          schema:
+            type: integer
+          description: Minimum year (inclusive)
+        - name: year_max
+          in: query
+          schema:
+            type: integer
+          description: Maximum year (inclusive)
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+          description: Number of entries to return
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+          description: Pagination offset
+      responses:
+        '200':
+          description: A list of failure entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  entries:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Entry'
+
+  /entries/{id}:
+    get:
+      tags:
+        - Entries
+      summary: Get a specific failure entry
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The entry's slug identifier
+      responses:
+        '200':
+          description: A single failure entry
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entry'
+        '404':
+          description: Entry not found
+
+  /patterns:
+    get:
+      tags:
+        - Patterns
+      summary: List all failure patterns
+      responses:
+        '200':
+          description: A list of failure patterns
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pattern'
+
+  /patterns/{id}:
+    get:
+      tags:
+        - Patterns
+      summary: Get a specific failure pattern with related entries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A pattern with its related entries
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pattern'
+                  - type: object
+                    properties:
+                      related_entries:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Entry'
+
+  /search:
+    post:
+      tags:
+        - Entries
+      summary: Semantic search for failure entries
+      description: |
+        Performs a semantic search against all failure entries using embeddings.
+        Returns the most relevant entries based on the query.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  description: Natural language query
+                  example: "What can go wrong when deploying AI agents with database access?"
+                filters:
+                  type: object
+                  properties:
+                    category:
+                      type: array
+                      items:
+                        type: string
+                    severity:
+                      type: array
+                      items:
+                        type: string
+                    tags:
+                      type: array
+                      items:
+                        type: string
+                limit:
+                  type: integer
+                  default: 5
+      responses:
+        '200':
+          description: Relevant failure entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      allOf:
+                        - $ref: '#/components/schemas/Entry'
+                        - type: object
+                          properties:
+                            similarity_score:
+                              type: number
+                              format: float
+
+  /risk-check:
+    post:
+      tags:
+        - Risk Check
+      summary: Assess risk of a proposed action
+      description: |
+        Given a description of a planned action (e.g., deploying an AI agent),
+        returns matching failure patterns, relevant past incidents, and a risk memo.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - plan
+              properties:
+                plan:
+                  type: string
+                  description: Description of the planned action
+                  example: "We're deploying an LLM agent with write access to our production database to automate schema migrations."
+                context:
+                  type: object
+                  description: Additional context about the environment
+                  properties:
+                    has_rollback:
+                      type: boolean
+                    has_human_approval:
+                      type: boolean
+                    budget_limit_set:
+                      type: boolean
+      responses:
+        '200':
+          description: Risk assessment result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  risk_level:
+                    type: string
+                    enum: [critical, high, medium, low]
+                  matching_patterns:
+                    type: array
+                    items:
+                      type: string
+                  relevant_entries:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Entry'
+                  warnings:
+                    type: array
+                    items:
+                      type: string
+                  recommendations:
+                    type: array
+                    items:
+                      type: string
+
+components:
+  schemas:
+    Entry:
+      type: object
+      required:
+        - id
+        - title
+        - year
+        - category
+        - cause
+        - severity
+        - summary
+      properties:
+        id:
+          type: string
+          example: "aws-s3-us-east-1-2017"
+        title:
+          type: string
+          example: "AWS S3 us-east-1 Outage"
+        year:
+          type: integer
+          example: 2017
+        evidence_type:
+          type: string
+          enum: [direct_incident, repeated_pattern]
+        category:
+          type: string
+          enum: [ai-slop, outage, security, startup, product, decision]
+        cause:
+          type: string
+          enum: [human-error, automation, architecture, incentives, ai]
+        stage:
+          type: string
+          enum: [early, growth, scale, decline]
+        impact:
+          type: array
+          items:
+            type: string
+        severity:
+          type: object
+          properties:
+            level:
+              type: string
+              enum: [critical, high, medium, low]
+            score:
+              type: integer
+              minimum: 1
+              maximum: 10
+            financial:
+              type: string
+        summary:
+          type: string
+        root_cause:
+          type: string
+        lessons:
+          type: array
+          items:
+            type: string
+        patterns:
+          type: array
+          items:
+            type: string
+        tags:
+          type: array
+          items:
+            type: string
+        sources:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+              url:
+                type: string
+                format: uri
+              kind:
+                type: string
+                enum: [primary, secondary]
+
+    Pattern:
+      type: object
+      required:
+        - id
+        - title
+        - description
+      properties:
+        id:
+          type: string
+          example: "automation-without-reversal"
+        title:
+          type: string
+          example: "Automation Without Reversal"
+        description:
+          type: string
+        common_tags:
+          type: array
+          items:
+            type: string
+        related_categories:
+          type: array
+          items:
+            type: string
+        examples:
+          type: array
+          items:
+            type: string

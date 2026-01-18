@@ -1,159 +1,86 @@
-# Awesome Tech Failures 💥
+<div align="center">
+  <img src="assets/logo.png" alt="Awesome Tech Failures Logo" width="600">
+  <br>
+  <h1>Awesome Tech Failures</h1>
+  <p>
+    <b>The most complete, curated list of public technology failures, postmortems, and lessons learned.</b>
+  </p>
 
-Failure is data.
+  [![Failures](https://img.shields.io/badge/Failures-38+-red?style=for-the-badge)](agent/entries.ndjson)
+  [![Patterns](https://img.shields.io/badge/Patterns-10-orange?style=for-the-badge)](failure-patterns.md)
+  [![Validation](https://img.shields.io/badge/Validation-Passing-green?style=for-the-badge)](.github/workflows/validate.yml)
+  [![Cite this Repo](https://img.shields.io/badge/Cite-CITATION.cff-blue?style=for-the-badge)](CITATION.cff)
+</div>
+
+<br>
+<hr>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=irnz/awesome-tech-failures&type=Date)](https://star-history.com/#irnz/awesome-tech-failures&Date)
+<hr>
+
+
+
+Failure is data. Studying it is a competitive advantage.
 
 A curated, tagged library of real-world tech failures — outages, breaches, startup shutdowns, product flops, **AI slop**, and automation disasters.
 
-**Goal:** learn faster by studying what broke, why it broke, and what actually fixed it.
+**Goal:** Learn faster by studying what broke, why it broke, and what actually fixed it.
 
 > Success stories sell. Failure stories teach.
 
 ---
 
-## Why this repo exists
+## 🏗️ The 2026 Failure Index
 
-The tech industry is full of success stories.
+Modern systems fail in modern ways. This repository provides the structured intelligence needed to navigate the age of AI agents and autonomous infrastructure.
 
-They are polished.
-They are incomplete.
-They often lie by omission.
-
-This repo exists for the other half of reality.
-
----
-
-### Failure is data
-
-Outages, breaches, failed startups, bad products, and broken AI systems
-are not embarrassing footnotes — they are **primary learning material**.
-
-Modern systems fail in modern ways:
-- automation without rollback
-- AI used without understanding
-- speed optimized over responsibility
-- decisions made by proxy instead of judgment
-
-We document those failures so they don't have to be rediscovered the hard way.
+### 🧩 Core Failure Categories
+- [**AI Slop & Automation**](ai-slop-and-automation.md) — Multi-agent loops, RAG cascades, and autonomous ops disasters.
+- [**Production Outages**](production-outages.md) — S3 typos, database deletions, and global edge cloud failures.
+- [**Security Incidents**](security-incidents.md) — Cloud misconfigurations, unpatched zero-days, and supply chain attacks.
+- [**Startup & Product**](startup-failures.md) — Shutdowns, PMF failures, and ecosystem mismatches.
+- [**Decision & Process**](decision-failures.md) — Metric gaming, groupthink, and leadership failures.
 
 ---
 
-### What this repo is
-
-- A **curated library** of real-world tech failures
-- A **pattern map**, not just a link dump
-- A place where **AI slop and automation failures are treated seriously**
-- A resource for **engineers, founders, operators — and AI agents**
-
-Every entry focuses on:
-- what happened
-- why it happened
-- what actually mattered in fixing (or failing to fix) it
+## 🛠️ Interactive Tools
+- 🩺 [**Failure Diagnosis Flowchart**](diagnosis-flowchart.md) — Identify patterns in real-time.
+- ⚖️ [**Severity Scoring System**](severity-system.md) — Standardized risk assessment.
+- ✅ [**AI Agent Pre-Flight Checklist**](ai-agent-checklist.md) — Deploy agents safely.
+- 📚 [**Prevention Playbooks**](playbooks/) — Actionable SOPs for common scenarios.
 
 ---
 
-### What this repo is not
+## 🤖 For AI Agents (Machine Layer)
 
-- Not a hype repository
-- Not "AI will save us" content
-- Not blame-driven or sensational
-- Not fictional or speculative
+This repo includes a machine-readable layer for AI agents to use for RAG, policy gates, and failure prior retrieval:
 
-If something is a repeated pattern rather than a single incident, we label it honestly.
-
----
-
-### Why this matters now
-
-We ship faster than ever.
-We automate decisions.
-We delegate thinking to tools.
-
-But responsibility doesn't disappear — it just moves.
-
-AI doesn't remove failure.
-It changes *how* failure happens.
-
-This repo helps you recognize those patterns **before** they show up in your own systems.
+| Resource | Description |
+|----------|-------------|
+| [**AGENTS.md**](AGENTS.md) | Operating policy for agents |
+| [**agent/schema.json**](agent/schema.json) | Structured data contract |
+| [**agent/entries.ndjson**](agent/entries.ndjson) | Structured failure entries (21+) |
+| [**agent/patterns.ndjson**](agent/patterns.ndjson) | Pattern definitions |
+| [**agent/embeddings_guide.md**](agent/embeddings_guide.md) | RAG integration guide |
+| [**agent/api_spec.yaml**](agent/api_spec.yaml) | OpenAPI 3.0 specification |
 
 ---
 
-### How to use this repo
+## 🤝 Contributing
 
-- **Humans:**  
-  Before shipping automation, agents, rewrites, or strategy shifts — scan the patterns.
+High signal only. Primary sources preferred. No "failure porn."
 
-- **AI agents:**  
-  Use failure patterns as negative priors:  
-  "This plan resembles known failures with these tags."
-
-- **Deploying AI agents?**  
-  Start with the [AI Agent Pre-Flight Checklist](ai-agent-checklist.md) to avoid common automation failures.
+See [**CONTRIBUTING.md**](CONTRIBUTING.md) to get started or use our [**New Entry Template**](.github/ISSUE_TEMPLATE/new_entry.yml).
 
 ---
 
-### One rule of thumb
+## 📋 Changelog
 
-> AI should remove **toil**, not **responsibility**.
-
-If responsibility moved to the model, you already lost.
+See [**CHANGELOG.md**](CHANGELOG.md) for version history and updates.
 
 ---
 
-## How this repo works
-
-Each entry has:
-- **What happened** (1–2 lines)
-- **Impact** (who/what got hit)
-- **Root cause** (best-known)
-- **Lessons** (actionable)
-- **Tags** (so humans & AI agents can search patterns)
-
-If you ship AI agents or automation: start with **AI Slop & Automation**.
-
----
-
-## Sections
-
-- [AI Slop & Automation Failures](ai-slop-and-automation.md)
-- [Production Outages](production-outages.md)
-- [Security Incidents](security-incidents.md)
-- [Startup Failures](startup-failures.md)
-- [Product & Strategy Failures](product-failures.md)
-- [Decision & Process Failures](decision-failures.md)
-- [Failure Patterns Index](failure-patterns.md)
-- [Tags Reference](tags.md)
-- [AI Agent Pre-Flight Checklist](ai-agent-checklist.md)
-- [Agent Layer (machine-readable)](agent/)
-
----
-
-## For AI Agents
-
-This repo includes a machine-readable layer for AI agents:
-
-- [AGENTS.md](AGENTS.md) — Operating policy for agents
-- [agent/entries.ndjson](/agent/entries.ndjson) — Structured failure entries
-- [agent/patterns.ndjson](/agent/patterns.ndjson) — Pattern definitions
-- [agent/policies/agent_preflight.json](/agent/policies/agent_preflight.json) — Executable policy gates
-
-Agents can use these files for RAG, policy checks, and failure prior retrieval.
-
----
-
-## Entry format (TL;DR)
-
-```yaml
-type: ai-slop | outage | security | startup | product | decision
-cause: human-error | automation | incentives | architecture | ai
-stage: early | growth | scale | decline
-impact: data-loss | money | trust | users | morale
-tags: [prompt-injection, runaway-costs, blind-trust, rollback-failure]
-```
-
----
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-High signal only. Primary sources preferred. No "failure porn".
+> AI should remove **toil**, not **responsibility**.  
+> If responsibility moved to the model, you already lost.

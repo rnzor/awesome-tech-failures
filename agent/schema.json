@@ -3,7 +3,7 @@
   "title": "Tech Failures Entry",
   "description": "Schema for tech failure entries in the awesome-tech-failures repo",
   "type": "object",
-  "required": ["id", "title", "year", "evidence_type", "category", "cause", "stage", "impact", "summary", "root_cause", "lessons", "patterns", "tags", "sources"],
+  "required": ["id", "title", "year", "evidence_type", "category", "cause", "stage", "impact", "severity", "summary", "root_cause", "lessons", "patterns", "tags", "sources"],
   "properties": {
     "id": {
       "type": "string",
@@ -47,6 +47,24 @@
         "enum": ["data-loss", "money", "trust", "users", "morale"]
       },
       "description": "Array of impact types"
+    },
+    "severity": {
+      "type": "object",
+      "required": ["level"],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"]
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "financial": {
+          "type": "string"
+        }
+      }
     },
     "summary": {
       "type": "string",
