@@ -35,6 +35,20 @@ body:
     validations:
       required: true
   - type: textarea
+    id: root_cause
+    attributes:
+      label: Root Cause
+      description: Why did it happen? Technical or organizational reason.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Who was affected? Cost ($)? Duration?
+    validations:
+      required: true
+  - type: textarea
     id: lessons
     attributes:
       label: Actionable Lessons
