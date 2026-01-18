@@ -36,6 +36,8 @@ Automation or agents are given power without clear rollback, kill-switches, or b
 **Common tags**
 `automation` `no-rollback` `agent-failure` `blast-radius`
 
+**Practical guide:** See [AI Agent Pre-Flight Checklist](ai-agent-checklist.md)
+
 ---
 
 ## 2. Blind Trust in AI Output ("AI Slop")
@@ -62,6 +64,8 @@ AI-generated outputs are treated as correct by default and shipped or acted on w
 
 **Common tags**
 `ai-slop` `blind-trust` `hallucination-in-prod` `decision-degradation`
+
+**Practical guide:** See [AI Agent Pre-Flight Checklist](ai-agent-checklist.md)
 
 ---
 
@@ -185,6 +189,8 @@ Systems assume internal access is safe.
 **Common tags**
 `security` `misconfiguration` `iam` `ssrf`
 
+**Practical guide:** See [AI Agent Pre-Flight Checklist](ai-agent-checklist.md)
+
 ---
 
 ## 8. Decision-Making by Proxy
@@ -209,6 +215,8 @@ Leaders or teams stop engaging with raw data and rely on summaries, dashboards, 
 
 **Common tags**
 `decision` `ai-slop` `incentive-mismatch`
+
+**Practical guide:** See [AI Agent Pre-Flight Checklist](ai-agent-checklist.md)
 
 ---
 

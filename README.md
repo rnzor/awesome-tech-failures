@@ -86,6 +86,9 @@ This repo helps you recognize those patterns **before** they show up in your own
   Use failure patterns as negative priors:  
   "This plan resembles known failures with these tags."
 
+- **Deploying AI agents?**  
+  Start with the [AI Agent Pre-Flight Checklist](ai-agent-checklist.md) to avoid common automation failures.
+
 ---
 
 ### One rule of thumb
