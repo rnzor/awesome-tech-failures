@@ -638,6 +638,62 @@ Industry-wide macro trend documented across multiple vendor analyses, Gartner re
 - Over-Hyped Technology
 ```
 
+### (2025) FutureAGI / Dev.to — RAG System Hallucination Failures (10+ Modes)
+
+```yaml
+---
+type: ai-slop
+cause: ai
+stage: scale
+impact: trust
+severity:
+  level: high
+  score: 8
+  financial: Variable
+tags: [rag, hallucination, retrieval-failure, document-quality, semantic-search]
+evidence-type: Repeated pattern
+sources:
+  - https://dev.to/rag/failure-modes-in-rag-systems-2025
+  - https://www.futureagi.com/blog/rag-hallucination-taxonomy
+supporting-entities: [FutureAGI, Dev.to Community, Academic Researchers]
+---
+
+**What happened:** Academic analysis and industry research from FutureAGI and Dev.to documented 10+ distinct failure modes in Retrieval-Augmented Generation (RAG) systems deployed in production. RAG is not "solved"—hallucinations remain rampant despite common assumptions that retrieval guarantees accuracy.
+
+**Impact:** Production RAG systems generating ungrounded answers; user trust erosion when incorrect information is delivered with high confidence; failed deployments across enterprises; difficulty distinguishing retrieval failures from LLM hallucinations.
+
+**Root cause:** RAG systems inherit LLM hallucination tendencies while adding new failure modes specific to retrieval. Document quality, semantic search limitations, temporal drift, and context window constraints all contribute to a complex failure taxonomy that many teams underestimate.
+
+**Failure Modes:**
+1. **Document Hallucination:** LLM generates answers not grounded in retrieved documents.
+2. **Retrieval Failure:** Semantic search limitations lead to irrelevant context.
+3. **Context Window Mismanagement:** Truncated context windows cause incomplete information hallucinations.
+4. **Fallback Failure:** System hallucinates from training data instead of admitting no documents match.
+5. **Latency Issues:** Timeouts during retrieval cause cascading hallucinations without graceful degradation.
+6. **Cold Start Problem:** New documents not yet indexed lead to stale or incorrect answers.
+7. **Conflicting Documents:** Systems fail to account for contradictions between multiple sources.
+8. **Temporal Hallucination:** Outdated documents are used without freshness indicators.
+9. **Format Mismatch:** Inability to parse tables or code leads to structural hallucinations.
+10. **Semantic Drift:** Tangentially related documents cause the LLM to fill gaps with fabricated data.
+
+**Evidence type:** Repeated pattern
+Systemic pattern documented across academic analysis, industry research, and production deployments. Multiple independent analyses converge on similar failure taxonomies.
+
+**Lessons:**
+- Document quality is existential for RAG systems—one bad document ruins retrieval
+- Monitor retrieval quality separately from answer quality; you can't improve what you don't measure
+- Implement strict refusal logic for low-confidence results rather than hallucinating
+- RAG reduces but does not eliminate hallucinations; verification remains essential
+- Temporal freshness checks and conflict resolution are not optional features
+
+**Source:** https://www.futureagi.com/blog/rag-hallucination-taxonomy
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Hallucination in Production
+- System Brittleness
+```
+
 ### (2025) LinkedIn — RAG Hallucination Cascades
 
 ```yaml
