@@ -594,8 +594,8 @@ severity:
 tags: [rag, hallucination, retrieval-failure, document-quality, semantic-search]
 evidence-type: repeated-pattern
 sources:
-  - https://dev.to/rag/failure-modes-in-rag-systems-2025
-  - https://www.futureagi.com/blog/rag-hallucination-taxonomy
+  - https://dev.to/kuldeep_paul/ten-failure-modes-of-rag-nobody-talks-about-and-how-to-detect-them-systematically-7i4
+  - https://futureagi.com/blogs/rag-hallucinations-future-agi-2025
 supporting-entities: [FutureAGI, Dev.to Community, Academic Researchers]
 ---
 
