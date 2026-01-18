@@ -148,16 +148,169 @@ supporting-entities: [Composio, Various AI Vendors]
 - "Pilot success" on clean data is not predictive of production success
 
 **Related failure patterns:**
-- Pilot Failure
-- Integration Complexity
-- Scale Failure
+- Overconfidence From Past Success
+- Decision-Making by Proxy
 ```
 
 ---
 
 ## Incentive Mismatch
 
-## Incentive Mismatch
+### (2019) Boeing 737 MAX MCAS — When Safety Became Optional
+
+```yaml
+---
+type: decision
+cause: incentives
+stage: scale
+impact: [trust, users, money]
+tags: [safety-over-profit, regulatory-capture, engineering-override, aviation, certification-failure]
+evidence-type: direct-incident
+severity:
+  level: critical
+  score: 10
+  financial: $20B+ costs
+sources:
+  - https://www.congress.gov/116/crpt/hrpt364/CRPT-116hrpt364.pdf
+  - https://www.nytimes.com/2019/03/23/business/boeing-737-max-crash.html
+supporting-entities: [Boeing, FAA, Congress]
+---
+
+**What happened:** Boeing's 737 MAX MCAS system was designed to mask aerodynamic changes from pilots. Two crashes killed 346 people. Congressional investigation revealed Boeing pressured engineers, misled regulators, and prioritized schedule over safety.
+
+**Impact:** 346 deaths; fleet grounded worldwide for 20 months; $20B+ in costs; criminal charges; CEO fired; trust in Boeing and FAA devastated.
+
+**Root cause:** Schedule and cost pressure overrode engineering concerns; regulatory capture allowed self-certification; MCAS was a software patch for a hardware problem; single-sensor design was known risk.
+
+**Lessons:**
+- When engineers raise safety concerns, listen or face catastrophic consequences
+- Self-certification creates conflicts of interest that can kill
+- Software cannot permanently fix hardware design decisions
+- "Move fast" cultures are incompatible with safety-critical systems
+
+**Related failure patterns:**
+- The Innovator's Dilemma
+- Decision-Making by Proxy
+```
+
+---
+
+### (2013-2019) Yahoo Acquiring Tumblr — $1.1B to $3M
+
+```yaml
+---
+type: decision
+cause: incentives
+stage: decline
+impact: [money, trust]
+tags: [acquisition-failure, culture-mismatch, content-moderation, valuation-destruction]
+evidence-type: direct-incident
+severity:
+  level: high
+  score: 8
+  financial: $1.1B to $3M
+sources:
+  - https://www.wsj.com/articles/verizon-sells-tumblr-to-wordpress-owner-11565627453
+  - https://www.theverge.com/2019/8/12/20802639/tumblr-verizon-sold-wordpress-blogging-yahoo
+supporting-entities: [Yahoo, Verizon, Automattic, WSJ]
+---
+
+**What happened:** Yahoo acquired Tumblr for $1.1B in 2013. After mismanagement, content policy disasters, and user exodus, Verizon sold it to Automattic for $3M in 2019 — a 99.7% loss.
+
+**Impact:** $1.097B value destruction; user base collapsed; became case study in how not to acquire and manage a social platform.
+
+**Root cause:** Yahoo didn't understand Tumblr's culture; content moderation decisions alienated core users; advertising strategy failed; NSFW ban killed differentiator.
+
+**Lessons:**
+- Acquiring a community means acquiring a culture — don't break it
+- Content moderation decisions are product decisions with business consequences
+- Paying premium price requires premium execution
+- What makes a platform unique is often what acquirers want to remove
+
+**Related failure patterns:**
+- Decision-Making by Proxy
+- Ecosystem Neglect
+```
+
+---
+
+### (2007-2013) Nokia Ignoring iPhone — The Fall of a Giant
+
+```yaml
+---
+type: decision
+cause: incentives
+stage: decline
+impact: [money, users, trust]
+tags: [innovators-dilemma, smartphone, platform-transition, symbian, organizational-inertia]
+evidence-type: direct-incident
+severity:
+  level: critical
+  score: 10
+  financial: $250B+ market cap loss
+sources:
+  - https://knowledge.insead.edu/strategy/nokias-fall-grace
+  - https://hbr.org/2010/07/how-nokia-lost-the-smartphone
+supporting-entities: [Nokia, INSEAD, HBR]
+---
+
+**What happened:** Nokia was the world's largest phone maker in 2007. Despite seeing the iPhone threat, organizational inertia and Symbian investment prevented response. Sold mobile division to Microsoft in 2013 for $7.2B.
+
+**Impact:** From 50% smartphone market share to near-zero; $250B+ market cap destruction; 40,000+ employees affected; became textbook case of disruption.
+
+**Root cause:** Middle management fear culture prevented bad news from reaching leadership; Symbian investment created sunk cost fallacy; hardware mindset couldn't adapt to software-defined future.
+
+**Lessons:**
+- Fear cultures filter information until it's too late
+- Installed base can become an anchor, not an asset
+- Platform transitions require burning boats, not hedging
+- The innovator's dilemma is real — you can see disruption and still fail
+
+**Related failure patterns:**
+- The Innovator's Dilemma
+- Overconfidence From Past Success
+```
+
+---
+
+### (2000) Blockbuster Passing on Netflix — $50M Decision, $100B Cost
+
+```yaml
+---
+type: decision
+cause: incentives
+stage: scale
+impact: [money, trust]
+tags: [disruption, wrong-assumptions, franchise-model, streaming, late-fee-dependency]
+evidence-type: direct-incident
+severity:
+  level: critical
+  score: 9
+  financial: Bankruptcy
+sources:
+  - https://www.inc.com/minda-zetlin/netflix-blockbuster-meeting-marc-randolph-reed-hastings-john-antioco.html
+  - https://www.businessinsider.com/blockbuster-ceo-passed-up-chance-to-buy-netflix-for-50-million-2015-7
+supporting-entities: [Blockbuster, Netflix, Inc, Business Insider]
+---
+
+**What happened:** In 2000, Netflix offered to sell to Blockbuster for $50M. Blockbuster declined, calling it "a very small niche business." Blockbuster filed for bankruptcy in 2010; Netflix is now worth $250B+.
+
+**Impact:** Blockbuster bankruptcy; 9,000 stores closed; 60,000+ jobs lost; Netflix became streaming giant; became defining example of disruption blindness.
+
+**Root cause:** Revenue model dependent on late fees (which Netflix eliminated); franchise owners opposed online shift; couldn't imagine customers preferring convenience over stores.
+
+**Lessons:**
+- The threat that seems "too small to matter" is the one that kills you
+- Business models built on customer pain (late fees) are disruption targets
+- Franchise models resist cannibalization even when necessary for survival
+- Never evaluate disruptors by current size, evaluate by trajectory
+
+**Related failure patterns:**
+- The Innovator's Dilemma
+- Overconfidence From Past Success
+```
+
+---
 
 ## Meeting-Driven Development
 

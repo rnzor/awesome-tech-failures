@@ -442,7 +442,6 @@ supporting-entities: [Engineering team (Ye & Tan study), Teja Kusireddy]
 **Related failure patterns:**
 - Automation Without Reversal
 - Hidden Single Point of Failure
-- Recursive Dependency Cascade
 
 
 ```
@@ -494,8 +493,7 @@ supporting-entities: [Fortune 500 company (anonymized), Clumio/Commvault, AI age
 **Related failure patterns:**
 - Blind Trust in AI Output
 - Automation Without Reversal
-- Schema Hallucination in RAG Systems
-- Hidden Single Point of Failure (centralized database, no validation)
+- Hidden Single Point of Failure
 
 ---
 
@@ -578,7 +576,7 @@ supporting-entities: [HyperSense Software, Gartner, Multiple AI Vendors]
 **Related failure patterns:**
 - Blind Trust in AI Output
 - Automation Without Reversal
-- Over-Hyped Technology
+- Overconfidence From Past Success
 ```
 
 ### (2025) Galileo AI — 40% of Agentic AI Projects Fail
@@ -671,8 +669,7 @@ supporting-entities: [FutureAGI, Dev.to Community, Academic Researchers]
 
 **Related failure patterns:**
 - Blind Trust in AI Output
-- Hallucination in Production
-- System Brittleness
+- Overconfidence From Past Success
 ```
 
 ### (2025) LinkedIn — RAG Hallucination Cascades

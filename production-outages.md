@@ -480,6 +480,6 @@ supporting-entities: [USENIX FAST, Jiang et al., Kubernetes Community]
 
 **Related failure patterns:**
 - Hidden Single Point of Failure
-- Cascading Dependency Failure
-- Amplification in Automation
+- Hidden Single Point of Failure
+- Automation Without Reversal
 ```

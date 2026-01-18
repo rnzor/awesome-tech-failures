@@ -14,7 +14,7 @@ This release marks the official v1.0.0 launch of **Awesome Tech Failures**. The 
 
 ### ✨ Major Features
 - **Machine Layer**: Added `agent/entries.ndjson` (Structured Data), `agent/schema.json` (Validation), and `agent/api_spec.yaml` (Integration Spec).
-- **Content Expansion**: Grown to **46+** entries across 6 categories (AI Slop, Production, Security, Startup, Product, Decision).
+- **Content Expansion**: Grown to **60+** entries across 6 categories (AI Slop, Production, Security, Startup, Product, Decision).
 - **Interactive Tools**: Moved `diagnosis-flowchart.md`, `severity-system.md`, and `ai-agent-checklist.md` to `docs/`.
 - **Community Governance**: Added `SECURITY.md`, `CITATION.cff`, `CODE_OF_CONDUCT.md`, and Issue Templates.
 - **Visual Identity**: New "Glitch" Logo and professional badges.
@@ -23,9 +23,9 @@ This release marks the official v1.0.0 launch of **Awesome Tech Failures**. The 
 - **AI Slop**: DeepSeek, Claude/GPT hallucinations, RAG cascades, Agent loops.
 - **Security**: SolarWinds (Supply Chain), Log4Shell (RCE), Twitch Leaks.
 - **Production**: Cloudflare (Regex), Meta (Cascades), CrowdStrike (Rollback).
-- **Business**: Quibi (Startup), Google Glass (Product), Kodak (Decision).
+- **Business**: Theranos, WeWork, FTX, Boeing 737 MAX, Nokia, Blockbuster.
 
 ### 🔧 Improvements
-- **Automated Validation**: `validate_entries.py` ensures 100% parity between Markdown and JSON.
+- **Automated Validation**: `validate_entries.py` & `validate_patterns.py` ensure 100% parity and link integrity.
 - **Tagging Consistency**: Enforced standardized tags across 100% of the repository.
 - **Documentation**: New `AGENTS.md` policy guide for autonomous systems.

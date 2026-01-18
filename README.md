@@ -6,7 +6,7 @@
     <b>The most complete, curated list of public technology failures, postmortems, and lessons learned.</b>
   </p>
 
-  [![Failures](https://img.shields.io/badge/Failures-38+-red?style=for-the-badge)](agent/entries.ndjson)
+  [![Failures](https://img.shields.io/badge/Failures-51+-red?style=for-the-badge)](agent/entries.ndjson)
   [![Patterns](https://img.shields.io/badge/Patterns-10-orange?style=for-the-badge)](docs/failure-patterns.md)
   [![Validation](https://img.shields.io/badge/Validation-Passing-green?style=for-the-badge)](.github/workflows/validate.yml)
   [![Cite this Repo](https://img.shields.io/badge/Cite-CITATION.cff-blue?style=for-the-badge)](CITATION.cff)
@@ -39,10 +39,29 @@ Modern systems fail in modern ways. This repository provides the structured inte
 
 ---
 
+## 📖 How to Use This
+
+### During Design Review
+1. Scan [**Failure Patterns**](docs/failure-patterns.md) for patterns that match your architecture
+2. Check the relevant category for analogous incidents
+3. Run the [**AI Agent Pre-Flight Checklist**](docs/ai-agent-checklist.md) before deploying any automation
+
+### During an Incident
+1. Use the [**Diagnosis Flowchart**](docs/diagnosis-flowchart.md) to identify the failure class
+2. Search entries by tag or category for similar incidents
+3. Check the **Lessons** from comparable cases for investigation paths
+
+### For Postmortems
+1. Find entries with similar root causes
+2. Reference patterns to explain systemic issues
+3. Cite this repo to connect your incident to industry precedent
+
+---
+
 ## 🛠️ Interactive Tools
 - 🩺 [**Failure Diagnosis Flowchart**](docs/diagnosis-flowchart.md) — Identify patterns in real-time.
 - ⚖️ [**Severity Scoring System**](docs/severity-system.md) — Standardized risk assessment.
-- ✅ [**AI Agent Pre-Flight Checklist**](docs/ai-agent-checklist.md) — Deploy agents safely.
+- ✅ [**AI Agent Pre-Flight Checklist**](docs/ai-agent-checklist.md) — **Essential before deploying any AI agent.**
 - 📚 [**Prevention Playbooks**](playbooks/) — Actionable SOPs for common scenarios.
 
 ---
