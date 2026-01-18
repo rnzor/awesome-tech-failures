@@ -15,13 +15,6 @@
 <br>
 <hr>
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=irnz/awesome-tech-failures&type=Date)](https://star-history.com/#irnz/awesome-tech-failures&Date)
-<hr>
-
-
-
 Failure is data. Studying it is a competitive advantage.
 
 A curated, tagged library of real-world tech failures — outages, breaches, startup shutdowns, product flops, **AI slop**, and automation disasters.
@@ -79,6 +72,12 @@ See [**CONTRIBUTING.md**](CONTRIBUTING.md) to get started or use our [**New Entr
 ## 📋 Changelog
 
 See [**CHANGELOG.md**](CHANGELOG.md) for version history and updates.
+
+---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rnzor/awesome-tech-failures&type=Date)](https://star-history.com/#rnzor/awesome-tech-failures&Date)
 
 ---
 
