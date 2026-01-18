@@ -322,6 +322,9 @@ tags: [social-engineering, mfa-fatigue, privileged-access, human-factor, data-ex
 
 **Root cause:** Reliance on simple push-based MFA; lack of internal zero-trust; human vulnerability to social engineering.
 
+**Evidence type:** Direct incident
+This was a named incident with official disclosure from Uber; not a repeated pattern observation.
+
 **Lessons:**
 - Shift from push-based MFA to security keys to prevent fatigue attacks
 - Apply zero-trust internally: password should not grant full access
