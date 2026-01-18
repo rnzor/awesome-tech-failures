@@ -6,31 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
-## [Unreleased]
-
-### Added
-- New 2025 entries: Multi-Agent Loop Cost Spike, Agentic Database Migration
-- New infrastructure entries: GitLab Data Loss (2017), Fastly Global Outage (2021)
-- New security entries: SolarWinds Supply Chain (2020), Uber Social Engineering (2022)
-- Severity scoring system with standardized levels (Critical/High/Medium/Low)
-- Diagnosis flowchart with Mermaid diagrams
-- Prevention playbooks: `agent-deployment.md`, `production-outage.md`
-- Issue and PR templates for community contributions
-- Updated README with 2026 branding and badges
-
-### Changed
-- Updated `agent/schema.json` to require severity metadata
-- Enhanced `agent/entries.ndjson` with severity scores for all 25 entries (6 AI Slop, 5 Production, 12 Security, 2 Startup)
-- Modernized README navigation and structure
-
----
-
 ## [1.0.0] - 2026-01-18
 
-### Added
-- Initial repository structure with 5 failure categories
-- 25+ documented failure entries across all categories
-- AI Agent Pre-Flight Checklist
-- Machine-readable agent layer (NDJSON, JSON Schema)
-- 10 failure pattern definitions
-- Validation workflow for markdown entries
+### 🚀 The "Agent-Native" Release
+
+This release marks the official v1.0.0 launch of **Awesome Tech Failures**. The repository has been transformed from a static list into a machine-readable intelligence source for AI agents.
+
+### ✨ Major Features
+- **Machine Layer**: Added `agent/entries.ndjson` (Structured Data), `agent/schema.json` (Validation), and `agent/api_spec.yaml` (Integration Spec).
+- **Content Expansion**: Grown to **46+** entries across 6 categories (AI Slop, Production, Security, Startup, Product, Decision).
+- **Interactive Tools**: Moved `diagnosis-flowchart.md`, `severity-system.md`, and `ai-agent-checklist.md` to `docs/`.
+- **Community Governance**: Added `SECURITY.md`, `CITATION.cff`, `CODE_OF_CONDUCT.md`, and Issue Templates.
+- **Visual Identity**: New "Glitch" Logo and professional badges.
+
+### 🆕 New Entries (Selected)
+- **AI Slop**: DeepSeek, Claude/GPT hallucinations, RAG cascades, Agent loops.
+- **Security**: SolarWinds (Supply Chain), Log4Shell (RCE), Twitch Leaks.
+- **Production**: Cloudflare (Regex), Meta (Cascades), CrowdStrike (Rollback).
+- **Business**: Quibi (Startup), Google Glass (Product), Kodak (Decision).
+
+### 🔧 Improvements
+- **Automated Validation**: `validate_entries.py` ensures 100% parity between Markdown and JSON.
+- **Tagging Consistency**: Enforced standardized tags across 100% of the repository.
+- **Documentation**: New `AGENTS.md` policy guide for autonomous systems.

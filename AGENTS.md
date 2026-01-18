@@ -1,6 +1,6 @@
 <!--
 AGENTS.md: Operating policy for AI agents consuming this repo.
-For human-readable pre-flight guidance, see ai-agent-checklist.md
+For human-readable pre-flight guidance, see docs/ai-agent-checklist.md
 -->
 
 # AGENTS.md — How to Use This Repo Safely
@@ -143,7 +143,7 @@ Before any agent action:
 - [ ] Are there analogous failures?
 - [ ] What happens if the model is wrong?
 
-See `ai-agent-checklist.md` for the full human-readable version.
+See `docs/ai-agent-checklist.md` for the full human-readable version.
 
 ---
 
@@ -156,8 +156,8 @@ See `ai-agent-checklist.md` for the full human-readable version.
 | `agent/patterns.ndjson` | All patterns as JSON lines |
 | `agent/tags.json` | Canonical tag definitions |
 | `agent/policies/agent_preflight.json` | Executable blocking/advisory rules |
-| `ai-agent-checklist.md` | Human-readable pre-flight guide |
-| `failure-patterns.md` | Pattern index with examples |
+| `docs/ai-agent-checklist.md` | Human-readable pre-flight guide |
+| `docs/failure-patterns.md` | Pattern index with examples |
 
 ---
 

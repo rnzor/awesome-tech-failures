@@ -7,7 +7,7 @@
   </p>
 
   [![Failures](https://img.shields.io/badge/Failures-38+-red?style=for-the-badge)](agent/entries.ndjson)
-  [![Patterns](https://img.shields.io/badge/Patterns-10-orange?style=for-the-badge)](failure-patterns.md)
+  [![Patterns](https://img.shields.io/badge/Patterns-10-orange?style=for-the-badge)](docs/failure-patterns.md)
   [![Validation](https://img.shields.io/badge/Validation-Passing-green?style=for-the-badge)](.github/workflows/validate.yml)
   [![Cite this Repo](https://img.shields.io/badge/Cite-CITATION.cff-blue?style=for-the-badge)](CITATION.cff)
 </div>
@@ -33,15 +33,16 @@ Modern systems fail in modern ways. This repository provides the structured inte
 - [**AI Slop & Automation**](ai-slop-and-automation.md) — Multi-agent loops, RAG cascades, and autonomous ops disasters.
 - [**Production Outages**](production-outages.md) — S3 typos, database deletions, and global edge cloud failures.
 - [**Security Incidents**](security-incidents.md) — Cloud misconfigurations, unpatched zero-days, and supply chain attacks.
-- [**Startup & Product**](startup-failures.md) — Shutdowns, PMF failures, and ecosystem mismatches.
+- **[Startup Failures](startup-failures.md)**: Premature scaling, finding a problem for a solution, and runway mismanagement.
+- **[Product Failures](product-failures.md)**: Features nobody wanted, pivot disasters, and market misreads.
 - [**Decision & Process**](decision-failures.md) — Metric gaming, groupthink, and leadership failures.
 
 ---
 
 ## 🛠️ Interactive Tools
-- 🩺 [**Failure Diagnosis Flowchart**](diagnosis-flowchart.md) — Identify patterns in real-time.
-- ⚖️ [**Severity Scoring System**](severity-system.md) — Standardized risk assessment.
-- ✅ [**AI Agent Pre-Flight Checklist**](ai-agent-checklist.md) — Deploy agents safely.
+- 🩺 [**Failure Diagnosis Flowchart**](docs/diagnosis-flowchart.md) — Identify patterns in real-time.
+- ⚖️ [**Severity Scoring System**](docs/severity-system.md) — Standardized risk assessment.
+- ✅ [**AI Agent Pre-Flight Checklist**](docs/ai-agent-checklist.md) — Deploy agents safely.
 - 📚 [**Prevention Playbooks**](playbooks/) — Actionable SOPs for common scenarios.
 
 ---
@@ -75,11 +76,7 @@ See [**CHANGELOG.md**](CHANGELOG.md) for version history and updates.
 
 ---
 
-## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rnzor/awesome-tech-failures&type=Date)](https://star-history.com/#rnzor/awesome-tech-failures&Date)
-
----
 
 > AI should remove **toil**, not **responsibility**.  
 > If responsibility moved to the model, you already lost.
