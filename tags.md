@@ -10,6 +10,12 @@
 - `product` — flops, strategy failures, ecosystem mismatches
 - `decision` — process, incentives, leadership, ownership failures
 
+### When to Use `ai-slop`
+- Entry is specifically about low-quality AI output causing harm
+- Use alongside `blind-trust`, `hallucination-in-prod`, `vibe-coding`, etc.
+- Do NOT use for non-AI automation failures (use `automation` cause instead)
+- Do NOT mix with infrastructure failures unless AI was the root cause
+
 ### Primary Cause
 - `ai` — model/tool behavior issues
 - `automation` — scripts/agents/CI/CD causing harm
