@@ -122,6 +122,21 @@ If you ship AI agents or automation: start with **AI Slop & Automation**.
 - [Decision & Process Failures](decision-failures.md)
 - [Failure Patterns Index](failure-patterns.md)
 - [Tags Reference](tags.md)
+- [AI Agent Pre-Flight Checklist](ai-agent-checklist.md)
+- [Agent Layer (machine-readable)](agent/)
+
+---
+
+## For AI Agents
+
+This repo includes a machine-readable layer for AI agents:
+
+- [AGENTS.md](AGENTS.md) — Operating policy for agents
+- [agent/entries.ndjson](/agent/entries.ndjson) — Structured failure entries
+- [agent/patterns.ndjson](/agent/patterns.ndjson) — Pattern definitions
+- [agent/policies/agent_preflight.json](/agent/policies/agent_preflight.json) — Executable policy gates
+
+Agents can use these files for RAG, policy checks, and failure prior retrieval.
 
 ---
 

@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tech Failures Entry",
+  "description": "Schema for tech failure entries in the awesome-tech-failures repo",
+  "type": "object",
+  "required": ["id", "title", "year", "evidence_type", "category", "cause", "stage", "impact", "summary", "root_cause", "lessons", "patterns", "tags", "sources"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable slug identifier for this entry",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title of the failure"
+    },
+    "year": {
+      "type": "integer",
+      "description": "Year the failure occurred or was documented",
+      "minimum": 1970,
+      "maximum": 2030
+    },
+    "evidence_type": {
+      "type": "string",
+      "enum": ["direct_incident", "repeated_pattern"],
+      "description": "Type of evidence supporting this entry"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["ai-slop", "outage", "security", "startup", "product", "decision"],
+      "description": "Primary category of the failure"
+    },
+    "cause": {
+      "type": "string",
+      "enum": ["human-error", "automation", "architecture", "incentives", "ai"],
+      "description": "Primary cause of the failure"
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["early", "growth", "scale", "decline"],
+      "description": "Stage of the organization or product when failure occurred"
+    },
+    "impact": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["data-loss", "money", "trust", "users", "morale"]
+      },
+      "description": "Array of impact types"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Brief 1-2 sentence summary of what happened"
+    },
+    "root_cause": {
+      "type": "string",
+      "description": "Short description of the root cause"
+    },
+    "lessons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "maxItems": 5,
+      "description": "Array of actionable lessons learned"
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of pattern IDs this entry relates to"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of free-form tags for categorization"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url", "kind"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the source"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the source"
+          },
+          "kind": {
+            "type": "string",
+            "enum": ["primary", "secondary"],
+            "description": "Type of source"
+          }
+        }
+      },
+      "description": "Array of source references"
+    }
+  }
+}

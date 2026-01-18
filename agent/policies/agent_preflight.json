@@ -1,0 +1,141 @@
+{
+  "policy_id": "agent-preflight-v1",
+  "version": "1.0.0",
+  "description": "Machine-readable policy for AI agent pre-flight checks based on awesome-tech-failures patterns",
+  "effective_date": "2026-01-18",
+  "blocking_rules": [
+    {
+      "rule_id": "write-without-rollback",
+      "if": {
+        "write_access": true,
+        "rollback_available": false
+      },
+      "then": {
+        "action": "block",
+        "reason": "Write operations without rollback capability are blocked. See: Automation Without Reversal pattern."
+      },
+      "patterns": ["automation-without-reversal"]
+    },
+    {
+      "rule_id": "prod-without-approval",
+      "if": {
+        "environment": "production",
+        "human_approval": false
+      },
+      "then": {
+        "action": "block",
+        "reason": "Production modifications require human approval. See: Automation Without Reversal pattern."
+      },
+      "patterns": ["automation-without-reversal"]
+    },
+    {
+      "rule_id": "insufficient-budget",
+      "if": {
+        "budget_remaining_usd": {
+          "lt": 10
+        }
+      },
+      "then": {
+        "action": "block",
+        "reason": "Insufficient budget for safe execution. See: Runaway AI Agents pattern."
+      },
+      "patterns": ["automation-without-reversal", "overconfidence-from-past-success"]
+    },
+    {
+      "rule_id": "untrusted-input-in-prompt",
+      "if": {
+        "user_input_in_system_prompt": true
+      },
+      "then": {
+        "action": "block",
+        "reason": "User input merged directly into system prompts is blocked. See: Misconfigured Trust Boundaries pattern."
+      },
+      "patterns": ["misconfigured-trust-boundaries"]
+    },
+    {
+      "rule_id": "ai-output-without-review",
+      "if": {
+        "ai_generated_output": true,
+        "human_review": false,
+        "impact": ["users", "money", "trust", "data-loss"]
+      },
+      "then": {
+        "action": "block",
+        "reason": "AI output affecting high-impact areas requires human review. See: Blind Trust in AI Output pattern."
+      },
+      "patterns": ["blind-trust-in-ai-output"]
+    },
+    {
+      "rule_id": "destructive-action-no-confirm",
+      "if": {
+        "destructive": true,
+        "confirmation_received": false
+      },
+      "then": {
+        "action": "block",
+        "reason": "Destructive actions require explicit confirmation. See: Automation Without Reversal pattern."
+      },
+      "patterns": ["automation-without-reversal"]
+    }
+  ],
+  "advisory_rules": [
+    {
+      "rule_id": "untrusted-input-warning",
+      "if": {
+        "user_input_near_system_prompt": true
+      },
+      "then": {
+        "action": "warn",
+        "reason": "Consider sanitizing user input before it reaches system prompts. Prompt injection risk detected."
+      },
+      "patterns": ["misconfigured-trust-boundaries"]
+    },
+    {
+      "rule_id": "ai-summary-replacing-reading",
+      "if": {
+        "using_ai_summary": true,
+        "decision_importance": "high"
+      },
+      "then": {
+        "action": "warn",
+        "reason": "AI summaries replacing direct analysis detected. Consider reading source material for critical decisions."
+      },
+      "patterns": ["decision-making-by-proxy", "blind-trust-in-ai-output"]
+    },
+    {
+      "rule_id": "past-success-complacency",
+      "if": {
+        "similar_operation_previously_successful": true,
+        "context_changed": true
+      },
+      "then": {
+        "action": "warn",
+        "reason": "Past success does not guarantee current safety. Context may have changed."
+      },
+      "patterns": ["overconfidence-from-past-success"]
+    },
+    {
+      "rule_id": "no-observability",
+      "if": {
+        "execution_without_logging": true
+      },
+      "then": {
+        "action": "warn",
+        "reason": "Consider adding structured logging for debugging and audit trails."
+      },
+      "patterns": ["overconfidence-from-past-success"]
+    }
+  ],
+  "required_fields_for_evaluation": [
+    "write_access",
+    "rollback_available",
+    "environment",
+    "human_approval",
+    "budget_remaining_usd",
+    "user_input_in_system_prompt",
+    "ai_generated_output",
+    "human_review",
+    "destructive",
+    "confirmation_received"
+  ]
+}

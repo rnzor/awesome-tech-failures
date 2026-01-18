@@ -1,0 +1,182 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-01-18",
+  "description": "Canonical tags for the awesome-tech-failures repo",
+  "tag_types": {
+    "category": {
+      "ai-slop": "Low-quality AI usage causing real harm",
+      "outage": "Availability/latency incidents",
+      "security": "Breaches, leaks, trust failures",
+      "startup": "Shutdowns, PMF failures, burn issues",
+      "product": "Flops, strategy failures, ecosystem mismatches",
+      "decision": "Process, incentives, leadership, ownership failures"
+    },
+    "cause": {
+      "ai": "Model/tool behavior issues",
+      "automation": "Scripts/agents/CI/CD causing harm",
+      "architecture": "Coupling, SPOFs, complexity",
+      "human-error": "Mistakes, fatigue, gaps",
+      "incentives": "KPIs, politics, misalignment"
+    },
+    "stage": {
+      "early": "Pre-PMF, seed to Series A",
+      "growth": "Product-market fit, scaling team",
+      "scale": "Major expansion, Series B+",
+      "decline": "Shrinking, pivot, shutdown"
+    },
+    "impact": {
+      "data-loss": "Permanent or significant data destruction",
+      "money": "Direct financial loss ($10k+)",
+      "trust": "Brand/reputational damage",
+      "users": "User impact (churn, complaints)",
+      "morale": "Team impact (burnout, departures)"
+    }
+  },
+  "free_tags": [
+    {
+      "tag": "prompt-injection",
+      "category": "security",
+      "description": "Adversarial input manipulating AI behavior"
+    },
+    {
+      "tag": "adversarial",
+      "category": "security",
+      "description": "Intentional attack or manipulation"
+    },
+    {
+      "tag": "no-guardrails",
+      "category": "ai-slop",
+      "description": "Missing safety limits on AI actions"
+    },
+    {
+      "tag": "blind-trust",
+      "category": "ai-slop",
+      "description": "Over-relying on AI output without verification"
+    },
+    {
+      "tag": "agent-failure",
+      "category": "ai-slop",
+      "description": "Autonomous agent causing harm"
+    },
+    {
+      "tag": "write-access",
+      "category": "ai-slop",
+      "description": "AI agent with destructive permissions"
+    },
+    {
+      "tag": "runaway-costs",
+      "category": "ai-slop",
+      "description": "Agent loops causing cost explosion"
+    },
+    {
+      "tag": "token-explosion",
+      "category": "ai-slop",
+      "description": "Uncontrolled token usage"
+    },
+    {
+      "tag": "ai-generated-code",
+      "category": "ai-slop",
+      "description": "Code written by AI without review"
+    },
+    {
+      "tag": "seo-collapse",
+      "category": "ai-slop",
+      "description": "AI content causing search ranking drops"
+    },
+    {
+      "tag": "vibe-coding",
+      "category": "ai-slop",
+      "description": "AI code generation without understanding"
+    },
+    {
+      "tag": "decision-degradation",
+      "category": "ai-slop",
+      "description": "AI summaries replacing judgment"
+    },
+    {
+      "tag": "hidden-dependency",
+      "category": "architecture",
+      "description": "Undocumented coupling between systems"
+    },
+    {
+      "tag": "rollback-failure",
+      "category": "architecture",
+      "description": "Unable to revert to known-good state"
+    },
+    {
+      "tag": "blast-radius",
+      "category": "architecture",
+      "description": "Failure affecting large portion of users"
+    },
+    {
+      "tag": "control-plane",
+      "category": "architecture",
+      "description": "Management layer failure"
+    },
+    {
+      "tag": "region-dependency",
+      "category": "architecture",
+      "description": "Hidden cross-region coupling"
+    },
+    {
+      "tag": "misconfiguration",
+      "category": "security",
+      "description": "Incorrect security settings"
+    },
+    {
+      "tag": "iam",
+      "category": "security",
+      "description": "Identity and access management failure"
+    },
+    {
+      "tag": "ssrf",
+      "category": "security",
+      "description": "Server-side request forgery"
+    },
+    {
+      "tag": "unpatched",
+      "category": "security",
+      "description": "Known vulnerability not patched"
+    },
+    {
+      "tag": "no-segmentation",
+      "category": "security",
+      "description": "Missing network segmentation"
+    },
+    {
+      "tag": "no-pmf",
+      "category": "startup",
+      "description": "Product didn't solve real user problem"
+    },
+    {
+      "tag": "burn-rate",
+      "category": "startup",
+      "description": "Spending exceeded runway"
+    },
+    {
+      "tag": "timing",
+      "category": "product",
+      "description": "Too early, too late, or wrong market"
+    },
+    {
+      "tag": "ecosystem-failure",
+      "category": "product",
+      "description": "Platform dependency issues"
+    },
+    {
+      "tag": "ux-mismatch",
+      "category": "product",
+      "description": "Product didn't match user mental models"
+    },
+    {
+      "tag": "innovators-dilemma",
+      "category": "decision",
+      "description": "Success blinding to disruption"
+    },
+    {
+      "tag": "incentive-mismatch",
+      "category": "decision",
+      "description": "Wrong KPIs driving behavior"
+    }
+  ]
+}
