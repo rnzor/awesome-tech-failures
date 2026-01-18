@@ -20,7 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 - Updated `agent/schema.json` to require severity metadata
-- Enhanced `agent/entries.ndjson` with severity scores for all 21 entries
+- Enhanced `agent/entries.ndjson` with severity scores for all 25 entries (6 AI Slop, 5 Production, 12 Security, 2 Startup)
 - Modernized README navigation and structure
 
 ---
@@ -28,7 +28,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.0.0] - 2026-01-18
 
 ### Added
-- Initial repository structure with 6 failure categories
+- Initial repository structure with 5 failure categories
+- 25+ documented failure entries across all categories
 - AI Agent Pre-Flight Checklist
 - Machine-readable agent layer (NDJSON, JSON Schema)
 - 10 failure pattern definitions
