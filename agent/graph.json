@@ -1,0 +1,2436 @@
+{
+  "nodes": [
+    {
+      "id": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "title": "Microsoft Tay \u2014 Prompt Injection & Adversarial Manipulation",
+      "category": "ai-slop"
+    },
+    {
+      "id": "ai-agent-deletes-production-data-2023",
+      "title": "AI Agent Deletes Production Data",
+      "category": "ai-slop"
+    },
+    {
+      "id": "runaway-ai-agents-causing-massive-costs-2023",
+      "title": "Runaway AI Agents Causing Massive Costs",
+      "category": "ai-slop"
+    },
+    {
+      "id": "2023-2024-ai-generated-code-shipped-without-review-2026",
+      "title": "(2023-2024) AI-Generated Code Shipped Without Review",
+      "category": "ai-slop"
+    },
+    {
+      "id": "low-quality-ai-content-tanking-search-rankings-2023",
+      "title": "Low-Quality AI Content Tanking Search Rankings",
+      "category": "ai-slop"
+    },
+    {
+      "id": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "title": "(2023-2024) Adversarial Prompts Exposing Sensitive Data",
+      "category": "ai-slop"
+    },
+    {
+      "id": "2023-2024-ai-summaries-replacing-human-analysis-2026",
+      "title": "(2023-2024) AI Summaries Replacing Human Analysis",
+      "category": "ai-slop"
+    },
+    {
+      "id": "ai-generated-codebases-that-can-t-be-maintained-2024",
+      "title": "AI-Generated Codebases That Can't Be Maintained",
+      "category": "ai-slop"
+    },
+    {
+      "id": "2023-2024-ai-chatbots-without-human-escalation-2026",
+      "title": "(2023-2024) AI Chatbots Without Human Escalation",
+      "category": "ai-slop"
+    },
+    {
+      "id": "autonomous-multi-agent-loop-cost-spike-2025",
+      "title": "Autonomous Multi-Agent Loop Cost Spike",
+      "category": "ai-slop"
+    },
+    {
+      "id": "agentic-database-migration-data-corruption-2025",
+      "title": "Agentic Database Migration Data Corruption",
+      "category": "ai-slop"
+    },
+    {
+      "id": "arxiv-multi-agent-llm-system-failures-2025",
+      "title": "ArXiv \u2014 Multi-Agent LLM System Failures",
+      "category": "ai-slop"
+    },
+    {
+      "id": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "title": "(2025\u20132026) HyperSense \u2014 88% of AI Agents Fail to Reach Production",
+      "category": "ai-slop"
+    },
+    {
+      "id": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "title": "Galileo AI \u2014 40% of Agentic AI Projects Fail",
+      "category": "ai-slop"
+    },
+    {
+      "id": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025",
+      "title": "FutureAGI / Dev.to \u2014 RAG System Hallucination Failures (10+ Modes)",
+      "category": "ai-slop"
+    },
+    {
+      "id": "linkedin-rag-hallucination-cascades-2025",
+      "title": "LinkedIn \u2014 RAG Hallucination Cascades",
+      "category": "ai-slop"
+    },
+    {
+      "id": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "title": "Pillar Security \u2014 AI Coding Assistant Rules File Backdoor",
+      "category": "ai-slop"
+    },
+    {
+      "id": "2024-2025-nature-arxiv-synthetic-data-poisoning-model-collapse-2026",
+      "title": "(2024\u20132025) Nature / ArXiv \u2014 Synthetic Data Poisoning & Model Collapse",
+      "category": "ai-slop"
+    },
+    {
+      "id": "datagrid-linkedin-agentic-workflow-cost-explosions-2025",
+      "title": "Datagrid / LinkedIn \u2014 Agentic Workflow Cost Explosions",
+      "category": "ai-slop"
+    },
+    {
+      "id": "github-mysql-replication-failure-2018",
+      "title": "GitHub \u2014 MySQL Replication Failure",
+      "category": "outage"
+    },
+    {
+      "id": "aws-s3-typo-takes-down-us-east-1-2017",
+      "title": "AWS \u2014 S3 Typo Takes Down us-east-1",
+      "category": "outage"
+    },
+    {
+      "id": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "title": "Knight Capital \u2014 $440M Trading Loss in Minutes",
+      "category": "outage"
+    },
+    {
+      "id": "cloudflare-regex-catastrophe-2019",
+      "title": "Cloudflare \u2014 Regex Catastrophe",
+      "category": "outage"
+    },
+    {
+      "id": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "title": "GitLab \u2014 Sysadmin Deletes Database during Maintenance",
+      "category": "outage"
+    },
+    {
+      "id": "fastly-single-customer-config-triggering-global-outage-2021",
+      "title": "Fastly \u2014 Single Customer Config Triggering Global Outage",
+      "category": "outage"
+    },
+    {
+      "id": "cloudflare-bot-management-feature-file-corruption-2025",
+      "title": "Cloudflare \u2014 Bot Management Feature File Corruption",
+      "category": "outage"
+    },
+    {
+      "id": "meta-shared-infrastructure-cascading-failure-2024",
+      "title": "Meta \u2014 Shared Infrastructure Cascading Failure",
+      "category": "outage"
+    },
+    {
+      "id": "aws-cloudwatch-health-dashboard-co-located-failure-2025",
+      "title": "AWS \u2014 CloudWatch & Health Dashboard Co-Located Failure",
+      "category": "outage"
+    },
+    {
+      "id": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "title": "CrowdStrike \u2014 Faulty Falcon Sensor Update",
+      "category": "outage"
+    },
+    {
+      "id": "cloudflare-ddos-rule-deployment-failure-2024",
+      "title": "Cloudflare \u2014 DDoS Rule Deployment Failure",
+      "category": "outage"
+    },
+    {
+      "id": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "title": "Kubernetes \u2014 Cluster-Wide Failures (51% Dependency-Related)",
+      "category": "outage"
+    },
+    {
+      "id": "capital-one-cloud-firewall-misconfiguration-2019",
+      "title": "Capital One \u2014 Cloud Firewall Misconfiguration",
+      "category": "security"
+    },
+    {
+      "id": "equifax-unpatched-vulnerability-2017",
+      "title": "Equifax \u2014 Unpatched Vulnerability",
+      "category": "security"
+    },
+    {
+      "id": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "title": "Twitch \u2014 Source Code Leak via S3 Misconfiguration",
+      "category": "security"
+    },
+    {
+      "id": "solarwinds-orion-supply-chain-attack-2020",
+      "title": "SolarWinds \u2014 Orion Supply Chain Attack",
+      "category": "security"
+    },
+    {
+      "id": "github-codeql-supply-chain-vulnerability-2025",
+      "title": "GitHub \u2014 CodeQL Supply Chain Vulnerability",
+      "category": "security"
+    },
+    {
+      "id": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "title": "Log4Shell \u2014 Global Remote Code Execution (CVE-2021-44228)",
+      "category": "security"
+    },
+    {
+      "id": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "title": "(2023\u20132025) Booking.com \u2014 OAuth Redirect URI Misconfiguration",
+      "category": "security"
+    },
+    {
+      "id": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "title": "(2023\u20132025) Expo \u2014 OAuth Token Exposure via Return URL",
+      "category": "security"
+    },
+    {
+      "id": "uber-mfa-fatigue-social-engineering-2022",
+      "title": "Uber \u2014 MFA Fatigue & Social Engineering",
+      "category": "security"
+    },
+    {
+      "id": "unit-42-social-engineering-trend-report-2025",
+      "title": "Unit 42 \u2014 Social Engineering Trend Report",
+      "category": "security"
+    },
+    {
+      "id": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "title": "LexisNexis \u2014 GitHub Account Compromise via Social Engineering",
+      "category": "security"
+    },
+    {
+      "id": "quibi-1-75b-burn-in-6-months-2020",
+      "title": "Quibi \u2014 $1.75B Burn in 6 Months",
+      "category": "startup"
+    },
+    {
+      "id": "theranos-9b-fraud-built-on-lies-2018",
+      "title": "Theranos \u2014 $9B Fraud Built on Lies",
+      "category": "startup"
+    },
+    {
+      "id": "wework-governance-failure-at-47b-valuation-2019",
+      "title": "WeWork \u2014 Governance Failure at $47B Valuation",
+      "category": "startup"
+    },
+    {
+      "id": "ftx-32b-collapse-in-10-days-2022",
+      "title": "FTX \u2014 $32B Collapse in 10 Days",
+      "category": "startup"
+    },
+    {
+      "id": "juicero-120m-for-a-juice-bag-squeezer-2017",
+      "title": "Juicero \u2014 $120M for a Juice Bag Squeezer",
+      "category": "startup"
+    },
+    {
+      "id": "jawbone-3b-wearables-pioneer-to-liquidation-2017",
+      "title": "Jawbone \u2014 $3B Wearables Pioneer to Liquidation",
+      "category": "startup"
+    },
+    {
+      "id": "google-glass-technology-ahead-of-society-2014",
+      "title": "Google Glass \u2014 Technology Ahead of Society",
+      "category": "product"
+    },
+    {
+      "id": "google-wave-technically-impressive-user-failure-2012",
+      "title": "Google Wave \u2014 Technically Impressive, User Failure",
+      "category": "product"
+    },
+    {
+      "id": "windows-phone-ecosystem-neglect-2017",
+      "title": "Windows Phone \u2014 Ecosystem Neglect",
+      "category": "product"
+    },
+    {
+      "id": "google-the-social-network-nobody-wanted-2019",
+      "title": "Google+ \u2014 The Social Network Nobody Wanted",
+      "category": "product"
+    },
+    {
+      "id": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014",
+      "title": "Amazon Fire Phone \u2014 When Amazon Tried to Be Apple",
+      "category": "product"
+    },
+    {
+      "id": "facebook-home-replacing-android-alienating-users-2013",
+      "title": "Facebook Home \u2014 Replacing Android, Alienating Users",
+      "category": "product"
+    },
+    {
+      "id": "2001-2020-segway-the-future-that-wasn-t-2026",
+      "title": "(2001-2020) Segway \u2014 The Future That Wasn't",
+      "category": "product"
+    },
+    {
+      "id": "1975-2012-kodak-invented-digital-buried-it-2026",
+      "title": "(1975-2012) Kodak \u2014 Invented Digital, Buried It",
+      "category": "decision"
+    },
+    {
+      "id": "ongoing-ai-summaries-replaced-understanding-2026",
+      "title": "(Ongoing) AI Summaries Replaced Understanding",
+      "category": "decision"
+    },
+    {
+      "id": "ai-pilots-fail-due-to-integration-complexity-2026",
+      "title": "AI Pilots Fail Due to Integration Complexity",
+      "category": "decision"
+    },
+    {
+      "id": "boeing-737-max-mcas-when-safety-became-optional-2019",
+      "title": "Boeing 737 MAX MCAS \u2014 When Safety Became Optional",
+      "category": "decision"
+    },
+    {
+      "id": "2013-2019-yahoo-acquiring-tumblr-1-1b-to-3m-2026",
+      "title": "(2013-2019) Yahoo Acquiring Tumblr \u2014 $1.1B to $3M",
+      "category": "decision"
+    },
+    {
+      "id": "2007-2013-nokia-ignoring-iphone-the-fall-of-a-giant-2026",
+      "title": "(2007-2013) Nokia Ignoring iPhone \u2014 The Fall of a Giant",
+      "category": "decision"
+    },
+    {
+      "id": "blockbuster-passing-on-netflix-50m-decision-100b-cost-2000",
+      "title": "Blockbuster Passing on Netflix \u2014 $50M Decision, $100B Cost",
+      "category": "decision"
+    }
+  ],
+  "edges": [
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "weight": 0.312,
+      "tags_overlap": [
+        "prompt-injection"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "capital-one-cloud-firewall-misconfiguration-2019",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "solarwinds-orion-supply-chain-attack-2020",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "github-codeql-supply-chain-vulnerability-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "uber-mfa-fatigue-social-engineering-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "unit-42-social-engineering-trend-report-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "microsoft-tay-prompt-injection-adversarial-manipulation-2016",
+      "target": "ftx-32b-collapse-in-10-days-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "ai-agent-deletes-production-data-2023",
+      "target": "2023-2024-ai-summaries-replacing-human-analysis-2026",
+      "weight": 0.229,
+      "tags_overlap": [
+        "blind-trust"
+      ],
+      "patterns_overlap": [
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-agent-deletes-production-data-2023",
+      "target": "agentic-database-migration-data-corruption-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-agent-deletes-production-data-2023",
+      "target": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-agent-deletes-production-data-2023",
+      "target": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-agent-deletes-production-data-2023",
+      "target": "datagrid-linkedin-agentic-workflow-cost-explosions-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-agent-deletes-production-data-2023",
+      "target": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "runaway-ai-agents-causing-massive-costs-2023",
+      "target": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "runaway-ai-agents-causing-massive-costs-2023",
+      "target": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "runaway-ai-agents-causing-massive-costs-2023",
+      "target": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "runaway-ai-agents-causing-massive-costs-2023",
+      "target": "cloudflare-regex-catastrophe-2019",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "runaway-ai-agents-causing-massive-costs-2023",
+      "target": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "runaway-ai-agents-causing-massive-costs-2023",
+      "target": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "runaway-ai-agents-causing-massive-costs-2023",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-generated-code-shipped-without-review-2026",
+      "target": "ai-generated-codebases-that-can-t-be-maintained-2024",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-generated-code-shipped-without-review-2026",
+      "target": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-generated-code-shipped-without-review-2026",
+      "target": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-generated-code-shipped-without-review-2026",
+      "target": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-generated-code-shipped-without-review-2026",
+      "target": "linkedin-rag-hallucination-cascades-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-generated-code-shipped-without-review-2026",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "low-quality-ai-content-tanking-search-rankings-2023",
+      "target": "2023-2024-ai-summaries-replacing-human-analysis-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Blind Trust in AI Output",
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "low-quality-ai-content-tanking-search-rankings-2023",
+      "target": "2024-2025-nature-arxiv-synthetic-data-poisoning-model-collapse-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Blind Trust in AI Output",
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "low-quality-ai-content-tanking-search-rankings-2023",
+      "target": "ongoing-ai-summaries-replaced-understanding-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "target": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "target": "capital-one-cloud-firewall-misconfiguration-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "target": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "target": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026",
+      "target": "uber-mfa-fatigue-social-engineering-2022",
+      "weight": 0.229,
+      "tags_overlap": [
+        "data-exposure"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-summaries-replacing-human-analysis-2026",
+      "target": "2024-2025-nature-arxiv-synthetic-data-poisoning-model-collapse-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Blind Trust in AI Output",
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-summaries-replacing-human-analysis-2026",
+      "target": "ongoing-ai-summaries-replaced-understanding-2026",
+      "weight": 0.393,
+      "tags_overlap": [
+        "decision-degradation",
+        "blind-trust"
+      ],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "ai-generated-codebases-that-can-t-be-maintained-2024",
+      "target": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-generated-codebases-that-can-t-be-maintained-2024",
+      "target": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-generated-codebases-that-can-t-be-maintained-2024",
+      "target": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-generated-codebases-that-can-t-be-maintained-2024",
+      "target": "linkedin-rag-hallucination-cascades-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "ai-generated-codebases-that-can-t-be-maintained-2024",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-chatbots-without-human-escalation-2026",
+      "target": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "2023-2024-ai-chatbots-without-human-escalation-2026",
+      "target": "ongoing-ai-summaries-replaced-understanding-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "autonomous-multi-agent-loop-cost-spike-2025",
+      "target": "agentic-database-migration-data-corruption-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "autonomous-multi-agent-loop-cost-spike-2025",
+      "target": "aws-s3-typo-takes-down-us-east-1-2017",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "autonomous-multi-agent-loop-cost-spike-2025",
+      "target": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "autonomous-multi-agent-loop-cost-spike-2025",
+      "target": "fastly-single-customer-config-triggering-global-outage-2021",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "autonomous-multi-agent-loop-cost-spike-2025",
+      "target": "cloudflare-bot-management-feature-file-corruption-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "autonomous-multi-agent-loop-cost-spike-2025",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "autonomous-multi-agent-loop-cost-spike-2025",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "agentic-database-migration-data-corruption-2025",
+      "target": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "agentic-database-migration-data-corruption-2025",
+      "target": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "agentic-database-migration-data-corruption-2025",
+      "target": "datagrid-linkedin-agentic-workflow-cost-explosions-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "agentic-database-migration-data-corruption-2025",
+      "target": "aws-s3-typo-takes-down-us-east-1-2017",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "agentic-database-migration-data-corruption-2025",
+      "target": "fastly-single-customer-config-triggering-global-outage-2021",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "agentic-database-migration-data-corruption-2025",
+      "target": "cloudflare-bot-management-feature-file-corruption-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "agentic-database-migration-data-corruption-2025",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "arxiv-multi-agent-llm-system-failures-2025",
+      "target": "aws-cloudwatch-health-dashboard-co-located-failure-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "arxiv-multi-agent-llm-system-failures-2025",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "arxiv-multi-agent-llm-system-failures-2025",
+      "target": "ongoing-ai-summaries-replaced-understanding-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "target": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "weight": 0.556,
+      "tags_overlap": [
+        "agentic-ai"
+      ],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "target": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "target": "linkedin-rag-hallucination-cascades-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "target": "datagrid-linkedin-agentic-workflow-cost-explosions-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "target": "cloudflare-regex-catastrophe-2019",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "target": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026",
+      "target": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "target": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "target": "linkedin-rag-hallucination-cascades-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "target": "datagrid-linkedin-agentic-workflow-cost-explosions-2025",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "target": "cloudflare-regex-catastrophe-2019",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "target": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "galileo-ai-40-of-agentic-ai-projects-fail-2025",
+      "target": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "weight": 0.333,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025",
+      "target": "linkedin-rag-hallucination-cascades-2025",
+      "weight": 0.562,
+      "tags_overlap": [
+        "hallucination"
+      ],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Blind Trust in AI Output"
+      ]
+    },
+    {
+      "source": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "linkedin-rag-hallucination-cascades-2025",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "target": "capital-one-cloud-firewall-misconfiguration-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "target": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "target": "solarwinds-orion-supply-chain-attack-2020",
+      "weight": 0.562,
+      "tags_overlap": [
+        "supply-chain"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries",
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "target": "github-codeql-supply-chain-vulnerability-2025",
+      "weight": 0.562,
+      "tags_overlap": [
+        "supply-chain"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries",
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "target": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2024-2025-nature-arxiv-synthetic-data-poisoning-model-collapse-2026",
+      "target": "ongoing-ai-summaries-replaced-understanding-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "datagrid-linkedin-agentic-workflow-cost-explosions-2025",
+      "target": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "weight": 0.222,
+      "tags_overlap": [
+        "replication"
+      ],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "meta-shared-infrastructure-cascading-failure-2024",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "aws-cloudwatch-health-dashboard-co-located-failure-2025",
+      "weight": 0.222,
+      "tags_overlap": [
+        "observability-gap"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "weight": 0.222,
+      "tags_overlap": [
+        "rollback-failure"
+      ],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "cloudflare-ddos-rule-deployment-failure-2024",
+      "weight": 0.556,
+      "tags_overlap": [
+        "rollback-failure"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.217,
+      "tags_overlap": [
+        "hidden-dependency"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "github-mysql-replication-failure-2018",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "aws-s3-typo-takes-down-us-east-1-2017",
+      "target": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "aws-s3-typo-takes-down-us-east-1-2017",
+      "target": "fastly-single-customer-config-triggering-global-outage-2021",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "aws-s3-typo-takes-down-us-east-1-2017",
+      "target": "cloudflare-bot-management-feature-file-corruption-2025",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "aws-s3-typo-takes-down-us-east-1-2017",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.55,
+      "tags_overlap": [
+        "control-plane"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "aws-s3-typo-takes-down-us-east-1-2017",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "target": "cloudflare-regex-catastrophe-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "target": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "target": "fastly-single-customer-config-triggering-global-outage-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "target": "cloudflare-bot-management-feature-file-corruption-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "target": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "knight-capital-440m-trading-loss-in-minutes-2012",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "cloudflare-regex-catastrophe-2019",
+      "target": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "cloudflare-regex-catastrophe-2019",
+      "target": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "cloudflare-regex-catastrophe-2019",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "target": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Automation Without Reversal",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "gitlab-sysadmin-deletes-database-during-maintenance-2017",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "fastly-single-customer-config-triggering-global-outage-2021",
+      "target": "cloudflare-bot-management-feature-file-corruption-2025",
+      "weight": 0.625,
+      "tags_overlap": [
+        "global-outage",
+        "cascading-failure"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "fastly-single-customer-config-triggering-global-outage-2021",
+      "target": "meta-shared-infrastructure-cascading-failure-2024",
+      "weight": 0.292,
+      "tags_overlap": [
+        "global-outage",
+        "cascading-failure"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "fastly-single-customer-config-triggering-global-outage-2021",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.55,
+      "tags_overlap": [
+        "cascading-failure"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "fastly-single-customer-config-triggering-global-outage-2021",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "cloudflare-bot-management-feature-file-corruption-2025",
+      "target": "meta-shared-infrastructure-cascading-failure-2024",
+      "weight": 0.292,
+      "tags_overlap": [
+        "global-outage",
+        "cascading-failure"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "cloudflare-bot-management-feature-file-corruption-2025",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.55,
+      "tags_overlap": [
+        "cascading-failure"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Automation Without Reversal"
+      ]
+    },
+    {
+      "source": "cloudflare-bot-management-feature-file-corruption-2025",
+      "target": "github-codeql-supply-chain-vulnerability-2025",
+      "weight": 0.222,
+      "tags_overlap": [
+        "2025-active"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "cloudflare-bot-management-feature-file-corruption-2025",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "meta-shared-infrastructure-cascading-failure-2024",
+      "target": "cloudflare-ddos-rule-deployment-failure-2024",
+      "weight": 0.556,
+      "tags_overlap": [
+        "2024-major"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "meta-shared-infrastructure-cascading-failure-2024",
+      "target": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "weight": 0.217,
+      "tags_overlap": [
+        "cascading-failure"
+      ],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "meta-shared-infrastructure-cascading-failure-2024",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "meta-shared-infrastructure-cascading-failure-2024",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.222,
+      "tags_overlap": [
+        "2024-major"
+      ],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "meta-shared-infrastructure-cascading-failure-2024",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "aws-cloudwatch-health-dashboard-co-located-failure-2025",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "aws-cloudwatch-health-dashboard-co-located-failure-2025",
+      "target": "ongoing-ai-summaries-replaced-understanding-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "target": "cloudflare-ddos-rule-deployment-failure-2024",
+      "weight": 0.222,
+      "tags_overlap": [
+        "rollback-failure"
+      ],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "crowdstrike-faulty-falcon-sensor-update-2024",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "cloudflare-ddos-rule-deployment-failure-2024",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "cloudflare-ddos-rule-deployment-failure-2024",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.222,
+      "tags_overlap": [
+        "2024-major"
+      ],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "cloudflare-ddos-rule-deployment-failure-2024",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "kubernetes-cluster-wide-failures-51-dependency-related-2024",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "solarwinds-orion-supply-chain-attack-2020",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "github-codeql-supply-chain-vulnerability-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "uber-mfa-fatigue-social-engineering-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "unit-42-social-engineering-trend-report-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "capital-one-cloud-firewall-misconfiguration-2019",
+      "target": "ftx-32b-collapse-in-10-days-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "solarwinds-orion-supply-chain-attack-2020",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "github-codeql-supply-chain-vulnerability-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "uber-mfa-fatigue-social-engineering-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "unit-42-social-engineering-trend-report-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "twitch-source-code-leak-via-s3-misconfiguration-2021",
+      "target": "ftx-32b-collapse-in-10-days-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "solarwinds-orion-supply-chain-attack-2020",
+      "target": "github-codeql-supply-chain-vulnerability-2025",
+      "weight": 0.556,
+      "tags_overlap": [
+        "supply-chain"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries",
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "solarwinds-orion-supply-chain-attack-2020",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "solarwinds-orion-supply-chain-attack-2020",
+      "target": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "solarwinds-orion-supply-chain-attack-2020",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "github-codeql-supply-chain-vulnerability-2025",
+      "target": "log4shell-global-remote-code-execution-cve-2021-44228-2021",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Hidden Single Point of Failure"
+      ]
+    },
+    {
+      "source": "github-codeql-supply-chain-vulnerability-2025",
+      "target": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "github-codeql-supply-chain-vulnerability-2025",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "target": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "weight": 0.714,
+      "tags_overlap": [
+        "2023-pattern",
+        "account-takeover",
+        "authentication-bypass"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "target": "uber-mfa-fatigue-social-engineering-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "target": "unit-42-social-engineering-trend-report-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026",
+      "target": "ftx-32b-collapse-in-10-days-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "target": "uber-mfa-fatigue-social-engineering-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "target": "unit-42-social-engineering-trend-report-2025",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "2023-2025-expo-oauth-token-exposure-via-return-url-2026",
+      "target": "ftx-32b-collapse-in-10-days-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "uber-mfa-fatigue-social-engineering-2022",
+      "target": "unit-42-social-engineering-trend-report-2025",
+      "weight": 0.222,
+      "tags_overlap": [
+        "human-factor"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries"
+      ]
+    },
+    {
+      "source": "uber-mfa-fatigue-social-engineering-2022",
+      "target": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "weight": 0.556,
+      "tags_overlap": [
+        "social-engineering"
+      ],
+      "patterns_overlap": [
+        "Misconfigured Trust Boundaries",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "uber-mfa-fatigue-social-engineering-2022",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "unit-42-social-engineering-trend-report-2025",
+      "target": "ongoing-ai-summaries-replaced-understanding-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "lexisnexis-github-account-compromise-via-social-engineering-2024",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "quibi-1-75b-burn-in-6-months-2020",
+      "target": "theranos-9b-fraud-built-on-lies-2018",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "quibi-1-75b-burn-in-6-months-2020",
+      "target": "wework-governance-failure-at-47b-valuation-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "quibi-1-75b-burn-in-6-months-2020",
+      "target": "ftx-32b-collapse-in-10-days-2022",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "quibi-1-75b-burn-in-6-months-2020",
+      "target": "juicero-120m-for-a-juice-bag-squeezer-2017",
+      "weight": 0.562,
+      "tags_overlap": [
+        "no-pmf"
+      ],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "quibi-1-75b-burn-in-6-months-2020",
+      "target": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "quibi-1-75b-burn-in-6-months-2020",
+      "target": "2001-2020-segway-the-future-that-wasn-t-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "theranos-9b-fraud-built-on-lies-2018",
+      "target": "wework-governance-failure-at-47b-valuation-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "theranos-9b-fraud-built-on-lies-2018",
+      "target": "ftx-32b-collapse-in-10-days-2022",
+      "weight": 0.306,
+      "tags_overlap": [
+        "fraud"
+      ],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "theranos-9b-fraud-built-on-lies-2018",
+      "target": "juicero-120m-for-a-juice-bag-squeezer-2017",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "theranos-9b-fraud-built-on-lies-2018",
+      "target": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "theranos-9b-fraud-built-on-lies-2018",
+      "target": "2001-2020-segway-the-future-that-wasn-t-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "wework-governance-failure-at-47b-valuation-2019",
+      "target": "juicero-120m-for-a-juice-bag-squeezer-2017",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "wework-governance-failure-at-47b-valuation-2019",
+      "target": "1975-2012-kodak-invented-digital-buried-it-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "The Innovator's Dilemma"
+      ]
+    },
+    {
+      "source": "ftx-32b-collapse-in-10-days-2022",
+      "target": "juicero-120m-for-a-juice-bag-squeezer-2017",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "juicero-120m-for-a-juice-bag-squeezer-2017",
+      "target": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014",
+      "weight": 0.312,
+      "tags_overlap": [
+        "hardware"
+      ],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "juicero-120m-for-a-juice-bag-squeezer-2017",
+      "target": "2001-2020-segway-the-future-that-wasn-t-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit"
+      ]
+    },
+    {
+      "source": "jawbone-3b-wearables-pioneer-to-liquidation-2017",
+      "target": "google-glass-technology-ahead-of-society-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "jawbone-3b-wearables-pioneer-to-liquidation-2017",
+      "target": "google-wave-technically-impressive-user-failure-2012",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "jawbone-3b-wearables-pioneer-to-liquidation-2017",
+      "target": "windows-phone-ecosystem-neglect-2017",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "jawbone-3b-wearables-pioneer-to-liquidation-2017",
+      "target": "google-the-social-network-nobody-wanted-2019",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success",
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "jawbone-3b-wearables-pioneer-to-liquidation-2017",
+      "target": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014",
+      "weight": 0.222,
+      "tags_overlap": [
+        "hardware"
+      ],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "jawbone-3b-wearables-pioneer-to-liquidation-2017",
+      "target": "facebook-home-replacing-android-alienating-users-2013",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "google-glass-technology-ahead-of-society-2014",
+      "target": "google-the-social-network-nobody-wanted-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "google-glass-technology-ahead-of-society-2014",
+      "target": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "google-glass-technology-ahead-of-society-2014",
+      "target": "2001-2020-segway-the-future-that-wasn-t-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "google-glass-technology-ahead-of-society-2014",
+      "target": "ai-pilots-fail-due-to-integration-complexity-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "google-glass-technology-ahead-of-society-2014",
+      "target": "2007-2013-nokia-ignoring-iphone-the-fall-of-a-giant-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "google-glass-technology-ahead-of-society-2014",
+      "target": "blockbuster-passing-on-netflix-50m-decision-100b-cost-2000",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "google-wave-technically-impressive-user-failure-2012",
+      "target": "windows-phone-ecosystem-neglect-2017",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "google-wave-technically-impressive-user-failure-2012",
+      "target": "google-the-social-network-nobody-wanted-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "google-wave-technically-impressive-user-failure-2012",
+      "target": "facebook-home-replacing-android-alienating-users-2013",
+      "weight": 0.562,
+      "tags_overlap": [
+        "ux-mismatch"
+      ],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "google-wave-technically-impressive-user-failure-2012",
+      "target": "2013-2019-yahoo-acquiring-tumblr-1-1b-to-3m-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "windows-phone-ecosystem-neglect-2017",
+      "target": "google-the-social-network-nobody-wanted-2019",
+      "weight": 0.306,
+      "tags_overlap": [
+        "late-entry"
+      ],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "windows-phone-ecosystem-neglect-2017",
+      "target": "facebook-home-replacing-android-alienating-users-2013",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "windows-phone-ecosystem-neglect-2017",
+      "target": "2013-2019-yahoo-acquiring-tumblr-1-1b-to-3m-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "google-the-social-network-nobody-wanted-2019",
+      "target": "facebook-home-replacing-android-alienating-users-2013",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014",
+      "target": "2001-2020-segway-the-future-that-wasn-t-2026",
+      "weight": 0.625,
+      "tags_overlap": [
+        "wrong-market",
+        "premium-pricing"
+      ],
+      "patterns_overlap": [
+        "Money \u2260 Product-Market Fit",
+        "Overconfidence From Past Success"
+      ]
+    },
+    {
+      "source": "facebook-home-replacing-android-alienating-users-2013",
+      "target": "2013-2019-yahoo-acquiring-tumblr-1-1b-to-3m-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Ecosystem Neglect"
+      ]
+    },
+    {
+      "source": "1975-2012-kodak-invented-digital-buried-it-2026",
+      "target": "boeing-737-max-mcas-when-safety-became-optional-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "The Innovator's Dilemma"
+      ]
+    },
+    {
+      "source": "1975-2012-kodak-invented-digital-buried-it-2026",
+      "target": "2007-2013-nokia-ignoring-iphone-the-fall-of-a-giant-2026",
+      "weight": 0.312,
+      "tags_overlap": [
+        "innovators-dilemma"
+      ],
+      "patterns_overlap": [
+        "The Innovator's Dilemma"
+      ]
+    },
+    {
+      "source": "1975-2012-kodak-invented-digital-buried-it-2026",
+      "target": "blockbuster-passing-on-netflix-50m-decision-100b-cost-2000",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "The Innovator's Dilemma"
+      ]
+    },
+    {
+      "source": "ongoing-ai-summaries-replaced-understanding-2026",
+      "target": "ai-pilots-fail-due-to-integration-complexity-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "ongoing-ai-summaries-replaced-understanding-2026",
+      "target": "boeing-737-max-mcas-when-safety-became-optional-2019",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "ongoing-ai-summaries-replaced-understanding-2026",
+      "target": "2013-2019-yahoo-acquiring-tumblr-1-1b-to-3m-2026",
+      "weight": 0.25,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "Decision-Making by Proxy"
+      ]
+    },
+    {
+      "source": "2007-2013-nokia-ignoring-iphone-the-fall-of-a-giant-2026",
+      "target": "blockbuster-passing-on-netflix-50m-decision-100b-cost-2000",
+      "weight": 0.5,
+      "tags_overlap": [],
+      "patterns_overlap": [
+        "The Innovator's Dilemma",
+        "Overconfidence From Past Success"
+      ]
+    }
+  ]
+}

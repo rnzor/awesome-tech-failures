@@ -1,0 +1,406 @@
+{
+  "src_1a1eba61": {
+    "url": "https://www.bbc.com/news/technology-35902104",
+    "status": "active"
+  },
+  "src_2487df1a": {
+    "url": "https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/",
+    "status": "active"
+  },
+  "src_10ea9195": {
+    "url": "https://ethicsunwrapped.utexas.edu/case-study/a-i-trust-tays-trespasses",
+    "status": "active"
+  },
+  "src_f8b36954": {
+    "url": "https://www.enterpriseai.news/2023/11/when-ai-agents-go-wrong-the-growing-pain-of-autonomous-systems/",
+    "status": "active"
+  },
+  "src_3b001119": {
+    "url": "https://news.ycombinator.com/item?id=37810234",
+    "status": "active"
+  },
+  "src_f6f72569": {
+    "url": "https://www.langchain.com/blog/agent-safety-guardrails",
+    "status": "active"
+  },
+  "src_a8c45706": {
+    "url": "https://news.ycombinator.com/item?id=37291821",
+    "status": "active"
+  },
+  "src_8eb7cf3b": {
+    "url": "https://github.com/langchain-ai/langchain/issues/10453",
+    "status": "active"
+  },
+  "src_aa17644e": {
+    "url": "https://community.openai.com/t/gpt-agent-burned-7000-overnight/4821",
+    "status": "active"
+  },
+  "src_66021421": {
+    "url": "https://stackoverflow.blog/2023/11/16/the-risks-of-ai-code-generators/",
+    "status": "active"
+  },
+  "src_d2c6d1ca": {
+    "url": "https://news.ycombinator.com/item?id=38420156",
+    "status": "active"
+  },
+  "src_6cf52c78": {
+    "url": "https://www.getrevue.co/profileengineering/p/why-we-stopped-merging-ai-code-blindly",
+    "status": "active"
+  },
+  "src_8f5f0be1": {
+    "url": "https://developers.google.com/search/blog/2022/12/helpful-content-update",
+    "status": "active"
+  },
+  "src_67b5b749": {
+    "url": "https://www.ahrefs.com/blog/ai-content-seo/",
+    "status": "active"
+  },
+  "src_9fafcbd6": {
+    "url": "https://www.searchenginejournal.com/ai-content-seo-risks/",
+    "status": "active"
+  },
+  "src_5131921d": {
+    "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "status": "active"
+  },
+  "src_5760384d": {
+    "url": "https://www.microsoft.com/en-us/security/blog/2023/10/understanding-prompt-injection/",
+    "status": "active"
+  },
+  "src_2006a3ea": {
+    "url": "https://blog.langchain.com/prompt-injection-use-cases/",
+    "status": "active"
+  },
+  "src_63cd8310": {
+    "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries",
+    "status": "active"
+  },
+  "src_d52d8f85": {
+    "url": "https://hbr.org/2023/09/how-ai-is-changing-decision-making",
+    "status": "active"
+  },
+  "src_d979f981": {
+    "url": "https://news.ycombinator.com/item?id=39102457",
+    "status": "active"
+  },
+  "src_d8408623": {
+    "url": "https://news.ycombinator.com/item?id=39852103",
+    "status": "active"
+  },
+  "src_0a896346": {
+    "url": "https://www.getrevue.co/profileengineering/p/vibe-coding-retrospective",
+    "status": "active"
+  },
+  "src_d8a65fdb": {
+    "url": "https://www.indiehackers.com/post/what-happened-when-we-let-ai-write-our-whole-backend",
+    "status": "active"
+  },
+  "src_90c2d787": {
+    "url": "https://www.cbc.ca/news/canada/air-canada-ai-chatbot-misinformation-1.7139752",
+    "status": "active"
+  },
+  "src_93e54490": {
+    "url": "https://news.ycombinator.com/item?id=40231568",
+    "status": "active"
+  },
+  "src_6035f067": {
+    "url": "https://www.gsb.stanford.edu/insights/when-automation-goes-wrong-customer-service",
+    "status": "active"
+  },
+  "src_0a420d13": {
+    "url": "https://arxiv.org/html/2601.08815v1",
+    "status": "active"
+  },
+  "src_2bb6cc84": {
+    "url": "https://youssefh.substack.com/p/we-spent-47000-running-ai-agents",
+    "status": "active"
+  },
+  "src_a0a6abe1": {
+    "url": "https://arxiv.org/html/2512.08290v1",
+    "status": "active"
+  },
+  "src_0a742e96": {
+    "url": "https://www.matechco.com/blog/agentic-ai-hidden-risks",
+    "status": "active"
+  },
+  "src_8a1af609": {
+    "url": "https://www.youtube.com/watch?v=QXQfw3fiR8k",
+    "status": "active"
+  },
+  "src_ff82dbed": {
+    "url": "https://muhammadraza.me/2025/building-ai-agents-devops-automation/",
+    "status": "active"
+  },
+  "src_d5fb4c7b": {
+    "url": "https://www.kellton.com/kellton-tech-blog/revealing-top-data-migration-trends",
+    "status": "active"
+  },
+  "src_3d4e24e0": {
+    "url": "https://kanerika.com/blogs/data-governance-challenges-in-agentic-ai-systems/",
+    "status": "active"
+  },
+  "src_0e077647": {
+    "url": "https://arxiv.org/abs/2410.12352",
+    "status": "active"
+  },
+  "src_169a6db2": {
+    "url": "https://hypersensesoftware.com/blog/88-percent-ai-agents-fail-production",
+    "status": "active"
+  },
+  "src_58f211b9": {
+    "url": "https://www.techcrunch.com/2025/11/ai-agents-fail-rate",
+    "status": "active"
+  },
+  "src_099b9578": {
+    "url": "https://www.gartner.com/en/articles/ai-agent-failure-rates-2026",
+    "status": "active"
+  },
+  "src_9de4a73a": {
+    "url": "https://dsn2024uq.github.io/Proceedings/pdfs/DSN2024-6rvE3SSpzFYmysif75Dkid/410500a001/410500a001.pdf",
+    "status": "active"
+  },
+  "src_ab444b2a": {
+    "url": "https://kubernetes.io/blog/2025/10/20/seven-kubernetes-pitfalls-and-how-to-avoid/",
+    "status": "active"
+  },
+  "src_7a8fea77": {
+    "url": "https://dev.to/kuldeep_paul/ten-failure-modes-of-rag-nobody-talks-about-and-how-to-detect-them-systematically-7i4",
+    "status": "active"
+  },
+  "src_2deecafb": {
+    "url": "https://futureagi.com/blogs/rag-hallucinations-future-agi-2025",
+    "status": "active"
+  },
+  "src_09941b83": {
+    "url": "https://www.linkedin.com/pulse/why-rag-projects-fail-2025-adrian-faryniuk/",
+    "status": "active"
+  },
+  "src_71cfe95f": {
+    "url": "https://www.pillar.security/blog/rules-file-backdoor",
+    "status": "active"
+  },
+  "src_9b525a57": {
+    "url": "https://www.nature.com/articles/s41586-024-07566-y",
+    "status": "active"
+  },
+  "src_0afb3a43": {
+    "url": "https://www.linkedin.com/pulse/your-ai-agent-just-burned-10x-weekly-budget-nav-bhasin/",
+    "status": "active"
+  },
+  "src_ad4dd197": {
+    "url": "https://github.blog/2018-10-30-october-incident-report/",
+    "status": "active"
+  },
+  "src_8eb18ca2": {
+    "url": "https://aws.amazon.com/message/41926/",
+    "status": "active"
+  },
+  "src_d8624663": {
+    "url": "https://www.sec.gov/spotlight/equity-markets-structure-committee/knight-capital-report.pdf",
+    "status": "active"
+  },
+  "src_5abbf276": {
+    "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/",
+    "status": "active"
+  },
+  "src_d81edb29": {
+    "url": "https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/",
+    "status": "active"
+  },
+  "src_2bdc5616": {
+    "url": "https://www.fastly.com/blog/summary-of-june-8-incident",
+    "status": "active"
+  },
+  "src_74451956": {
+    "url": "https://blog.cloudflare.com/outage-report-november-18-2025/",
+    "status": "active"
+  },
+  "src_d5af43e8": {
+    "url": "https://www.cnbc.com/2024/12/11/metas-facebook-instagram-go-down.html",
+    "status": "active"
+  },
+  "src_a51ad98f": {
+    "url": "https://www.linkedin.com/pulse/when-observability-fails-what-we-can-learn-from-aws-outage/",
+    "status": "active"
+  },
+  "src_7bbeb8e3": {
+    "url": "https://www.crowdstrike.com/blog/falcon-content-update-remediation-and-guidance-hub/",
+    "status": "active"
+  },
+  "src_4e696c79": {
+    "url": "https://blog.cloudflare.com/incident-report-june-20-2024/",
+    "status": "active"
+  },
+  "src_873431c7": {
+    "url": "https://github.com/doy2020/mutiny",
+    "status": "active"
+  },
+  "src_65fdb295": {
+    "url": "https://www.usenix.org/conference/fast24/presentation/paper-jiang",
+    "status": "active"
+  },
+  "src_7400e270": {
+    "url": "https://www.justice.gov/opa/press-release/file/1244101/download",
+    "status": "active"
+  },
+  "src_09324809": {
+    "url": "https://www.breachsense.com/blog/equifax-data-breach/",
+    "status": "active"
+  },
+  "src_0246c327": {
+    "url": "https://www.bbc.com/news/technology-58817658",
+    "status": "active"
+  },
+  "src_212833af": {
+    "url": "https://cloud.google.com/blog/topics/threat-intelligence/sunburst-backdoor-analysis",
+    "status": "active"
+  },
+  "src_09c29544": {
+    "url": "https://www.praetorian.com/blog/codeqleaked-public-secrets-exposure/",
+    "status": "active"
+  },
+  "src_7f2d197a": {
+    "url": "https://logging.apache.org/log4j/2.x/security.html",
+    "status": "active"
+  },
+  "src_b2a6ffea": {
+    "url": "https://www.descope.com/blog/post/oauth-vulnerabilities",
+    "status": "active"
+  },
+  "src_0fa032dc": {
+    "url": "https://www.uber.com/newsroom/security-update/",
+    "status": "active"
+  },
+  "src_a8bd888a": {
+    "url": "https://unit42.paloaltonetworks.com/global-incident-response-report/",
+    "status": "active"
+  },
+  "src_369530f3": {
+    "url": "https://techcrunch.com/2025/05/27/data-broker-lexisnexis-breach-exposed-364k-people/",
+    "status": "active"
+  },
+  "src_8a6696e4": {
+    "url": "https://www.theinformation.com/articles/quibi-the-rise-and-fall-of-a-1-75-billion-failure",
+    "status": "active"
+  },
+  "src_1b7e78fc": {
+    "url": "https://www.sec.gov/news/press-release/2018-41",
+    "status": "active"
+  },
+  "src_bc01a197": {
+    "url": "https://www.wsj.com/articles/theranos-has-struggled-with-blood-tests-1444881901",
+    "status": "active"
+  },
+  "src_80e54824": {
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=wework&type=S-1",
+    "status": "active"
+  },
+  "src_b0e71966": {
+    "url": "https://www.wsj.com/articles/this-is-not-the-way-everybody-behaves-how-adam-neumanns-over-the-top-style-built-wework-11568823827",
+    "status": "active"
+  },
+  "src_7ad77f11": {
+    "url": "https://restructuring.ra.kroll.com/FTX/",
+    "status": "active"
+  },
+  "src_cd871502": {
+    "url": "https://www.justice.gov/opa/pr/ftx-founder-sam-bankman-fried-sentenced-25-years-imprisonment",
+    "status": "active"
+  },
+  "src_38873a33": {
+    "url": "https://www.bloomberg.com/news/features/2017-04-19/silicon-valley-s-400-juicer-may-be-feeling-the-squeeze",
+    "status": "active"
+  },
+  "src_266d0373": {
+    "url": "https://techcrunch.com/2017/07/06/jawbone-is-going-out-of-business/",
+    "status": "active"
+  },
+  "src_e4fe32e1": {
+    "url": "https://www.theverge.com/2017/7/6/15929510/jawbone-going-out-of-business-fitness-tracking",
+    "status": "active"
+  },
+  "src_b6767bdf": {
+    "url": "https://www.investopedia.com/articles/investing/052115/how-why-google-glass-failed.asp",
+    "status": "active"
+  },
+  "src_f03b0efa": {
+    "url": "https://googleblog.blogspot.com/2012/08/update-on-google-wave.html",
+    "status": "active"
+  },
+  "src_75669e52": {
+    "url": "https://www.theverge.com/2017/10/8/16437700/microsoft-windows-phone-dead",
+    "status": "active"
+  },
+  "src_b70def16": {
+    "url": "https://blog.google/technology/safety-security/project-strobe/",
+    "status": "active"
+  },
+  "src_c6c8589b": {
+    "url": "https://www.theverge.com/2019/4/2/18290637/google-plus-shutdown-consumer-version-today",
+    "status": "active"
+  },
+  "src_cce9e273": {
+    "url": "https://www.fastcompany.com/3039887/fire-phone-was-a-misfire-but-amazon-isnt-done-reinventing-the-smartphone",
+    "status": "active"
+  },
+  "src_a2e57814": {
+    "url": "https://www.theverge.com/2014/12/16/7404231/amazon-fire-phone-83-million-loss",
+    "status": "active"
+  },
+  "src_387c18d4": {
+    "url": "https://www.theverge.com/2013/5/13/4325050/htc-first-facebook-home-phone-report-card",
+    "status": "active"
+  },
+  "src_8e6d6370": {
+    "url": "https://techcrunch.com/2013/06/14/facebook-home-1-million/",
+    "status": "active"
+  },
+  "src_2ec37a88": {
+    "url": "https://www.wired.com/story/rise-and-fall-of-the-segway/",
+    "status": "active"
+  },
+  "src_21907b64": {
+    "url": "https://www.bbc.com/news/technology-53181792",
+    "status": "active"
+  },
+  "src_24847f62": {
+    "url": "https://quartr.com/insights/edge/the-dilemma-that-brought-down-kodak",
+    "status": "active"
+  },
+  "src_dd360577": {
+    "url": "https://www.linkedin.com/pulse/gemini-3-continually-hallucinates-gaslights-face-rag-errors-jesse-vyete",
+    "status": "active"
+  },
+  "src_2165205b": {
+    "url": "https://www.congress.gov/116/crpt/hrpt364/CRPT-116hrpt364.pdf",
+    "status": "active"
+  },
+  "src_9b35209e": {
+    "url": "https://www.nytimes.com/2019/03/23/business/boeing-737-max-crash.html",
+    "status": "active"
+  },
+  "src_72e1956e": {
+    "url": "https://www.wsj.com/articles/verizon-sells-tumblr-to-wordpress-owner-11565627453",
+    "status": "active"
+  },
+  "src_075eca9b": {
+    "url": "https://www.theverge.com/2019/8/12/20802639/tumblr-verizon-sold-wordpress-blogging-yahoo",
+    "status": "active"
+  },
+  "src_9385d1de": {
+    "url": "https://knowledge.insead.edu/strategy/nokias-fall-grace",
+    "status": "active"
+  },
+  "src_a2fb23b6": {
+    "url": "https://hbr.org/2010/07/how-nokia-lost-the-smartphone",
+    "status": "active"
+  },
+  "src_25a0d8b4": {
+    "url": "https://www.inc.com/minda-zetlin/netflix-blockbuster-meeting-marc-randolph-reed-hastings-john-antioco.html",
+    "status": "active"
+  },
+  "src_ed188e38": {
+    "url": "https://www.businessinsider.com/blockbuster-ceo-passed-up-chance-to-buy-netflix-for-50-million-2015-7",
+    "status": "active"
+  }
+}

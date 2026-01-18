@@ -8,9 +8,12 @@ Warning: Overwrites agent/entries.ndjson
 import json
 import re
 import sys
+import hashlib
 import yaml
 from pathlib import Path
 
+def generate_source_id(url):
+    return f"src_{hashlib.md5(url.encode()).hexdigest()[:8]}"
 
 def parse_markdown_entry(frontmatter_raw, body_raw):
     """Parse a single entry's frontmatter and body."""
@@ -20,12 +23,15 @@ def parse_markdown_entry(frontmatter_raw, body_raw):
         print(f"Error parsing YAML: {e}")
         return None
 
-    # Normalization
     if not data:
         return None
 
+    # Resolve Source IDs
+    sources = data.get('sources', [])
+    if isinstance(sources, list):
+        data['source_ids'] = [generate_source_id(s) for s in sources if isinstance(s, str) and s.startswith('http')]
+
     # Extract Summary (What happened)
-    # Matches text between **What happened:** and next section (**Impact:** or **Root cause:**)
     summary_match = re.search(r'\*\*What happened:\*\*\s*(.*?)\s*\n\s*\*\*', body_raw, re.DOTALL)
     if summary_match:
         data['summary'] = summary_match.group(1).strip().replace('\n', ' ')
@@ -47,9 +53,22 @@ def parse_markdown_entry(frontmatter_raw, body_raw):
         if lessons:
             data['lessons'] = lessons
 
-    # Ensure required array fields exist
+    # Extract Patterns
+    patterns_section = re.search(r'\*\*Related failure patterns:\*\*\s*\n((?:(?!\n\n).)*)', body_raw, re.DOTALL)
+    if patterns_section:
+        raw_patterns = patterns_section.group(1)
+        patterns = []
+        for line in raw_patterns.split('\n'):
+            line = line.strip()
+            if line.startswith('- '):
+                patterns.append(line[2:].strip())
+        if patterns:
+            data['patterns'] = patterns
+
     if 'lessons' not in data:
         data['lessons'] = []
+    if 'patterns' not in data:
+        data['patterns'] = []
     
     # Generate ID if missing (from title)
     # Most entries seem to lack 'id' in frontmatter in the new ones?

@@ -74,7 +74,10 @@ This repo includes a machine-readable layer for AI agents to use for RAG, policy
 |----------|-------------|
 | [**AGENTS.md**](AGENTS.md) | Operating policy for agents |
 | [**agent/schema.json**](agent/schema.json) | Structured data contract |
-| [**agent/entries.ndjson**](agent/entries.ndjson) | Structured failure entries (21+) |
+| [**agent/entries.ndjson**](agent/entries.ndjson) | Structured failure entries (62) |
+| [**agent/sources.json**](agent/sources.json) | Source registry with stable IDs |
+| [**agent/graph.json**](agent/graph.json) | Similarity graph (edges & weights) |
+| [**agent/embeddings.ndjson**](agent/embeddings.ndjson) | Pre-computed embeddings |
 | [**agent/patterns.ndjson**](agent/patterns.ndjson) | Pattern definitions |
 | [**agent/embeddings_guide.md**](agent/embeddings_guide.md) | RAG integration guide |
 | [**agent/api_spec.yaml**](agent/api_spec.yaml) | OpenAPI 3.0 specification |
