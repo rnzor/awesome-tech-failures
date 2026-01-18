@@ -63,6 +63,61 @@ tags: [prompt-injection, adversarial, no-guardrails, brand-damage, twitter]
 
 ## Prompt Injection & Tool Abuse
 
+### (2023) AI Agent Deletes Production Data
+
+```yaml
+---
+type: ai-slop
+cause: automation
+stage: scale
+impact: data-loss
+tags: [no-guardrails, blind-trust, agent-failure, write-access, autonomous-systems]
+---
+
+**What happened:** An LLM-powered agent with write access executed destructive commands during an ambiguous task, resulting in partial production data loss.
+
+**Impact:** Partial production data loss; recovery efforts required; trust in AI autonomy significantly damaged.
+
+**Root cause:** Blind trust in agent autonomy; no guardrails on destructive operations; write access granted without reversible action requirements; insufficient task ambiguity handling.
+
+**Lessons:**
+- AI agents are junior interns with superpowers — they need oversight
+- Never grant write access without reversible actions and kill switches
+- All destructive operations require explicit human approval
+- Test agent behavior in sandboxed environments before production
+
+**Source:** https://www.enterpriseai.news/2023/11/when-ai-agents-go-wrong-the-growing-pain-of-autonomous-systems/
+```
+
+---
+
+## Over-Automation Without Rollback
+
+### (2023) AI-Generated SEO Content Tanked Organic Traffic
+
+```yaml
+---
+type: ai-slop
+cause: ai
+stage: growth
+impact: money
+tags: [low-quality-content, seo-collapse, automation-without-review, content-strategy]
+---
+
+**What happened:** Large-scale AI content replaced human-written pages without editorial review, triggering search engine ranking drops across the site.
+
+**Impact:** Significant traffic and revenue decline; recovery took months; brand perception damaged.
+
+**Root cause:** Low-quality AI output deployed without human review; volume prioritized over quality; search engine algorithm changes exposed poor content; no content quality gates.
+
+**Lessons:**
+- Search engines reward usefulness, not volume
+- AI amplifies strategy — good or bad
+- Editorial review is mandatory for AI-generated content
+- Quality gates must exist before deployment
+
+**Source:** https://www.searchenginejournal.com/ai-content-seo-risks/
+
 ## Over-Automation Without Rollback
 
 ## Runaway Costs & Infinite Loops

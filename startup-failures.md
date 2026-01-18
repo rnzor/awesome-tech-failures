@@ -38,25 +38,25 @@ tags: [free-form, tags]
 ```yaml
 ---
 type: startup
-cause: no-pmf
+cause: incentives
 stage: growth
 impact: money
-tags: [timing, market-context, halo-effect, wrong-assumptions, content-strategy]
+tags: [no-pmf, timing, distribution, wrong-assumptions, premium-content]
 ---
 
-**What happened:** Quibi raised $1.75B to build "Netflix for your phone" with 10-minute premium content. Launched April 2020, shut down October 2020. Burned through nearly $2B in under 7 months.
+**What happened:** Quibi raised $1.75B to build "Netflix for your phone" with premium short-form content. Launched April 2020, shut down October 2020. Burned through nearly $2B in under 7 months.
 
-**Impact:** All investor capital lost; 500+ employees laid off; became case study in timing, PMF, and overconfidence. Content library sold for scraps.
+**Impact:** Company closed; investors wiped; 500+ employees laid off; content library sold for scraps; became definitive case study in PMF failure.
 
-**Root cause:** Wrong market assumptions (on-the-go viewing irrelevant during COVID); content didn't justify subscription; timing destroyed core use case; too much faith in "dream team" rather than product-market fit.
+**Root cause:** No product-market fit; fundamentally wrong assumptions about mobile viewing habits; content didn't justify subscription; premium positioning meaningless without habit formation; distribution strategy failed.
 
 **Lessons:**
-- Market timing isn't adjustable. If your use case becomes irrelevant, you're stuck.
-- "Dream team" doesn't substitute for product-market fit
+- Money doesn't buy demand
+- "Premium" means nothing without habit
+- Timing assumptions must be tested, not assumed
 - Content differentiation must be obvious, not explained
-- Validate assumptions with minimal spend before scaling
 
-**Source:** https://www.choicehacking.com/2024/01/03/the-psychology-behind-quibis-2b-fail/
+**Source:** https://www.theinformation.com/articles/quibi-the-rise-and-fall-of-a-1-75-billion-failure
 ```
 
 ---

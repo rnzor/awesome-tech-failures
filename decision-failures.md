@@ -63,6 +63,36 @@ tags: [innovators-dilemma, fear-of-cannibalization, short-term-incentives, misse
 
 ## No Ownership
 
+### (Ongoing) AI Summaries Replaced Understanding
+
+```yaml
+---
+type: decision
+cause: ai
+stage: scale
+impact: morale
+tags: [blind-trust, decision-degradation, ai-slop, delegation-thinking, leadership-failure]
+---
+
+**What happened:** Teams across multiple organizations began relying on AI-generated summaries instead of reading source data, leading to cascading bad strategic decisions based on incomplete understanding.
+
+**Impact:** Strategic misprioritization; lost time correcting errors; team morale damage as decisions based on summaries proved wrong; rebuild of trust in data required.
+
+**Root cause:** Delegating thinking, not just toil; AI used to compress data but output treated as authoritative; leaders stopped verifying against sources; "efficiency" prioritized over accuracy.
+
+**Lessons:**
+- AI should compress data, not replace judgment
+- Leaders must still read the source for critical decisions
+- Summary is a starting point, not the endpoint of reasoning
+- Verify AI output against source material for high-stakes decisions
+
+**Source:** https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries
+```
+
+---
+
+## Incentive Mismatch
+
 ## Incentive Mismatch
 
 ## Meeting-Driven Development

@@ -59,6 +59,58 @@ tags: [premature, privacy, fashion, user-acceptance, enterprise-pivot]
 **Source:** https://www.investopedia.com/articles/investing/052115/how-why-google-glass-failed.asp
 ```
 
+### (2012) Google Wave — Technically Impressive, User Failure
+
+```yaml
+---
+type: product
+cause: incentives
+stage: growth
+impact: users
+tags: [ux-mismatch, wrong-market, documentation-heavy, collaboration-complexity]
+---
+
+**What happened:** Google Wave launched as a "revolutionary" collaboration tool combining email, chat, and documents. Despite technical innovation, users couldn't understand its value proposition.
+
+**Impact:** Product discontinued; user adoption never materialized; valuable technology absorbed into other products; significant engineering investment lost.
+
+**Root cause:** UX complexity too high; unclear value proposition; users needed tutorials just to understand the product; "cool tech" doesn't create demand; marketing confused novelty with value.
+
+**Lessons:**
+- Cool tech doesn't create demand
+- If users need tutorials, you're already in trouble
+- Value proposition must be obvious within seconds
+- Technical excellence ≠ product success
+
+**Source:** https://googleblog.blogspot.com/2012/08/update-on-google-wave.html
+```
+
+### (2017) Windows Phone — Ecosystem Neglect
+
+```yaml
+---
+type: product
+cause: incentives
+stage: scale
+impact: users
+tags: [ecosystem-failure, platform-risk, developer-trust, late-entry, app-gap]
+---
+
+**What happened:** Windows Phone launched with a strong, innovative OS but failed to attract app developers. By 2017, the platform was abandoned, leaving users without support or apps.
+
+**Impact:** Platform abandoned; billions in investment lost; user trust destroyed; developers who invested in the platform left stranded; mobile market permanently lost to iOS/Android.
+
+**Root cause:** Late market entry; developer ecosystem neglected; app gap persisted too long; developer trust is non-renewable; competing platforms had insurmountable network effects.
+
+**Lessons:**
+- Platforms live or die by ecosystems
+- Developer trust is non-renewable — once burned, they won't return
+- Late entry requires 10x better, not 10% better
+- App ecosystem gap is a death spiral, not a temporary problem
+
+**Source:** https://www.theverge.com/2017/10/8/16437700/microsoft-windows-phone-dead
+```
+
 ---
 
 ## Ecosystem Dependencies

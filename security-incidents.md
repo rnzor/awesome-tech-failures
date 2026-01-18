@@ -32,6 +32,32 @@ tags: [free-form, tags]
 
 ## Data Breaches
 
+### (2019) Capital One — Cloud Firewall Misconfiguration
+
+```yaml
+---
+type: security
+cause: human-error
+stage: scale
+impact: trust
+tags: [misconfiguration, iam, ssrf, cloud-security, over-privileged-access]
+---
+
+**What happened:** An attacker exploited a misconfigured cloud firewall combined with a server-side request forgery (SSRF) vulnerability to access sensitive customer data stored in AWS.
+
+**Impact:** Approximately 100 million customer records exposed; names, addresses, credit scores, and bank account numbers compromised; $80M regulatory fine; significant reputational damage.
+
+**Root cause:** Misconfigured IAM roles with over-privileged access; internal services assumed trusted without validation; firewall rules too permissive; SSRF vulnerability in web application firewall.
+
+**Lessons:**
+- Cloud security failures are often configuration, not complex exploits
+- Assume internal services will be abused — apply zero-trust principles
+- IAM permissions should follow least-privilege, always
+- Regular configuration audits catch what vulnerability scans miss
+
+**Source:** https://www.justice.gov/opa/press-release/file/1244101/download
+```
+
 ### (2017) Equifax — Unpatched Vulnerability
 
 ```yaml
