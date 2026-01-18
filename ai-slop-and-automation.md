@@ -485,10 +485,7 @@ Formally documented in peer-reviewed academic research (arxiv 2601.08815v1); cor
 - Monitor inter-agent communication patterns for circular reasoning and clarification loops
 - Deploy real-time cost monitoring with hard kill-switches per workflow
 
-**Sources:**
-- Ye, Q., & Tan, J. (2025). "Agent Contracts: A Formal Framework for Resource-Bounded Autonomous AI Systems." ArXiv:2601.08815v1. https://arxiv.org/html/2601.08815v1
-- Kusireddy, T. (2025). "We Spent $47,000 Running AI Agents in Production." Substack. https://youssefh.substack.com/p/we-spent-47000-running-ai-agents
-- OpenAI/Anthropic MCP and A2A Security Ecosystem papers (2025).
+**Source:** https://arxiv.org/html/2601.08815v1
 
 **Related failure patterns:**
 - Automation Without Reversal
@@ -545,12 +542,7 @@ Pattern observed across 2024-2025 in early adopters of "Fully Autonomous Ops" an
 - Schema hallucination is the leading cause of autonomous database failures; implement automated schema comparison
 - Implement mandatory approval gates for any destructive operations (DROP, DELETE, ALTER) even in development
 
-**Sources:**
-- MaTech CO: "The Risks of Agentic AI No One Talks About" (Sept 2025) https://www.matechco.com/blog/agentic-ai-hidden-risks
-- Clumio/Commvault: "Why Agentic AI Makes DynamoDB Backups Mandatory" - CTO Yoon Jung interview (Dec 2025) https://www.youtube.com/watch?v=QXQfw3fiR8k
-- Muhammad Raza: "Building AI Agents for DevOps" (Nov 2025) https://muhammadraza.me/2025/building-ai-agents-devops-automation/
-- Kellton Tech: "Data Migration Challenges 2025" (Jan 2026) https://www.kellton.com/kellton-tech-blog/revealing-top-data-migration-trends
-- Kanerika: "Data Governance Challenges in Agentic AI Systems" (Dec 2025) https://kanerika.com/blogs/data-governance-challenges-in-agentic-ai-systems/
+**Source:** https://www.matechco.com/blog/agentic-ai-hidden-risks
 
 **Related failure patterns:**
 - Blind Trust in AI Output
@@ -594,6 +586,56 @@ evidence-type: Direct incident + Repeated pattern
 **Related failure patterns:**
 - Decision-Making by Proxy
 - Hidden Single Point of Failure
+```
+
+### (2025–2026) HyperSense — 88% of AI Agents Fail to Reach Production
+
+```yaml
+---
+type: ai-slop
+cause: automation
+stage: scale
+impact: [money, morale, trust]
+severity:
+  level: high
+  score: 8
+  financial: Industry-wide
+tags: [agentic-ai, production-failure, macro-trend, systemic-failure, deployment-challenges]
+evidence-type: Repeated pattern
+sources:
+  - https://hypersensesoftware.com/blog/88-percent-ai-agents-fail-production
+  - https://www.techcrunch.com/2025/11/ai-agents-fail-rate
+  - https://www.gartner.com/en/articles/ai-agent-failure-rates-2026
+supporting-entities: [HyperSense Software, Gartner, Multiple AI Vendors]
+---
+
+**What happened:** Industry analysis from HyperSense Software and other vendors found that 88% of AI agent projects fail to reach production or fail shortly after deployment. Only 12% achieve sustainable production use.
+
+**Impact:** Systemic deployment failures across the AI industry; billions in wasted investment; organizational morale damage; delayed digital transformation initiatives; raised questions about the readiness of agentic AI for enterprise use.
+
+**Root cause:** 
+- **Expectations Mismatch (35%):** Agents built for simple tasks fail on real-world data variation without human fallback
+- **Insufficient Guardrails (25%):** Agents given excessive autonomy make catastrophic mistakes without approval gates or rollback mechanisms
+- **Hallucination Issues (20%):** Downstream systems trust hallucinated data; confidence scores are often misleading
+- **Integration Complexity (15%):** Proofs of concept work on curated data, but real-world API dependencies break agent workflows
+- **Testing Insufficient (5%):** No adversarial testing leads to security and production failures on edge cases
+
+**Evidence type:** Repeated pattern
+Industry-wide macro trend documented across multiple vendor analyses, Gartner reports, and tech press coverage. Not a single incident but a systemic pattern observed across enterprises deploying agentic AI in 2025-2026.
+
+**Lessons:**
+- Implement "shadow mode" evaluation before granting write access to agents
+- Test agents on adversarial inputs before production deployment
+- Start agents small without high-stakes access; expand gradually based on demonstrated reliability
+- Build human-in-the-loop checkpoints for critical decision paths
+- Establish clear escalation paths when agents encounter edge cases
+
+**Source:** https://hypersensesoftware.com/blog/88-percent-ai-agents-fail-production
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Automation Without Reversal
+- Over-Hyped Technology
 ```
 
 ### (2025) LinkedIn — RAG Hallucination Cascades
