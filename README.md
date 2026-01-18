@@ -39,6 +39,34 @@ Modern systems fail in modern ways. This repository provides the structured inte
 
 ---
 
+## 📦 Installation
+
+This dataset is available as a package for Python and Node.js agents.
+
+### Python
+```bash
+pip install git+https://github.com/rnzor/awesome-tech-failures.git
+```
+```python
+import awesome_tech_failures as atf
+
+# Load all 62+ failure entries
+entries = atf.load_entries()
+# Load the connectivity graph
+graph = atf.load_graph()
+```
+
+### Node.js
+```bash
+npm install rnzor/awesome-tech-failures
+```
+```javascript
+const agent = require('awesome-tech-failures');
+// Access raw NDJSON files in agent/ directory
+```
+
+---
+
 ## 📖 How to Use This
 
 ### During Design Review
