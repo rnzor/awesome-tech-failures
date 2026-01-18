@@ -43,6 +43,16 @@ def validate_entry(file_path, content):
     if "tags:" not in content.lower():
         errors.append(f"Missing 'tags:' in entry")
 
+    # Check for evidence-type field (only required for ai-slop entries in ai-slop-and-automation.md)
+    if "ai-slop-and-automation.md" in str(file_path):
+        if (
+            "evidence-type:" not in content.lower()
+            and "**Evidence type:**" not in content
+        ):
+            errors.append(
+                f"Missing 'Evidence type:' field (Direct incident or Repeated pattern)"
+            )
+
     return errors
 
 
