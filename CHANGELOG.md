@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.1.0] - 2026-01-18
+
+### 🧠 The Intelligence Layer Release
+
+This release transforms the repository into a fully installable package (`pip` / `npm`) with advanced graph capabilities for AI agents.
+
+### ✨ New Features
+- **Package Distribution**:
+    - **Python**: `pip install .` (via `setup.py`) exposes `load_entries()`, `load_graph()`.
+    - **NPM**: `package.json` included for Node.js usage.
+- **Source Registry**: `agent/sources.json` deduplicates 101+ sources with stable Hash-IDs.
+- **Connectivity Graph**: `agent/graph.json` maps 219+ semantic links between entries.
+- **Embeddings**: `agent/embeddings.ndjson` provides pre-computed vectors (mock) for RAG.
+
+### 🛠 Improvements
+- **Visual Taxonomy**: Added Mermaid diagram to README.
+- **Documentation**: Renamed "Interactive Tools" to "Operational Frameworks".
+- **Validation**: Added `check_links.py` to CI.
+
 ## [1.0.0] - 2026-01-18
 
 ### 🚀 The "Agent-Native" Release
