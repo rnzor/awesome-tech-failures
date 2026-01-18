@@ -57,6 +57,11 @@ tags: [hidden-dependency, rollback-failure, observability-gap, mysql, replicatio
 - Operational confidence ≠ operational safety
 
 **Source:** https://github.blog/2018-10-30-october-incident-report/
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Overconfidence From Past Success
+
 ```
 
 ### (2017) AWS — S3 Typo Takes Down us-east-1
@@ -83,6 +88,11 @@ tags: [blast-radius, control-plane, region-dependency, s3, typo]
 - Recovery procedures must be tested and resilient
 
 **Source:** https://aws.amazon.com/message/41926/
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Automation Without Reversal
+
 ```
 
 ### (2012) Knight Capital — $440M Trading Loss in Minutes
@@ -109,6 +119,10 @@ tags: [no-rollback, deployment-failure, trading-automation, dead-code, kill-swit
 - Every automated system needs a tested emergency stop
 
 **Source:** https://www.sec.gov/spotlight/equity-markets-structure-committee/knight-capital-report.pdf
+
+**Related failure patterns:**
+- Automation Without Reversal
+
 ```
 
 ### (2019) Cloudflare — Regex Catastrophe
@@ -135,6 +149,11 @@ tags: [regex, backtracking, cpu-exhaustion, waf, global-impact, cascade]
 - Single points of failure in safety systems are catastrophic
 
 **Source:** https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Overconfidence From Past Success
+
 ```
 
 ---

@@ -74,6 +74,10 @@ Named company (Microsoft), specific event (March 2016 Twitter launch), public wr
 - Need content filtering and human-in-loop for anything user-facing
 
 **Source:** https://www.bbc.com/news/technology-35902104
+
+**Related failure patterns:**
+- Misconfigured Trust Boundaries
+
 ```
 
 ---
@@ -113,6 +117,11 @@ Pattern observed across multiple engineering retrospectives, agent safety discus
 - Test agent behavior in sandboxed environments before production
 
 **Source:** https://www.enterpriseai.news/2023/11/when-ai-agents-go-wrong-the-growing-pain-of-autonomous-systems/
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Blind Trust in AI Output
+
 ```
 
 ---
@@ -152,6 +161,11 @@ Multiple documented cases from OpenAI community forums, LangChain GitHub issues,
 - Agent runs should require explicit approval for expensive operations
 
 **Source:** https://community.openai.com/t/gpt-agent-burned-7000-overnight/4821
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Overconfidence From Past Success
+
 ```
 
 ---
@@ -191,6 +205,11 @@ Pattern documented across Stack Overflow analysis, HN discussions, and engineeri
 - Establish review checklists specifically for AI-generated code
 
 **Source:** https://stackoverflow.blog/2023/11/16/the-risks-of-ai-code-generators/
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Overconfidence From Past Success
+
 ```
 
 ---
@@ -230,6 +249,11 @@ Aggregated case studies from SEO agencies, documented by Ahrefs and Search Engin
 - Quality gates must exist before deployment
 
 **Source:** https://www.ahrefs.com/blog/ai-content-seo/
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Decision-Making by Proxy
+
 ```
 
 ---
@@ -269,6 +293,11 @@ Documented in OWASP Top 10 for LLM Applications, Microsoft security research, an
 - Build defense-in-depth for AI safety
 
 **Source:** https://owasp.org/www-project-top-10-for-large-language-model-applications/
+
+**Related failure patterns:**
+- Misconfigured Trust Boundaries
+- Automation Without Reversal
+
 ```
 
 ---
@@ -308,6 +337,11 @@ Pattern documented in McKinsey research on AI decision risks, HBR analysis of AI
 - Verify AI output against source material for high-stakes decisions
 
 **Source:** https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries
+
+**Related failure patterns:**
+- Decision-Making by Proxy
+- Blind Trust in AI Output
+
 ```
 
 ---
@@ -347,6 +381,11 @@ Emerging pattern documented across Indie Hacker discussions, engineering retrosp
 - Vibe coding is a path to rewrite, not a path to shipping
 
 **Source:** https://www.indiehackers.com/post/what-happened-when-we-let-ai-write-our-whole-backend
+
+**Related failure patterns:**
+- Blind Trust in AI Output
+- Overconfidence From Past Success
+
 ```
 
 ---
@@ -386,4 +425,9 @@ Documented cases including Air Canada chatbot incident with regulatory coverage,
 - Monitor chatbot interactions for misinformation
 
 **Source:** https://www.cbc.ca/news/canada/air-canada-ai-chatbot-misinformation-1.7139752
+
+**Related failure patterns:**
+- Automation Without Reversal
+- Decision-Making by Proxy
+
 ```

@@ -57,6 +57,10 @@ tags: [no-pmf, timing, distribution, wrong-assumptions, premium-content]
 - Content differentiation must be obvious, not explained
 
 **Source:** https://www.theinformation.com/articles/quibi-the-rise-and-fall-of-a-1-75-billion-failure
+
+**Related failure patterns:**
+- Money ≠ Product-Market Fit
+
 ```
 
 ---

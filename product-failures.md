@@ -57,6 +57,10 @@ tags: [premature, privacy, fashion, user-acceptance, enterprise-pivot]
 - "Cool" can't be bought through influencer marketing
 
 **Source:** https://www.investopedia.com/articles/investing/052115/how-why-google-glass-failed.asp
+
+**Related failure patterns:**
+- Timing Blindness (technology ahead of society)
+
 ```
 
 ### (2012) Google Wave — Technically Impressive, User Failure
@@ -83,6 +87,10 @@ tags: [ux-mismatch, wrong-market, documentation-heavy, collaboration-complexity]
 - Technical excellence ≠ product success
 
 **Source:** https://googleblog.blogspot.com/2012/08/update-on-google-wave.html
+
+**Related failure patterns:**
+- Ecosystem Neglect
+
 ```
 
 ### (2017) Windows Phone — Ecosystem Neglect
@@ -109,6 +117,10 @@ tags: [ecosystem-failure, platform-risk, developer-trust, late-entry, app-gap]
 - App ecosystem gap is a death spiral, not a temporary problem
 
 **Source:** https://www.theverge.com/2017/10/8/16437700/microsoft-windows-phone-dead
+
+**Related failure patterns:**
+- Ecosystem Neglect
+
 ```
 
 ---

@@ -57,6 +57,10 @@ tags: [innovators-dilemma, fear-of-cannibalization, short-term-incentives, misse
 - Market disruption doesn't wait for comfortable transitions
 
 **Source:** https://quartr.com/insights/edge/the-dilemma-that-brought-down-kodak
+
+**Related failure patterns:**
+- The Innovator's Dilemma
+
 ```
 
 ---
@@ -87,6 +91,10 @@ tags: [blind-trust, decision-degradation, ai-slop, delegation-thinking, leadersh
 - Verify AI output against source material for high-stakes decisions
 
 **Source:** https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries
+
+**Related failure patterns:**
+- Decision-Making by Proxy
+
 ```
 
 ---

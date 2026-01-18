@@ -56,6 +56,10 @@ tags: [misconfiguration, iam, ssrf, cloud-security, over-privileged-access]
 - Regular configuration audits catch what vulnerability scans miss
 
 **Source:** https://www.justice.gov/opa/press-release/file/1244101/download
+
+**Related failure patterns:**
+- Misconfigured Trust Boundaries
+
 ```
 
 ### (2017) Equifax — Unpatched Vulnerability
@@ -82,6 +86,10 @@ tags: [unpatched, apache-struts, credential-lateral-movement, no-segmentation, r
 - Detection time matters as much as prevention
 
 **Source:** https://www.breachsense.com/blog/equifax-data-breach/
+
+**Related failure patterns:**
+- Patching Debt
+
 ```
 
 ---

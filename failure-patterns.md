@@ -16,9 +16,12 @@ Each pattern links multiple real failures so you can reason by analogy:
 Automation or agents are given power without clear rollback, kill-switches, or blast-radius limits.
 
 **Seen in**
-- Knight Capital trading incident
-- AI agent deleting production data
-- CI/CD pipelines pushing bad configs globally
+- Knight Capital trading incident (2012)
+- AI agent deleting production data (2023)
+- Runaway AI agents causing massive costs (2023)
+- AWS us-east-1 S3 outage (2017)
+- Prompt injection leading to data exposure (2023-2024)
+- Over-automated customer support (2023-2024)
 
 **Why it happens**
 - Automation optimized for speed, not safety
@@ -41,9 +44,11 @@ Automation or agents are given power without clear rollback, kill-switches, or b
 AI-generated outputs are treated as correct by default and shipped or acted on without verification.
 
 **Seen in**
-- AI-generated SEO content tanking traffic
-- AI summaries replacing human understanding
-- LLM-written code deployed without review
+- AI agent deleting production data (2023)
+- AI-generated SEO content tanking rankings (2023)
+- LLM-written code breaking production (2023-2024)
+- AI summaries replacing understanding (2023-2024)
+- "Vibe coding" unmaintainable systems (2024)
 
 **Why it happens**
 - AI output sounds confident
@@ -66,9 +71,8 @@ AI-generated outputs are treated as correct by default and shipped or acted on w
 A system assumed to be redundant depends on a shared component that silently becomes a global SPOF.
 
 **Seen in**
-- AWS us-east-1 S3 outage
-- GitHub database replication failure
-- Control-plane outages taking down "independent" services
+- AWS us-east-1 S3 outage (2017)
+- GitHub database outage (2018)
 
 **Why it happens**
 - Partial migrations
@@ -91,9 +95,11 @@ A system assumed to be redundant depends on a shared component that silently bec
 "We've done this before" replaces active risk assessment.
 
 **Seen in**
-- GitHub maintenance causing outage
-- Repeated AWS regional failures
-- Teams skipping dry-runs or game days
+- Runaway AI agents causing massive costs (2023)
+- LLM-written code breaking production (2023-2024)
+- "Vibe coding" unmaintainable systems (2024)
+- GitHub database outage (2018)
+- Cloudflare regex catastrophe (2019)
 
 **Why it happens**
 - Familiarity breeds complacency
@@ -116,9 +122,8 @@ A system assumed to be redundant depends on a shared component that silently bec
 A technically solid product fails because developers, partners, or users don't adopt it.
 
 **Seen in**
-- Windows Phone
-- Google Wave
-- Multiple internal platform rewrites
+- Windows Phone platform failure (2017)
+- Google Wave shutdown (2012)
 
 **Why it happens**
 - Focus on core product over ecosystem
@@ -141,9 +146,7 @@ A technically solid product fails because developers, partners, or users don't a
 Capital and talent are used to compensate for missing demand.
 
 **Seen in**
-- Quibi shutdown
-- Well-funded startups with no retention
-- Enterprise products nobody actually wants
+- Quibi shutdown (2020)
 
 **Why it happens**
 - Validation skipped due to confidence
@@ -166,9 +169,8 @@ Capital and talent are used to compensate for missing demand.
 Systems assume internal access is safe.
 
 **Seen in**
-- Capital One breach
-- Cloud IAM misconfigurations
-- Internal tools exposed via SSRF
+- Capital One breach (2019)
+- Prompt injection leading to data exposure (2023-2024)
 
 **Why it happens**
 - "Internal" treated as "trusted"
@@ -191,9 +193,9 @@ Systems assume internal access is safe.
 Leaders or teams stop engaging with raw data and rely on summaries, dashboards, or AI outputs.
 
 **Seen in**
-- AI summaries replacing analysis
-- KPI dashboards hiding real user behavior
-- Delegated decision-making without context
+- AI-generated SEO content tanking rankings (2023)
+- AI summaries replacing understanding (2023-2024)
+- Over-automated customer support (2023-2024)
 
 **Why it happens**
 - Scale increases cognitive load
@@ -216,9 +218,7 @@ Leaders or teams stop engaging with raw data and rely on summaries, dashboards, 
 Successful companies with profitable legacy products fail to invest in disruptive alternatives because it threatens current revenue.
 
 **Seen in**
-- Kodak invented digital camera, buried it for 20 years
-- Blockbuster passed on Netflix
-- Nokia dismissed iPhone
+- Kodak invented digital camera, buried it (1975-2012)
 
 **Why it happens**
 - Leadership incentives tied to short-term profits
@@ -242,9 +242,7 @@ Successful companies with profitable legacy products fail to invest in disruptiv
 Security patches are delayed due to operational complexity, only to be exploited while waiting.
 
 **Seen in**
-- Equifax breach (Apache Struts patch delayed 2 months)
-- Many other breach postmortems
-- Legacy systems that can't be patched without downtime
+- Equifax breach (2017)
 
 **Why it happens**
 - "Patch would require downtime"
