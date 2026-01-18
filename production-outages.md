@@ -412,7 +412,7 @@ supporting-entities: [Cloudflare]
 
 **Impact:** Significant global error spike (1-3%) and 3x latency increase for hours. Engineers initially misdiagnosed as an external attack.
 
-**Root cause:** New DDoS rule contained a broken cookie validation check that triggered an exception. Latent interaction was not exercised during pre-deployment testing.
+**Root cause:** New DDoS rule contained a broken cookie validation check that triggered an exception. Latent interaction was not exercised in pre-deployment testing.
 
 **Lessons:**
 - Latent bugs in stable code can be triggered by new code paths; interaction testing is essential
@@ -422,5 +422,54 @@ supporting-entities: [Cloudflare]
 **Related failure patterns:**
 - Hidden Single Point of Failure
 - Overconfidence From Past Success
+```
 
+### (2024) Kubernetes — Cluster-Wide Failures (51% Dependency-Related)
+
+```yaml
+---
+type: outage
+cause: architecture
+stage: scale
+impact: [users]
+severity:
+  level: high
+  score: 8
+  financial: Significant
+tags: [kubernetes, cascading-failure, control-plane, autoscaler, node-explosion, hidden-dependency]
+evidence-type: repeated-pattern
+sources:
+  - https://github.com/doy2020/mutiny
+  - https://www.usenix.org/conference/fast24/presentation/paper-jiang
+supporting-entities: [USENIX FAST, Jiang et al., Kubernetes Community]
+---
+
+**What happened:** Peer-reviewed research "Mutiny! How does Kubernetes fail" found that over half (51%) of cluster-wide failures are caused by interdependencies. A control plane timeout can cascade into complete cluster unavailability through autoscaler amplification.
+
+**Impact:** Complete cluster unavailability; applications down across all nodes; node explosion spiral consuming resources; extended recovery time as autoscaler fights against healing systems.
+
+**Root cause:** 
+- Hidden coupling between control plane and data plane components
+- Autoscalers that amplify failures by acting on bad health signals
+- Control plane timeouts interpreted as node failures by kubelets
+- Mass node deletion triggers cascading rescheduling that overwhelms remaining infrastructure
+
+**Failure Cascade Example:**
+1. Control plane timeout occurs
+2. Kubelets fail to report node health
+3. Autoscaler interprets missing heartbeats as node failure
+4. Autoscaler mass-deletes nodes and creates replacements, triggering "node explosion" spiral
+5. Entire cluster becomes unavailable
+
+**Lessons:**
+- Implement circuit breaker logic in autoscalers to prevent action on degraded signals
+- Separate control plane and data plane health monitoring to avoid false positives
+- Use dependency-aware scaling that understands control plane dependencies
+- Build observability specifically for interdependency detection, not just component health
+- Test failure modes that involve multiple component interactions, not just single components
+
+**Related failure patterns:**
+- Hidden Single Point of Failure
+- Cascading Dependency Failure
+- Amplification in Automation
 ```
