@@ -4,7 +4,7 @@ setup(
     name='awesome-tech-failures',
     version='1.1.0',
     description='A machine-readable index of technology failures for AI agents.',
-    long_description=open('README.md').read(),
+    long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
     author='Antigravity',
     url='https://github.com/rnzor/awesome-tech-failures',
