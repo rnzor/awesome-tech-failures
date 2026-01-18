@@ -1,0 +1,27 @@
+name: Check Archive Coverage
+
+on:
+  schedule:
+    # Run weekly on Mondays at 6 AM UTC
+    - cron: '0 6 * * 1'
+  pull_request:
+    paths:
+      - 'agent/entries.ndjson'
+  workflow_dispatch:
+
+jobs:
+  check-archives:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Check archive coverage
+        run: python .github/check_archives.py

@@ -8,15 +8,19 @@ Warning: Overwrites agent/entries.ndjson
 import json
 import re
 import sys
-import hashlib
 import yaml
 from pathlib import Path
 
-def generate_source_id(url):
-    return f"src_{hashlib.md5(url.encode()).hexdigest()[:8]}"
-
-def parse_markdown_entry(frontmatter_raw, body_raw):
+def parse_markdown_entry(header_text, text_block, category_default):
     """Parse a single entry's frontmatter and body."""
+    # Split YAML and Body
+    yaml_match = re.search(r'```yaml\s*\n---\s*\n(.*?)\n---\s*\n', text_block, re.DOTALL)
+    if not yaml_match:
+        return None
+        
+    frontmatter_raw = yaml_match.group(1)
+    body_raw = text_block[yaml_match.end():]
+    
     try:
         data = yaml.safe_load(frontmatter_raw)
     except yaml.YAMLError as e:
@@ -24,187 +28,156 @@ def parse_markdown_entry(frontmatter_raw, body_raw):
         return None
 
     if not data:
-        return None
+        data = {}
 
-    # Resolve Source IDs
+    # 1. Basic Metadata from Header
+    header_text = header_text[4:].strip() if header_text.startswith('### ') else header_text.strip()
+    year_match = re.search(r'^\((\d{4})\)', header_text)
+    if year_match:
+        data['year'] = int(year_match.group(1))
+        title = header_text[year_match.end():].strip().lstrip('—-').strip()
+        data['title'] = title
+    else:
+        if 'year' not in data:
+            data['year'] = 2026
+        data['title'] = header_text
+
+    # 2. Extract Body Sections
+    # Summary
+    if 'summary' not in data:
+        summary_match = re.search(r'\*\*What happened:\*\*\s*(.*?)(?:\s*\n\s*\*\*|$)', body_raw, re.DOTALL)
+        if summary_match:
+            data['summary'] = summary_match.group(1).strip().replace('\n', ' ')
+    
+    # Root Cause
+    if 'root_cause' not in data and 'root-cause' not in data:
+        rc_match = re.search(r'\*\*Root cause:\*\*\s*(.*?)(?:\s*\n\s*\*\*|$)', body_raw, re.DOTALL)
+        if rc_match:
+            data['root_cause'] = rc_match.group(1).strip().replace('\n', ' ')
+    
+    # Lessons
+    if 'lessons' not in data or not data['lessons']:
+        lessons_section = re.search(r'\*\*Lessons:\*\*\s*\n((?:(?!\n\n).)*)', body_raw, re.DOTALL)
+        if lessons_section:
+            data['lessons'] = [line.strip()[2:].strip() for line in lessons_section.group(1).split('\n') if line.strip().startswith('- ')]
+            
+    # Patterns
+    if 'patterns' not in data or not data['patterns']:
+        patterns_section = re.search(r'\*\*Related failure patterns:\*\*\s*\n((?:(?!\n\n).)*)', body_raw, re.DOTALL)
+        if patterns_section:
+            data['patterns'] = [line.strip()[2:].strip() for line in patterns_section.group(1).split('\n') if line.strip().startswith('- ')]
+
+    # 3. Schema Alignment & Normalization
+    
+    # Category (from type in frontmatter)
+    if 'type' in data:
+        data['category'] = data.pop('type')
+    if 'category' not in data:
+        data['category'] = category_default
+
+    # Root Cause key
+    if 'root-cause' in data:
+        data['root_cause'] = data.pop('root-cause')
+    if 'root_cause' not in data:
+        data['root_cause'] = "Not specified."
+
+    # Evidence Type mapping (hyphen to underscore)
+    ev_type = data.pop('evidence-type', data.get('evidence_type', 'direct_incident'))
+    data['evidence_type'] = str(ev_type).replace('-', '_')
+
+    # Impact (ensure list)
+    impact = data.get('impact', [])
+    if isinstance(impact, str):
+        data['impact'] = [impact]
+    elif not isinstance(impact, list):
+        data['impact'] = []
+
+    # Severity normalization
+    severity = data.get('severity', {})
+    if isinstance(severity, str):
+        severity = {"level": severity}
+    elif not severity:
+        severity = {"level": "medium"}
+    if 'score' in severity and severity['score'] is not None:
+        try: severity['score'] = int(severity['score'])
+        except: del severity['score']
+    data['severity'] = severity
+
+    # Sources (Array of Objects)
     sources = data.get('sources', [])
+    new_sources = []
     if isinstance(sources, list):
-        data['source_ids'] = [generate_source_id(s) for s in sources if isinstance(s, str) and s.startswith('http')]
+        for src in sources:
+            if isinstance(src, str):
+                new_sources.append({"title": "Source", "url": src, "kind": "primary"})
+            elif isinstance(src, dict) and 'url' in src:
+                src.setdefault('title', "Source")
+                src.setdefault('kind', "primary")
+                new_sources.append(src)
+    data['sources'] = new_sources
 
-    # Extract Summary (What happened)
-    summary_match = re.search(r'\*\*What happened:\*\*\s*(.*?)\s*\n\s*\*\*', body_raw, re.DOTALL)
-    if summary_match:
-        data['summary'] = summary_match.group(1).strip().replace('\n', ' ')
+    # Required lists initialization
+    for field in ['lessons', 'patterns', 'tags']:
+        if field not in data or not isinstance(data[field], list):
+            data[field] = []
 
-    # Extract Root Cause
-    root_cause_match = re.search(r'\*\*Root cause:\*\*\s*(.*?)\s*\n\s*\*\*', body_raw, re.DOTALL)
-    if root_cause_match:
-        data['root-cause'] = root_cause_match.group(1).strip().replace('\n', ' ')
+    # Summary length check (schema maxLength: 200)
+    if 'summary' not in data:
+        data['summary'] = "Summary not provided."
+    if len(data['summary']) > 200:
+        data['summary'] = data['summary'][:197] + "..."
 
-    # Extract Lessons
-    lessons_section = re.search(r'\*\*Lessons:\*\*\s*\n((?:(?!\n\n).)*)', body_raw, re.DOTALL)
-    if lessons_section:
-        raw_lessons = lessons_section.group(1)
-        lessons = []
-        for line in raw_lessons.split('\n'):
-            line = line.strip()
-            if line.startswith('- '):
-                 lessons.append(line[2:].strip())
-        if lessons:
-            data['lessons'] = lessons
+    # ID Generation
+    if 'id' not in data:
+        slug = re.sub(r'[^a-z0-9]+', '-', data['title'].lower()).strip('-')
+        data['id'] = f"{slug}-{data.get('year', 'xxxx')}"
 
-    # Extract Patterns
-    patterns_section = re.search(r'\*\*Related failure patterns:\*\*\s*\n((?:(?!\n\n).)*)', body_raw, re.DOTALL)
-    if patterns_section:
-        raw_patterns = patterns_section.group(1)
-        patterns = []
-        for line in raw_patterns.split('\n'):
-            line = line.strip()
-            if line.startswith('- '):
-                patterns.append(line[2:].strip())
-        if patterns:
-            data['patterns'] = patterns
-
-    if 'lessons' not in data:
-        data['lessons'] = []
-    if 'patterns' not in data:
-        data['patterns'] = []
-    
-    # Generate ID if missing (from title)
-    # Most entries seem to lack 'id' in frontmatter in the new ones?
-    # Actually, existing schema requires ID. My new entries didn't specify 'id' in yaml!
-    # I need to generate it or extract it.
-    # The entries usually don't have ID in YAML? Let's check existing files.
-    
-    # Wait, looking at `entries.ndjson`, they have "id".
-    # Looking at `ai-slop-and-automation.md`:
-    # 
-    # ### (2016) Microsoft Tay ...
-    # ```yaml
-    # ---
-    # type: ...
-    # ---
-    #
-    # It seems ID is NOT in the frontmatter. I must generate it.
-    
-    # Heuristic for ID: lowercase-kebab-title-year
-    # But wait, looking at my edit to decision-failures.md:
-    # ### (2019) Boeing 737 MAX MCAS — ...
-    # Title is complex.
-    
-    # Let's try to infer ID from the markdown header if available?
-    # My script splits by `### `. I will pass the header line to this function.
+    # Clean non-schema fields
+    data.pop('source_ids', None)
+    data.pop('supporting-entities', None)
+    data.pop('supporting_entities', None)
     
     return data
 
 def main():
     repo_root = Path(__file__).parent.parent
-    category_files = [
-        'ai-slop-and-automation.md',
-        'production-outages.md',
-        'security-incidents.md',
-        'startup-failures.md',
-        'product-failures.md',
-        'decision-failures.md',
-    ]
+    mapping = {
+        'ai-slop-and-automation.md': 'ai-slop',
+        'production-outages.md': 'outage',
+        'security-incidents.md': 'security',
+        'startup-failures.md': 'startup',
+        'product-failures.md': 'product',
+        'decision-failures.md': 'decision',
+    }
     
     output_entries = []
     
-    for filename in category_files:
+    for filename, category_default in mapping.items():
         file_path = repo_root / filename
         if not file_path.exists():
             continue
             
         content = file_path.read_text(encoding='utf-8')
-        
-        # Split by ### headers
-        # We need the header line to extract Year and Title
-        
-        # Regex to find entries:
-        # ### (Year) Title
-        # ... content ...
-        
-        # We'll stick to splitting by line for simplicity but capture the header
         lines = content.split('\n')
         current_entry_lines = []
         current_header = None
         
         for line in lines:
             if line.startswith('### '):
-                # Process previous
                 if current_entry_lines and current_header:
                     text_block = '\n'.join(current_entry_lines)
-                    # Extract YAML
-                    yaml_match = re.search(r'```yaml\s*\n---\s*\n(.*?)\n---\s*\n', text_block, re.DOTALL)
-                    if yaml_match:
-                        frontmatter = yaml_match.group(1)
-                        # Body is everything after YAML end
-                        body = text_block[yaml_match.end():]
-                        
-                        entry_data = parse_markdown_entry(frontmatter, body)
-                        if entry_data:
-                            # Parse header for metadata
-                            # Header format: ### (YYYY) Title...
-                            # or ### Title...
-                            header_text = current_header[4:].strip()
-                            
-                            # Try to extract year: (YYYY)
-                            year_match = re.search(r'^\((\d{4})\)', header_text)
-                            if year_match:
-                                entry_data['year'] = int(year_match.group(1))
-                                # Title is the rest
-                                title_part = header_text[year_match.end():].strip()
-                                # Remove starting dash if present (e.g. ") - Title")
-                                if title_part.startswith('—') or title_part.startswith('-'):
-                                    title_part = title_part[1:].strip()
-                                entry_data['title'] = title_part
-                            else:
-                                if 'year' not in entry_data:
-                                    entry_data['year'] = 2026 # Default? Or leave out? Schema requires year.
-                                entry_data['title'] = header_text
-
-                            # Generate ID if missing
-                            if 'id' not in entry_data:
-                                # Create slug from title
-                                slug = re.sub(r'[^a-z0-9]+', '-', entry_data['title'].lower()).strip('-')
-                                entry_data['id'] = f"{slug}-{entry_data.get('year', 'xxxx')}"
-
-                            output_entries.append(entry_data)
-
+                    entry = parse_markdown_entry(current_header, text_block, category_default)
+                    if entry: output_entries.append(entry)
                 current_header = line
                 current_entry_lines = []
             elif current_header:
                 current_entry_lines.append(line)
         
-        # Process last entry
         if current_entry_lines and current_header:
             text_block = '\n'.join(current_entry_lines)
-            yaml_match = re.search(r'```yaml\s*\n---\s*\n(.*?)\n---\s*\n', text_block, re.DOTALL)
-            if yaml_match:
-                frontmatter = yaml_match.group(1)
-                body = text_block[yaml_match.end():]
-                entry_data = parse_markdown_entry(frontmatter, body)
-                if entry_data:
-                    header_text = current_header[4:].strip()
-                    year_match = re.search(r'^\((\d{4})\)', header_text)
-                    if year_match:
-                        entry_data['year'] = int(year_match.group(1))
-                        title_part = header_text[year_match.end():].strip()
-                        if title_part.startswith('—') or title_part.startswith('-'):
-                             title_part = title_part[1:].strip()
-                        entry_data['title'] = title_part
-                    else:
-                        if 'year' not in entry_data:
-                            entry_data['year'] = 2026 
-                        entry_data['title'] = header_text
+            entry = parse_markdown_entry(current_header, text_block, category_default)
+            if entry: output_entries.append(entry)
 
-                    if 'id' not in entry_data:
-                        slug = re.sub(r'[^a-z0-9]+', '-', entry_data['title'].lower()).strip('-')
-                        entry_data['id'] = f"{slug}-{entry_data.get('year', 'xxxx')}"
-                    
-                    output_entries.append(entry_data)
-
-    # Write to ndjson
     outfile = repo_root / 'agent' / 'entries.ndjson'
     with open(outfile, 'w', encoding='utf-8') as f:
         for entry in output_entries:

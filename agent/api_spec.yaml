@@ -23,6 +23,8 @@ tags:
     description: Operations on failure entries
   - name: Patterns
     description: Operations on failure patterns
+  - name: Playbooks
+    description: Operations on prevention playbooks
   - name: Risk Check
     description: Pre-flight risk assessment
 
@@ -46,6 +48,20 @@ paths:
             type: string
             enum: [critical, high, medium, low]
           description: Filter by severity level
+        - name: severity_min
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10
+          description: Minimum severity score (inclusive, 1-10)
+        - name: severity_max
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10
+          description: Maximum severity score (inclusive, 1-10)
         - name: cause
           in: query
           schema:
@@ -152,6 +168,44 @@ paths:
                         type: array
                         items:
                           $ref: '#/components/schemas/Entry'
+
+  /playbooks:
+    get:
+      tags:
+        - Playbooks
+      summary: List all prevention playbooks
+      description: Returns all prevention playbooks with their linked patterns.
+      responses:
+        '200':
+          description: A list of playbooks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Playbook'
+
+  /playbooks/{id}:
+    get:
+      tags:
+        - Playbooks
+      summary: Get a specific playbook with full content
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The playbook's slug identifier (e.g., 'agent-deployment')
+      responses:
+        '200':
+          description: A playbook with its full markdown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Playbook'
+        '404':
+          description: Playbook not found
 
   /search:
     post:
@@ -377,3 +431,39 @@ components:
           type: array
           items:
             type: string
+        playbooks:
+          type: array
+          items:
+            type: string
+          description: "IDs of prevention playbooks that address this pattern"
+
+    Playbook:
+      type: object
+      required:
+        - id
+        - title
+        - file
+      properties:
+        id:
+          type: string
+          example: "agent-deployment"
+          description: "Unique slug identifier for this playbook"
+        title:
+          type: string
+          example: "AI Agent Deployment Playbook"
+        description:
+          type: string
+          description: "Brief description of the playbook's purpose"
+        file:
+          type: string
+          example: "playbooks/agent-deployment.md"
+          description: "Path to the playbook markdown file"
+        content_md:
+          type: string
+          description: "Full markdown content of the playbook (optional, for GET by ID)"
+        related_patterns:
+          type: array
+          items:
+            type: string
+          description: "Pattern IDs this playbook helps prevent"
+

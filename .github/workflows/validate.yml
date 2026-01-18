@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - '**.md'
+      - 'agent/*.ndjson'
+      - 'agent/*.json'
 
 jobs:
   validate:
@@ -18,7 +20,7 @@ jobs:
 
       - name: Install validation dependencies
         run: |
-          pip install pyyaml
+          pip install pyyaml jsonschema
 
       - name: Run entry validation
         run: |
@@ -27,3 +29,7 @@ jobs:
       - name: Run pattern validation
         run: |
           python .github/validate_patterns.py
+
+      - name: Run NDJSON schema validation
+        run: |
+          python .github/validate_ndjson.py

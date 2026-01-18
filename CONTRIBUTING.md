@@ -77,6 +77,8 @@ The CI workflow checks:
 - [ ] At least 2 lessons listed
 - [ ] No markdown formatting errors
 - [ ] Evidence type field present (for AI slop entries)
+- [ ] NDJSON entries match JSON schema (`agent/schema.json`)
+- [ ] Archive coverage report (warning only, not blocking)
 
 ---
 

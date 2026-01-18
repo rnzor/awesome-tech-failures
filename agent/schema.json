@@ -3,7 +3,23 @@
   "title": "Tech Failures Entry",
   "description": "Schema for tech failure entries in the awesome-tech-failures repo",
   "type": "object",
-  "required": ["id", "title", "year", "evidence_type", "category", "cause", "stage", "impact", "severity", "summary", "root_cause", "lessons", "patterns", "tags", "sources"],
+  "required": [
+    "id",
+    "title",
+    "year",
+    "evidence_type",
+    "category",
+    "cause",
+    "stage",
+    "impact",
+    "severity",
+    "summary",
+    "root_cause",
+    "lessons",
+    "patterns",
+    "tags",
+    "sources"
+  ],
   "properties": {
     "id": {
       "type": "string",
@@ -22,39 +38,83 @@
     },
     "evidence_type": {
       "type": "string",
-      "enum": ["direct_incident", "repeated_pattern"],
+      "enum": [
+        "direct_incident",
+        "repeated_pattern"
+      ],
       "description": "Type of evidence supporting this entry"
     },
     "category": {
       "type": "string",
-      "enum": ["ai-slop", "outage", "security", "startup", "product", "decision"],
+      "enum": [
+        "ai-slop",
+        "outage",
+        "security",
+        "startup",
+        "product",
+        "decision"
+      ],
       "description": "Primary category of the failure"
     },
     "cause": {
       "type": "string",
-      "enum": ["human-error", "automation", "architecture", "incentives", "ai"],
+      "enum": [
+        "human-error",
+        "automation",
+        "architecture",
+        "incentives",
+        "ai",
+        "timing",
+        "ecosystem",
+        "ux-mismatch",
+        "platform-risk",
+        "no-pmf",
+        "deployment-validation",
+        "latent-bug"
+      ],
       "description": "Primary cause of the failure"
     },
     "stage": {
       "type": "string",
-      "enum": ["early", "growth", "scale", "decline"],
+      "enum": [
+        "early",
+        "growth",
+        "scale",
+        "decline"
+      ],
       "description": "Stage of the organization or product when failure occurred"
     },
     "impact": {
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["data-loss", "money", "trust", "users", "morale"]
+        "enum": [
+          "data-loss",
+          "money",
+          "trust",
+          "users",
+          "morale",
+          "visibility-loss",
+          "systemic-outage",
+          "error-spike"
+        ]
       },
       "description": "Array of impact types"
     },
     "severity": {
       "type": "object",
-      "required": ["level"],
+      "required": [
+        "level"
+      ],
       "properties": {
         "level": {
           "type": "string",
-          "enum": ["critical", "high", "medium", "low"]
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ]
         },
         "score": {
           "type": "integer",
@@ -81,7 +141,7 @@
         "type": "string"
       },
       "minItems": 2,
-      "maxItems": 5,
+      "maxItems": 10,
       "description": "Array of actionable lessons learned"
     },
     "patterns": {
@@ -102,7 +162,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["title", "url", "kind"],
+        "required": [
+          "title",
+          "url",
+          "kind"
+        ],
         "properties": {
           "title": {
             "type": "string",
@@ -115,8 +179,16 @@
           },
           "kind": {
             "type": "string",
-            "enum": ["primary", "secondary"],
+            "enum": [
+              "primary",
+              "secondary"
+            ],
             "description": "Type of source"
+          },
+          "archive_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Wayback Machine or other archive URL for permanence"
           }
         }
       },
