@@ -19,9 +19,9 @@ info:
     url: https://creativecommons.org/publicdomain/zero/1.0/
 
 servers:
-  - url: https://rnzor.github.io/awesome-tech-failures/api
-    description: Production GitHub Pages (static JSON files)
-  - url: http://localhost:3000/api
+  - url: https://rnzor.github.io/awesome-tech-failures/api/v1
+    description: Production GitHub Pages (Static API v1)
+  - url: http://localhost:3000/api/v1
     description: Local development (Vite dev server)
 
 tags:
@@ -116,28 +116,23 @@ paths:
         '404':
           description: Failure entry not found
 
-  /search/similarity:
+  /client/search/similarity:
     post:
       tags:
         - Search
-      summary: Find similar failures
+      summary: Find similar failures (Client-side Implementation)
       description: |
-        **Client-Side Implementation:**
+        **NOTE: This is not a server endpoint.** It describes the interface for a client-side function.
         
-        This endpoint performs semantic search using pre-computed embeddings.
+        This search performs semantic matching using pre-computed embeddings stored in `embeddings.json` and `hybrid_lookup.json`.
         
-        **Hybrid Mode:**
+        **Hybrid Mode Implementation:**
         1. Check if query is in `hybrid_lookup.json` → Use pre-embedded vector
-        2. If not found, optionally call embedding API for custom query
-        3. Calculate cosine similarity in-browser against all embeddings
+        2. If not found, optionally call external embedding API for custom query
+        3. Calculate cosine similarity in-browser against all entries in `embeddings.json`
         4. Return top-K matches with optional filtering
         
-        Frontend should:
-        1. Load `embeddings.json` on app mount (~256KB)
-        2. Load `hybrid_lookup.json` for pre-embedded terms
-        3. For search, check hybrid lookup first, then optionally call embedding API
-        4. Calculate cosine similarity: `dot(a, b) / (norm(a) * norm(b))`
-        5. Apply filters and return top-K results
+        Frontend developers should implement this logic using the [Frontend Integration Guide](https://rnzor.github.io/awesome-tech-failures/FRONTEND_INTEGRATION.html).
       requestBody:
         required: true
         content:

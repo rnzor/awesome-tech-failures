@@ -51,7 +51,7 @@ def generate_mock_vector(text, dimensions=384):
 
 def main():
     repo_root = Path(__file__).parent.parent
-    api_dir = repo_root / "docs" / "api"
+    api_dir = repo_root / "docs" / "api" / "v1"
 
     print("Creating hybrid term lookup...")
 

@@ -10,7 +10,7 @@ from datetime import datetime
 
 def main():
     repo_root = Path(__file__).parent.parent
-    api_dir = repo_root / "docs" / "api"
+    api_dir = repo_root / "docs" / "api" / "v1"
 
     print("Creating API index...")
 
@@ -21,16 +21,15 @@ def main():
     # Create index
     api_index = {
         "version": "1.0.0",
-        "base_url": "https://rnzor.github.io/awesome-tech-failures/api",
+        "base_url": "https://rnzor.github.io/awesome-tech-failures/api/v1",
         "generated_at": datetime.now().isoformat(),
         "endpoints": {
-            "GET /api/failures": "List all failure entries with optional filtering",
-            "GET /api/failures/{id}": "Get specific failure entry by ID",
-            "POST /api/search/similarity": "Semantic search with client-side similarity",
-            "GET /api/patterns": "List all failure patterns",
-            "GET /api/patterns/{id}": "Get specific pattern with related entries",
-            "GET /api/tags": "Get tag definitions",
-            "GET /api/hybrid_lookup": "Pre-embedded common terms (hybrid mode)",
+            "GET /api/v1/failures.json": "List all failure entries",
+            "GET /api/v1/patterns.json": "List all failure patterns",
+            "GET /api/v1/index.json": "API metadata and statistics",
+            "SEARCH /client/search/similarity": "Client-side similarity search (Function documentation)",
+            "GET /api/v1/tags.json": "Get tag definitions",
+            "GET /api/v1/hybrid_lookup.json": "Pre-embedded common terms (hybrid mode)",
         },
         "statistics": {
             "failures_count": failures_count,

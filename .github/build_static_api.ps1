@@ -3,7 +3,7 @@ $ErrorActionPreference = "Continue"
 
 $REPO_ROOT = $PSScriptRoot.Parent.FullName
 $DOCS_DIR = Join-Path $REPO_ROOT "docs"
-$API_DIR = Join-Path $DOCS_DIR "api"
+$API_DIR = Join-Path $DOCS_DIR "api\v1"
 $AGENT_DIR = Join-Path $REPO_ROOT "agent"
 
 Write-Host "Building static API..."

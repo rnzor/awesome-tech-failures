@@ -5,7 +5,7 @@ set -e
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DOCS_DIR="$REPO_ROOT/docs"
-API_DIR="$DOCS_DIR/api"
+API_DIR="$DOCS_DIR/api/v1"
 AGENT_DIR="$REPO_ROOT/agent"
 
 echo "🏗️  Building static API..."

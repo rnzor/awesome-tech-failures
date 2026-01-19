@@ -8,9 +8,8 @@ This guide explains how to integrate with the Awesome Tech Failures API.
 
 | Environment | Base URL | Description |
 |-------------|-----------|-------------|
-| Production | `https://rnzor.github.io/awesome-tech-failures/api` | GitHub Pages static API |
-| Development | `http://localhost:3000/api` | Vite dev server with proxy |
-| Local Build | `./public/api` | Copy to public folder for local builds |
+| Production | `https://rnzor.github.io/awesome-tech-failures/api/v1` | GitHub Pages static API v1 |
+| Development | `http://localhost:3000/api/v1` | Local development path |
 
 ---
 
@@ -28,7 +27,7 @@ interface GetFailuresParams {
   offset?: number;
 }
 
-const failures = await fetch('/api/failures?category=ai-slop&limit=10')
+const failures = await fetch('https://rnzor.github.io/awesome-tech-failures/api/v1/failures.json')
   .then(r => r.json());
 ```
 
@@ -47,14 +46,15 @@ Get specific failure entry.
 
 **Request:**
 ```typescript
-const failure = await fetch('/api/failures/aws-s3-us-east-1-2017')
-  .then(r => r.json());
+const failure = await fetch('https://rnzor.github.io/awesome-tech-failures/api/v1/failures.json')
+  .then(r => r.json())
+  .then(data => data.find(f => f.id === 'aws-s3-us-east-1-2017'));
 ```
 
 ---
 
-### POST /search/similarity
-**IMPORTANT:** This is a client-side implementation.
+### clientSearchSimilarity()
+**IMPORTANT:** This is a client-side function, not a network endpoint.
 
 **Request:**
 ```typescript
@@ -79,7 +79,7 @@ let embeddingsCache: Embedding[] | null = null;
 
 async function loadEmbeddings() {
   if (!embeddingsCache) {
-    const response = await fetch('/api/embeddings.json');
+    const response = await fetch('https://rnzor.github.io/awesome-tech-failures/api/v1/embeddings.json');
     const data = await response.json();
     embeddingsCache = data;
   }
@@ -93,7 +93,7 @@ let hybridLookupCache: Record<string, number[]> | null = null;
 
 async function loadHybridLookup() {
   if (!hybridLookupCache) {
-    const response = await fetch('/api/hybrid_lookup.json');
+    const response = await fetch('https://rnzor.github.io/awesome-tech-failures/api/v1/hybrid_lookup.json');
     const data = await response.json();
     hybridLookupCache = data.terms;
   }
@@ -116,11 +116,13 @@ function cosineSimilarity(vec1: number[], vec2: number[]): number {
 
 4. Get query embedding (hybrid approach):
 ```typescript
-async function getQueryEmbedding(query: string, apiKey?: string): Promise<number[]> {
+async function getQueryEmbedding(query: string, options: { apiKey?: string, useHybridOnly?: boolean } = {}): Promise<number[]> {
+  const { apiKey, useHybridOnly = true } = options;
   const hybridLookup = await loadHybridLookup();
+  
   if (hybridLookup[query]) {
     console.log('Using pre-embedded term');
-    return hybridLookup[query];
+    return hybridLookup[query].vector;
   }
   
   if (apiKey && !useHybridOnly) {
@@ -136,12 +138,13 @@ async function getQueryEmbedding(query: string, apiKey?: string): Promise<number
         input: query
       })
     });
+    
+    if (!response.ok) throw new Error('Embedding API failed');
     const data = await response.json();
     return data.data[0].embedding;
   }
   
-  console.log('Using fallback mock embedding');
-  return generateMockEmbedding(query);
+  throw new Error('NO_EMBEDDING_AVAILABLE: Term not in hybrid lookup and no API key provided.');
 }
 ```
 
@@ -155,7 +158,7 @@ async function searchSimilarity(
   apiKey?: string
 ): Promise<SimilarityResult[]> {
   const embeddings = await loadEmbeddings();
-  const queryVector = await getQueryEmbedding(query, apiKey);
+  const queryVector = await getQueryEmbedding(query, { apiKey, useHybridOnly });
   
   const results = embeddings
     .filter(emb => applyFilters(emb, filters))
@@ -216,9 +219,9 @@ export default defineConfig({
    - Cache in localStorage for faster subsequent loads
 
 2. Similarity Calculation:
-   - 62 embeddings × 384 dimensions
-   - Time: < 10ms for full search
-   - Scales linearly with entry count
+   - Complexity: `O(N * d)` where N is entry count and d is dimensions.
+   - Time: Expected < 10ms for current dataset.
+   - Scales linearly with entry count.
 
 3. Hybrid Mode:
    - Pre-embedded terms: Instant (no network)
@@ -233,11 +236,20 @@ export default defineConfig({
 
 ## CORS Configuration
 
-No CORS issues expected when using:
-- GitHub Pages (same origin)
-- Vite dev proxy (same origin)
+No CORS issues expected when using GitHub Pages.
 
-If calling external embedding API, ensure API key is stored securely.
+---
+
+## 🔒 Security & Privacy
+
+1. **API Keys**:
+   - **CRITICAL**: Never store OpenAI/external API keys in `localStorage` or `cookies`.
+   - Use per-session memory input only.
+   - For public deployments, forced `useHybridOnly: true` is recommended.
+
+2. **Data Privacy**:
+   - All similarity calculations happen locally.
+   - No failure data is sent to external servers unless a custom embedding is requested.
 
 ---
 
