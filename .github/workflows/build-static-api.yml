@@ -36,11 +36,12 @@ jobs:
       - name: Validate output
         run: |
           echo "Validating generated API files..."
-          test -f docs/api/failures.json || exit 1
-          test -f docs/api/patterns.json || exit 1
-          test -f docs/api/embeddings.json || exit 1
-          test -f docs/api/index.json || exit 1
+          test -f docs/api/v1/failures.json || exit 1
+          test -f docs/api/v1/patterns.json || exit 1
+          test -f docs/api/v1/embeddings.json || exit 1
+          test -f docs/api/v1/index.json || exit 1
           test -f docs/openapi.yaml || exit 1
+          test -f docs/api/v1/hybrid_lookup.json || exit 1
           echo "✅ All API files validated"
 
       - name: Upload artifact
