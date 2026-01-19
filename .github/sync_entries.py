@@ -32,15 +32,38 @@ def parse_markdown_entry(header_text, text_block, category_default):
 
     # 1. Basic Metadata from Header
     header_text = header_text[4:].strip() if header_text.startswith('### ') else header_text.strip()
-    year_match = re.search(r'^\((\d{4})\)', header_text)
-    if year_match:
-        data['year'] = int(year_match.group(1))
-        title = header_text[year_match.end():].strip().lstrip('—-').strip()
-        data['title'] = title
+    
+    # Try different year patterns (Priority: Range End > Single > None)
+    year = None
+    title = header_text
+
+    # Pattern 1: Date range (2023-2024) or (2023–2025) - use END year
+    range_match = re.search(r'^\((\d{4})[-–u2013](\d{4})\)', header_text)
+    if range_match:
+        year = int(range_match.group(2))
+        title = header_text[range_match.end():].strip().lstrip('—-').strip()
     else:
-        if 'year' not in data:
-            data['year'] = 2026
-        data['title'] = header_text
+        # Pattern 2: Single year (2024)
+        single_match = re.search(r'^\((\d{4})\)', header_text)
+        if single_match:
+            year = int(single_match.group(1))
+            title = header_text[single_match.end():].strip().lstrip('—-').strip()
+        else:
+            # Pattern 3: (Ongoing) or other text prefixes
+            ongoing_match = re.search(r'^\(([^)]+)\)', header_text)
+            if ongoing_match:
+                # No year extracted, but we clean the title
+                title = header_text[ongoing_match.end():].strip().lstrip('—-').strip()
+    
+    if year is not None:
+        data['year'] = year
+    
+    data['title'] = title
+
+    # Fallback/Safety: If no year parsed and no year in frontmatter
+    if 'year' not in data:
+        data['year'] = None
+        # We don't error here, but validation scripts should catch this
 
     # 2. Extract Body Sections
     # Summary

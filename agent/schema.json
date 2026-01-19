@@ -31,8 +31,11 @@
       "description": "Human-readable title of the failure"
     },
     "year": {
-      "type": "integer",
-      "description": "Year the failure occurred or was documented",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Year the failure occurred. Null if unknown (requires review).",
       "minimum": 1970,
       "maximum": 2030
     },

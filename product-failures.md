@@ -7,6 +7,9 @@ When the product was built but nobody wanted it.
 
 ## Entry Template
 
+> **Header Format:** `### (YYYY) Title` or `### (YYYY-YYYY) Title` (use END year for ranges).
+> For ongoing issues, use `### (Ongoing) Title` and add `year: YYYY` to frontmatter.
+
 ```yaml
 ---
 type: product

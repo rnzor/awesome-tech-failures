@@ -7,6 +7,9 @@ from founders who lived to tell the tale.
 
 ## Entry Template
 
+> **Header Format:** `### (YYYY) Title` or `### (YYYY-YYYY) Title` (use END year for ranges).
+> For ongoing issues, use `### (Ongoing) Title` and add `year: YYYY` to frontmatter.
+
 ```yaml
 ---
 type: startup

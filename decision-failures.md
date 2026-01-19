@@ -7,6 +7,9 @@ Incentive misalignment, ownership gaps, and the quiet killers of organizations.
 
 ## Entry Template
 
+> **Header Format:** `### (YYYY) Title` or `### (YYYY-YYYY) Title` (use END year for ranges).
+> For ongoing issues, use `### (Ongoing) Title` and add `year: YYYY` to frontmatter.
+
 ```yaml
 ---
 type: decision
@@ -86,6 +89,7 @@ type: decision
 cause: ai
 stage: scale
 impact: morale
+year: 2026
 tags: [blind-trust, decision-degradation, ai-slop, delegation-thinking, leadership-failure]
 evidence-type: repeated-pattern
 sources:
