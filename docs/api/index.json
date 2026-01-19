@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "base_url": "https://rnzor.github.io/awesome-tech-failures/api",
+  "generated_at": "2026-01-19T03:34:56.198278",
+  "endpoints": {
+    "GET /api/failures": "List all failure entries with optional filtering",
+    "GET /api/failures/{id}": "Get specific failure entry by ID",
+    "POST /api/search/similarity": "Semantic search with client-side similarity",
+    "GET /api/patterns": "List all failure patterns",
+    "GET /api/patterns/{id}": "Get specific pattern with related entries",
+    "GET /api/tags": "Get tag definitions",
+    "GET /api/hybrid_lookup": "Pre-embedded common terms (hybrid mode)"
+  },
+  "statistics": {
+    "failures_count": 62,
+    "patterns_count": 10,
+    "embeddings_available": true,
+    "hybrid_mode": true
+  },
+  "client_side_features": {
+    "similarity_search": {
+      "mode": "hybrid",
+      "default_implementation": "pre-embedded_terms",
+      "optional": "custom_query_embedding_via_api"
+    }
+  }
+}

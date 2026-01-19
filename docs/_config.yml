@@ -1,0 +1,5 @@
+# Disable Jekyll to serve raw JSON files correctly
+safe: false
+exclude:
+  - .gitignore
+  - README.md

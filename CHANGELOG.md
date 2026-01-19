@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.2.0] - 2026-01-19
+
+### 🌐 The Connectivity API
+
+This release introduces a serverless, static API architecture that runs entirely on GitHub Pages, complete with client-side similarity search and interactive OpenAPI documentation.
+
+### ✨ New Features
+- **Static API Endpoints**:
+    - `docs/api/failures.json`: Full dataset with filtering metadata.
+    - `docs/api/hybrid_lookup.json`: Pre-computed vectors for zero-latency search.
+    - `docs/api/patterns.json` & `index.json`: discovery endpoints.
+- **Interactive Documentation**:
+    - **Swagger UI**: Live OpenAPI explorer at `docs/swagger-ui.html`.
+    - **Frontend Guide**: `docs/FRONTEND_INTEGRATION.md` for logic implementation.
+- **Pipeline**: `.github/build_static_api.sh` automatically compiles the API from source on every push.
+
+---
+
 ## [1.1.0] - 2026-01-18
 
 ### 🧠 The Intelligence Layer Release

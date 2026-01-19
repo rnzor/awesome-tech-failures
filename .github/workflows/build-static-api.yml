@@ -1,0 +1,60 @@
+name: Build Static API for GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'agent/**'
+      - '.github/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Build static API
+        run: |
+          chmod +x .github/build_static_api.sh
+          .github/build_static_api.sh
+
+      - name: Validate output
+        run: |
+          echo "Validating generated API files..."
+          test -f docs/api/failures.json || exit 1
+          test -f docs/api/patterns.json || exit 1
+          test -f docs/api/embeddings.json || exit 1
+          test -f docs/api/index.json || exit 1
+          test -f docs/openapi.yaml || exit 1
+          echo "✅ All API files validated"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,7 @@
+[X] Validation failed with 3 error(s):
+
+  - Line 11 (agentic-database-migration-data-corruption-2025): ['Database migrations are always high-stakes operations requiring human-in-loop verification', 'Agen...
+  - Line 29 (crowdstrike-faulty-falcon-sensor-update-2024): 'systemic-outage' is not one of ['data-loss', 'money', 'trust', 'users', 'morale', 'visibility-loss'...
+  - Line 30 (cloudflare-ddos-rule-deployment-failure-2024): 'error-spike' is not one of ['data-loss', 'money', 'trust', 'users', 'morale', 'visibility-loss']
+
+TIP: Ensure entries.ndjson fields match schema.json requirements.

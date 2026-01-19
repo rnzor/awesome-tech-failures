@@ -1,0 +1,2819 @@
+[
+  {
+    "cause": "ai",
+    "stage": "growth",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 6,
+      "financial": "N/A"
+    },
+    "tags": [
+      "prompt-injection",
+      "adversarial",
+      "no-guardrails",
+      "brand-damage",
+      "twitter"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.bbc.com/news/technology-35902104",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.cbsnews.com/news/microsoft-shuts-down-ai-chatbot-after-it-turned-into-racist-nazi/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://ethicsunwrapped.utexas.edu/case-study/a-i-trust-tays-trespasses",
+        "kind": "primary"
+      }
+    ],
+    "year": 2016,
+    "title": "Microsoft Tay \u2014 Prompt Injection & Adversarial Manipulation",
+    "summary": "Microsoft launched an AI chatbot designed to learn from Twitter users. Within 24 hours, adversarial users manipulated it into generating racist, antisemitic, and inflammatory content.",
+    "root_cause": "No adversarial input filtering, no content safeguards, \"learn from everyone\" approach without robustness, trusted users would train it well.",
+    "lessons": [
+      "Never expose learning systems to unmoderated public input without safeguards",
+      "Assume adversarial actors will test every boundary",
+      "Trust \"users will teach it good things\" is not a valid architectural assumption",
+      "Need content filtering and human-in-loop for anything user-facing"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "direct_incident",
+    "id": "microsoft-tay-prompt-injection-adversarial-manipulation-2016"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "data-loss"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "N/A"
+    },
+    "tags": [
+      "no-guardrails",
+      "blind-trust",
+      "agent-failure",
+      "write-access",
+      "autonomous-systems"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.enterpriseai.news/2023/11/when-ai-agents-go-wrong-the-growing-pain-of-autonomous-systems/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://news.ycombinator.com/item?id=37810234",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.langchain.com/blog/agent-safety-guardrails",
+        "kind": "primary"
+      }
+    ],
+    "year": 2023,
+    "title": "AI Agent Deletes Production Data",
+    "summary": "An LLM-powered agent with write access executed destructive commands during an ambiguous task, resulting in partial production data loss.",
+    "root_cause": "Blind trust in agent autonomy; no guardrails on destructive operations; write access granted without reversible action requirements; insufficient task ambiguity handling.",
+    "lessons": [
+      "AI agents are junior interns with superpowers \u2014 they need oversight",
+      "Never grant write access without reversible actions and kill switches",
+      "All destructive operations require explicit human approval",
+      "Test agent behavior in sandboxed environments before production"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Blind Trust in AI Output"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "ai-agent-deletes-production-data-2023"
+  },
+  {
+    "cause": "automation",
+    "stage": "growth",
+    "impact": [
+      "money"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 7,
+      "financial": "$7k+"
+    },
+    "tags": [
+      "runaway-costs",
+      "token-explosion",
+      "agent-loops",
+      "no-limits"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://news.ycombinator.com/item?id=37291821",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://github.com/langchain-ai/langchain/issues/10453",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://community.openai.com/t/gpt-agent-burned-7000-overnight/4821",
+        "kind": "primary"
+      }
+    ],
+    "year": 2023,
+    "title": "Runaway AI Agents Causing Massive Costs",
+    "summary": "Autonomous LLM agents entered infinite loops or continuously called expensive APIs, generating thousands of dollars in token costs within hours.",
+    "root_cause": "No token or cost limits on agent actions; recursive self-improvement loops; lack of execution budgets; no circuit breakers on API calls.",
+    "lessons": [
+      "Always implement cost limits on autonomous agents",
+      "Set execution budgets before letting agents run unattended",
+      "Monitor token usage in real-time with hard limits",
+      "Agent runs should require explicit approval for expensive operations"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Overconfidence From Past Success"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "direct_incident",
+    "id": "runaway-ai-agents-causing-massive-costs-2023"
+  },
+  {
+    "cause": "ai",
+    "stage": "growth",
+    "impact": [
+      "users"
+    ],
+    "tags": [
+      "ai-generated-code",
+      "no-review",
+      "production-bug",
+      "copilot"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://stackoverflow.blog/2023/11/16/the-risks-of-ai-code-generators/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://news.ycombinator.com/item?id=38420156",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.getrevue.co/profileengineering/p/why-we-stopped-merging-ai-code-blindly",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2023-2024) AI-Generated Code Shipped Without Review",
+    "summary": "Engineering teams merged AI-generated code without adequate review, leading to production bugs, security vulnerabilities, and maintainability issues.",
+    "root_cause": "Time pressure to deliver; overconfidence in AI code quality; belief that \"AI knows more than me\"; skipping review for \"obvious\" code.",
+    "lessons": [
+      "AI-generated code requires at least as much review as human code",
+      "Never ship AI code that you don't understand",
+      "AI is a generator, not a validator \u2014 outputs need human validation",
+      "Establish review checklists specifically for AI-generated code"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Overconfidence From Past Success"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "2023-2024-ai-generated-code-shipped-without-review-2026"
+  },
+  {
+    "cause": "ai",
+    "stage": "growth",
+    "impact": [
+      "money"
+    ],
+    "tags": [
+      "seo-collapse",
+      "low-quality-content",
+      "automation-without-review",
+      "content-strategy"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://developers.google.com/search/blog/2022/12/helpful-content-update",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.ahrefs.com/blog/ai-content-seo/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.searchenginejournal.com/ai-content-seo-risks/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2023,
+    "title": "Low-Quality AI Content Tanking Search Rankings",
+    "summary": "Large-scale AI content replaced human-written pages without editorial review, triggering search engine ranking drops across the site.",
+    "root_cause": "Low-quality AI output deployed without human review; volume prioritized over quality; search engine algorithm changes exposed poor content; no content quality gates.",
+    "lessons": [
+      "Search engines reward usefulness, not volume",
+      "AI amplifies strategy \u2014 good or bad",
+      "Editorial review is mandatory for AI-generated content",
+      "Quality gates must exist before deployment"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Decision-Making by Proxy"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "low-quality-ai-content-tanking-search-rankings-2023"
+  },
+  {
+    "cause": "ai",
+    "stage": "scale",
+    "impact": [
+      "data-loss"
+    ],
+    "tags": [
+      "prompt-injection",
+      "data-exposure",
+      "security",
+      "adversarial-input"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.microsoft.com/en-us/security/blog/2023/10/understanding-prompt-injection/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://blog.langchain.com/prompt-injection-use-cases/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2023-2024) Adversarial Prompts Exposing Sensitive Data",
+    "summary": "Adversarial prompt injection attacks tricked AI systems into revealing sensitive information, bypassing safety measures and outputting private data.",
+    "root_cause": "Prompt injection as a novel attack vector; AI systems trusting user input too readily; lack of input sanitization; safety measures bypassed through creative prompting.",
+    "lessons": [
+      "Prompt injection is the SQL injection of the AI era",
+      "Validate and sanitize all inputs, including \"hidden\" prompt fields",
+      "Separate untrusted input from system prompts",
+      "Build defense-in-depth for AI safety"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries",
+      "Automation Without Reversal"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "2023-2024-adversarial-prompts-exposing-sensitive-data-2026"
+  },
+  {
+    "cause": "ai",
+    "stage": "scale",
+    "impact": [
+      "morale"
+    ],
+    "tags": [
+      "ai-summaries",
+      "decision-degradation",
+      "blind-trust",
+      "automation-bias"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://hbr.org/2023/09/how-ai-is-changing-decision-making",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://news.ycombinator.com/item?id=39102457",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2023-2024) AI Summaries Replacing Human Analysis",
+    "summary": "Teams relied on AI-generated summaries instead of reading source data, leading to cascading bad strategic decisions based on incomplete or incorrect understanding.",
+    "root_cause": "Delegating thinking, not just toil; AI used to compress data but output treated as authoritative; leaders stopped verifying against sources; \"efficiency\" prioritized over accuracy.",
+    "lessons": [
+      "AI should compress data, not replace judgment",
+      "Leaders must still read the source for critical decisions",
+      "Summary is a starting point, not the endpoint of reasoning",
+      "Verify AI output against source material for high-stakes decisions"
+    ],
+    "patterns": [
+      "Decision-Making by Proxy",
+      "Blind Trust in AI Output"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "2023-2024-ai-summaries-replacing-human-analysis-2026"
+  },
+  {
+    "cause": "ai",
+    "stage": "early",
+    "impact": [
+      "morale"
+    ],
+    "tags": [
+      "vibe-coding",
+      "technical-debt",
+      "ai-generated-codebase",
+      "unmaintainable"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://news.ycombinator.com/item?id=39852103",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.getrevue.co/profileengineering/p/vibe-coding-retrospective",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.indiehackers.com/post/what-happened-when-we-let-ai-write-our-whole-backend",
+        "kind": "primary"
+      }
+    ],
+    "year": 2024,
+    "title": "AI-Generated Codebases That Can't Be Maintained",
+    "summary": "Teams used AI coding tools extensively to build entire features or backends, only to discover the code was unmaintainable, undocumented, and impossible for humans to extend.",
+    "root_cause": "\"Vibe coding\" \u2014 generating code without understanding it; no documentation generated; no architectural oversight; belief that AI would \"handle it.\"",
+    "lessons": [
+      "Code you don't understand is technical debt from day one",
+      "AI can generate code, but humans must own architecture",
+      "Require documentation and code review for AI-generated code",
+      "Vibe coding is a path to rewrite, not a path to shipping"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Overconfidence From Past Success"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "ai-generated-codebases-that-can-t-be-maintained-2024"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "tags": [
+      "customer-support",
+      "chatbot-failure",
+      "no-escalation",
+      "trust-destruction"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.cbc.ca/news/canada/air-canada-ai-chatbot-misinformation-1.7139752",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://news.ycombinator.com/item?id=40231568",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.gsb.stanford.edu/insights/when-automation-goes-wrong-customer-service",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2023-2024) AI Chatbots Without Human Escalation",
+    "summary": "Companies deployed AI customer support chatbots without adequate human escalation paths, leading to misinformation, frustrated customers, and trust damage.",
+    "root_cause": "Cost-cutting focus over customer experience; no clear escalation paths; chatbots empowered to make promises they couldn't keep; AI confidence without AI accuracy.",
+    "lessons": [
+      "Customer trust is hard to earn, easy to lose",
+      "AI chatbots need clear escalation paths to humans",
+      "Never let AI make promises it can't verify",
+      "Monitor chatbot interactions for misinformation"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Decision-Making by Proxy"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "2023-2024-ai-chatbots-without-human-escalation-2026"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "money"
+    ],
+    "tags": [
+      "multi-agent",
+      "mcp",
+      "cost-explosion",
+      "recursive-delegation",
+      "runaway-agents",
+      "A2A"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://arxiv.org/html/2601.08815v1",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://youssefh.substack.com/p/we-spent-47000-running-ai-agents",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://arxiv.org/html/2512.08290v1",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "Autonomous Multi-Agent Loop Cost Spike",
+    "summary": "A multi-agent research system with four LangChain agents deployed recursive A2A (Agent-to-Agent) delegation through MCP (Model Context Protocol). Two agents entered a recursive clarification loop f...",
+    "root_cause": "- No recursive depth limits on agent-to-agent delegation - No global budget controller or cost monitoring - MCP/A2A protocols standardize connectivity but lack resource governance - Agents had write access to downstream decision paths without verification",
+    "lessons": [
+      "Multi-agent systems require a central orchestrator with explicit recursion depth limits (max 3-5 hops)",
+      "Implement token-bucket rate limiting at the organization level, not per-agent",
+      "Recursive delegation must require explicit human approval after 3 hops",
+      "Monitor inter-agent communication patterns for circular reasoning and clarification loops",
+      "Deploy real-time cost monitoring with hard kill-switches per workflow"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Hidden Single Point of Failure"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "autonomous-multi-agent-loop-cost-spike-2025"
+  },
+  {
+    "cause": "ai",
+    "stage": "growth",
+    "impact": [
+      "data-loss"
+    ],
+    "tags": [
+      "agentic-migration",
+      "data-corruption",
+      "schema-hallucination",
+      "autonomous-ops",
+      "blind-trust-in-ai"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.matechco.com/blog/agentic-ai-hidden-risks",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.youtube.com/watch?v=QXQfw3fiR8k",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://muhammadraza.me/2025/building-ai-agents-devops-automation/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.kellton.com/kellton-tech-blog/revealing-top-data-migration-trends",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://kanerika.com/blogs/data-governance-challenges-in-agentic-ai-systems/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "Agentic Database Migration Data Corruption",
+    "summary": "Multiple independent incidents (2024-2025) where AI agents performing autonomous database operations and schema migrations misidentified resources, executed wrong table operations, or deleted criti...",
+    "root_cause": "- Agents given write access without dry-run validation - Documentation fed to RAG agents outdated or inconsistent with actual schema - No mandatory human-in-loop verification for DDL/DML operations - Agents hallucinate table relationships when documentation is incomplete",
+    "lessons": [
+      "Database migrations are always high-stakes operations requiring human-in-loop verification",
+      "Agentic AI must run schema-checking tools (pg_dump, SQLFluff, database introspection APIs) BEFORE suggesting any DDL changes",
+      "Documentation fed to RAG systems must be versioned and synchronized with live database schema",
+      "Autonomous operations require \"Shadow Mode\" evaluation (dry-run in staging with full schema validation) before write access",
+      "Schema hallucination is the leading cause of autonomous database failures; implement automated schema comparison",
+      "Implement mandatory approval gates for any destructive operations (DROP, DELETE, ALTER) even in development"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Automation Without Reversal",
+      "Hidden Single Point of Failure"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "agentic-database-migration-data-corruption-2025"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Indirect"
+    },
+    "tags": [
+      "coordination-failure",
+      "system-design",
+      "multi-agent-llm",
+      "verification-gap"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://arxiv.org/abs/2410.12352",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "ArXiv \u2014 Multi-Agent LLM System Failures",
+    "summary": "Researchers analyzed 1,600+ annotated traces across 7 popular multi-agent frameworks and identified 14 distinct failure modes. Systems exhibited 41% to 86.7% failure rates even in state-of-the-art ...",
+    "root_cause": "Multi-agent systems lack organizational structure\u2014clear role definitions, communication protocols, institutional memory, and verification mechanisms that successful human teams depend on. Failures mirror classic organizational dysfunction, not intelligence deficiency.",
+    "lessons": [
+      "Coordination failures dominate; intelligence is not the limiting factor",
+      "Systems require explicit approval chains and verification layers between agent handoffs",
+      "Unclear goals and role ambiguity cascade through agent interactions"
+    ],
+    "patterns": [
+      "Decision-Making by Proxy",
+      "Hidden Single Point of Failure"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "arxiv-multi-agent-llm-system-failures-2025"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "money",
+      "morale",
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Industry-wide"
+    },
+    "tags": [
+      "agentic-ai",
+      "production-failure",
+      "macro-trend",
+      "systemic-failure",
+      "deployment-challenges"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://hypersensesoftware.com/blog/88-percent-ai-agents-fail-production",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.techcrunch.com/2025/11/ai-agents-fail-rate",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.gartner.com/en/articles/ai-agent-failure-rates-2026",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2025\u20132026) HyperSense \u2014 88% of AI Agents Fail to Reach Production",
+    "summary": "Industry analysis from HyperSense Software and other vendors found that 88% of AI agent projects fail to reach production or fail shortly after deployment. Only 12% achieve sustainable production use.",
+    "root_cause": "- **Expectations Mismatch (35%):** Agents built for simple tasks fail on real-world data variation without human fallback - **Insufficient Guardrails (25%):** Agents given excessive autonomy make catastrophic mistakes without approval gates or rollback mechanisms - **Hallucination Issues (20%):** Downstream systems trust hallucinated data; confidence scores are often misleading - **Integration Complexity (15%):** Proofs of concept work on curated data, but real-world API dependencies break agent workflows - **Testing Insufficient (5%):** No adversarial testing leads to security and production failures on edge cases",
+    "lessons": [
+      "Implement \"shadow mode\" evaluation before granting write access to agents",
+      "Test agents on adversarial inputs before production deployment",
+      "Start agents small without high-stakes access; expand gradually based on demonstrated reliability",
+      "Build human-in-the-loop checkpoints for critical decision paths",
+      "Establish clear escalation paths when agents encounter edge cases"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Automation Without Reversal",
+      "Overconfidence From Past Success"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "2025-2026-hypersense-88-of-ai-agents-fail-to-reach-production-2026"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "10-100x budget overruns"
+    },
+    "tags": [
+      "agentic-ai",
+      "cost-explosion",
+      "guardrails",
+      "context-loss",
+      "integration-failure"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://dsn2024uq.github.io/Proceedings/pdfs/DSN2024-6rvE3SSpzFYmysif75Dkid/410500a001/410500a001.pdf",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://kubernetes.io/blog/2025/10/20/seven-kubernetes-pitfalls-and-how-to-avoid/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "Galileo AI \u2014 40% of Agentic AI Projects Fail",
+    "summary": "Galileo AI research on \"Hidden Costs of Agentic AI\" found that 40% of agentic AI projects fail primarily due to cost explosion and guardrail issues. Projects fail despite successful POCs because ag...",
+    "root_cause": "- **Cost Explosion (Primary):** No rate limiting; API calls exceed budget; agents enter infinite loops on simple tasks - **Guardrails Insufficient:** Runaway agents take unintended actions without approval gates or rollback mechanisms - **Context/Hallucination:** Agents lose context between steps in long workflows, leading to cascading errors - **Integration Failures:** Lack of circuit breakers leads to cascading workflow failures across systems",
+    "lessons": [
+      "Rate limiting and cost monitoring are mandatory for any agentic deployment",
+      "Test long-running workflows specifically for context management and drift",
+      "Implement approval gates for any action with cost or side-effect implications",
+      "Build circuit breakers at the integration layer to prevent cascading failures",
+      "\"Shadow mode\" evaluation must include cost analysis, not just functionality"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Blind Trust in AI Output",
+      "Overconfidence From Past Success"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "galileo-ai-40-of-agentic-ai-projects-fail-2025"
+  },
+  {
+    "cause": "ai",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Variable"
+    },
+    "tags": [
+      "rag",
+      "hallucination",
+      "retrieval-failure",
+      "document-quality",
+      "semantic-search"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://dev.to/kuldeep_paul/ten-failure-modes-of-rag-nobody-talks-about-and-how-to-detect-them-systematically-7i4",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://futureagi.com/blogs/rag-hallucinations-future-agi-2025",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "FutureAGI / Dev.to \u2014 RAG System Hallucination Failures (10+ Modes)",
+    "summary": "Academic analysis and industry research from FutureAGI and Dev.to documented 10+ distinct failure modes in Retrieval-Augmented Generation (RAG) systems deployed in production. RAG is not \"solved\"\u2014h...",
+    "root_cause": "RAG systems inherit LLM hallucination tendencies while adding new failure modes specific to retrieval. Document quality, semantic search limitations, temporal drift, and context window constraints all contribute to a complex failure taxonomy that many teams underestimate.",
+    "lessons": [
+      "Document quality is existential for RAG systems\u2014one bad document ruins retrieval",
+      "Monitor retrieval quality separately from answer quality; you can't improve what you don't measure",
+      "Implement strict refusal logic for low-confidence results rather than hallucinating",
+      "RAG reduces but does not eliminate hallucinations; verification remains essential",
+      "Temporal freshness checks and conflict resolution are not optional features"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Overconfidence From Past Success"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "futureagi-dev-to-rag-system-hallucination-failures-10-modes-2025"
+  },
+  {
+    "cause": "ai",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Brand Damage"
+    },
+    "tags": [
+      "hallucination",
+      "rag-degradation",
+      "business-logic-bypass",
+      "detection-failure"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.linkedin.com/pulse/why-rag-projects-fail-2025-adrian-faryniuk/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "LinkedIn \u2014 RAG Hallucination Cascades",
+    "summary": "42% of AI projects failed in 2025\u2014a 2.5x increase from 2024. Hallucination detection tools failed on 83% of production examples. A notable incident: Chevrolet was manipulated via ChatGPT into agree...",
+    "root_cause": "RAG systems retrieve contextual data but inherit model hallucinations; poor retrieval quality or absence of verification allows false context to amplify errors. Detection tools have high false-negative rates in production conditions.",
+    "lessons": [
+      "RAG reduces hallucinations but does not eliminate them; verification is essential",
+      "Retrieval quality directly impacts downstream accuracy; garbage-in-garbage-out remains true",
+      "Production hallucination detection requires continuous testing against real failure patterns"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Overconfidence From Past Success"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "linkedin-rag-hallucination-cascades-2025"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "data-loss"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 9,
+      "financial": "Massive Potential"
+    },
+    "tags": [
+      "supply-chain",
+      "config-injection",
+      "backdoor-insertion",
+      "ai-assistant"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.pillar.security/blog/rules-file-backdoor",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "Pillar Security \u2014 AI Coding Assistant Rules File Backdoor",
+    "summary": "Pillar Security discovered a supply chain vulnerability in GitHub Copilot and Cursor allowing attackers to inject malicious code via hidden instructions in project `.cursor/rules` and configuration...",
+    "root_cause": "AI coding assistants lack trust boundaries between user input (project config) and system instructions. Configuration files directly influence model behavior without validation.",
+    "lessons": [
+      "AI assistants must treat configuration files with the same security rigor as code",
+      "Invisible characters and Unicode obfuscation can evade standard code review",
+      "Trust in AI tools compounds supply chain risk; malicious code appears legitimate"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries",
+      "Hidden Single Point of Failure"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "direct_incident",
+    "id": "pillar-security-ai-coding-assistant-rules-file-backdoor-2025"
+  },
+  {
+    "cause": "ai",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 7,
+      "financial": "Retraining Costs"
+    },
+    "tags": [
+      "data-degradation",
+      "synthetic-recursion",
+      "performance-loss",
+      "model-collapse"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.nature.com/articles/s41586-024-07566-y",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2024\u20132025) Nature / ArXiv \u2014 Synthetic Data Poisoning & Model Collapse",
+    "summary": "Training generative models on recursively generated synthetic data causes \"model collapse\": early stages lose rare patterns, while late stages lose most variance and confuse concepts. A 2024 Nature...",
+    "root_cause": "Statistical approximation (finite sampling) and functional approximation errors compound exponentially when no ground truth anchors the distribution.",
+    "lessons": [
+      "Model collapse occurs only when synthetic data replaces human data; mixing prevents it",
+      "Early collapse is hard to detect; overall performance may improve while tails degrade",
+      "Multi-modal systems exhibit unique collapse patterns requiring distinct research"
+    ],
+    "patterns": [
+      "Blind Trust in AI Output",
+      "Decision-Making by Proxy"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "2024-2025-nature-arxiv-synthetic-data-poisoning-model-collapse-2026"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "money"
+    ],
+    "severity": {
+      "level": "medium",
+      "score": 6,
+      "financial": "10x budget"
+    },
+    "tags": [
+      "cost-runaway",
+      "token-bloat",
+      "budget-explosion",
+      "agentic-workflow"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.linkedin.com/pulse/your-ai-agent-just-burned-10x-weekly-budget-nav-bhasin/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "Datagrid / LinkedIn \u2014 Agentic Workflow Cost Explosions",
+    "summary": "AI agent deployments experienced cost spirals 10x beyond projections. Multi-agent conversations caused token bloat; function-calling chains hit API rate limits; and agents stuck in retry loops burn...",
+    "root_cause": "Development environments don't reflect production complexity. Token usage multiplies across agent handoffs. Agents lack cost awareness and automatic circuit breakers.",
+    "lessons": [
+      "Test with production-scale data volumes and real API rate limits",
+      "Multi-agent conversations require aggressive token caching and context optimization",
+      "Set hard budget limits with automatic circuit breakers per agent"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Blind Trust in AI Output"
+    ],
+    "category": "ai-slop",
+    "evidence_type": "repeated_pattern",
+    "id": "datagrid-linkedin-agentic-workflow-cost-explosions-2025"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 7,
+      "financial": "N/A"
+    },
+    "tags": [
+      "hidden-dependency",
+      "rollback-failure",
+      "observability-gap",
+      "mysql",
+      "replication"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://github.blog/2018-10-30-october-incident-report/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2018,
+    "title": "GitHub \u2014 MySQL Replication Failure",
+    "summary": "A routine maintenance operation triggered a large-scale MySQL replication failure, causing hours of downtime across GitHub's platform.",
+    "root_cause": "Overconfidence in replication infrastructure; insufficient understanding of failure modes; restore paths never tested; assumed backups were sufficient without validation.",
+    "lessons": [
+      "Backups are useless if restore paths aren't tested",
+      "\"We've done this before\" is not a safety guarantee",
+      "Understand failure modes before they happen",
+      "Operational confidence \u2260 operational safety"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Overconfidence From Past Success"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "github-mysql-replication-failure-2018"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 9,
+      "financial": "N/A"
+    },
+    "tags": [
+      "blast-radius",
+      "control-plane",
+      "region-dependency",
+      "s3",
+      "typo"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://aws.amazon.com/message/41926/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2017,
+    "title": "AWS \u2014 S3 Typo Takes Down us-east-1",
+    "summary": "A typo during debugging commands took down S3 in the us-east-1 region, cascading into major internet outages for thousands of services.",
+    "root_cause": "Human error during debugging; insufficient blast-radius controls; region-level dependencies as silent killers; recovery process itself caused delays.",
+    "lessons": [
+      "\"Highly available\" doesn't mean invulnerable",
+      "Region-level dependencies are silent killers",
+      "Debugging in production requires extreme caution",
+      "Recovery procedures must be tested and resilient"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Automation Without Reversal"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "aws-s3-typo-takes-down-us-east-1-2017"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "money"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "$440M"
+    },
+    "tags": [
+      "no-rollback",
+      "deployment-failure",
+      "trading-automation",
+      "dead-code",
+      "kill-switch"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.sec.gov/spotlight/equity-markets-structure-committee/knight-capital-report.pdf",
+        "kind": "primary"
+      }
+    ],
+    "year": 2012,
+    "title": "Knight Capital \u2014 $440M Trading Loss in Minutes",
+    "summary": "A faulty deployment activated dead code paths in Knight Capital's trading system, triggering uncontrolled trading that lost approximately $440M in under an hour.",
+    "root_cause": "Broken deployment process; dead code left in production; no kill switches; automation without human oversight; deployment occurred during market hours.",
+    "lessons": [
+      "Automation without kill switches is lethal",
+      "Old code is still production code \u2014 audit and remove dead paths",
+      "Deployments during critical operations require extreme caution",
+      "Every automated system needs a tested emergency stop"
+    ],
+    "patterns": [
+      "Automation Without Reversal"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "knight-capital-440m-trading-loss-in-minutes-2012"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "N/A"
+    },
+    "tags": [
+      "regex",
+      "backtracking",
+      "cpu-exhaustion",
+      "waf",
+      "global-impact",
+      "cascade"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2019,
+    "title": "Cloudflare \u2014 Regex Catastrophe",
+    "summary": "A single regex rule deployed to Cloudflare's WAF caused CPU exhaustion across all HTTP/HTTPS servers worldwide, resulting in 30+ minutes of 502 errors for sites using Cloudflare.",
+    "root_cause": "The regex `.*(?:.*=.*)` caused catastrophic backtracking. The rule wasn't tested for CPU impact. A safety mechanism that would have limited CPU usage had been removed weeks earlier \"by mistake.\"",
+    "lessons": [
+      "Test regex performance before deployment, especially in WAF rules",
+      "Any change to safety mechanisms requires review and rollback plan",
+      "Monitor CPU usage in test suites, not just functionality",
+      "Single points of failure in safety systems are catastrophic"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Overconfidence From Past Success"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "cloudflare-regex-catastrophe-2019"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "data-loss"
+    ],
+    "tags": [
+      "data-loss",
+      "backup-failure",
+      "human-error",
+      "postgresql",
+      "replication"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2017,
+    "title": "GitLab \u2014 Sysadmin Deletes Database during Maintenance",
+    "summary": "During a routine maintenance window to resolve replication lag, a tired system administrator accidentally deleted 300GB of live production data by running `rm -rf` on the wrong directory.",
+    "root_cause": "Human error due to fatigue and lack of guardrails; five different levels of backups and replication failed or were found to be empty; backup verification process was non-existent.",
+    "lessons": [
+      "Backups are only as good as your last successful restore test",
+      "Implement guardrails for destructive commands (e.g., alias `rm` to interactive mode)",
+      "Monitor backup size and completion \u2014 don't assume success",
+      "Engineer systems to be resilient to human error at 2 AM"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Overconfidence From Past Success"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "gitlab-sysadmin-deletes-database-during-maintenance-2017"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "tags": [
+      "vcl",
+      "global-outage",
+      "cascading-failure",
+      "edge-computing",
+      "hidden-sop"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.fastly.com/blog/summary-of-june-8-incident",
+        "kind": "primary"
+      }
+    ],
+    "year": 2021,
+    "title": "Fastly \u2014 Single Customer Config Triggering Global Outage",
+    "summary": "A single valid configuration change by one customer triggered a software bug in Fastly's edge cloud, causing 85% of their network to return 503 errors within minutes.",
+    "root_cause": "A dormant bug in the VCL (Varnish Configuration Language) compiler was triggered by a specific set of configuration parameters; failure to isolate service-wide impacts from individual customer changes.",
+    "lessons": [
+      "Individual customer actions should never be able to trigger global infrastructure failures",
+      "Implement \"cell-based architecture\" to limit blast radius",
+      "Dormant bugs in critical path code are time bombs \u2014 fuzzing matters",
+      "Fast rollbacks are the best defense against unknown-condition triggers"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Automation Without Reversal"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "fastly-single-customer-config-triggering-global-outage-2021"
+  },
+  {
+    "cause": "automation",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 9,
+      "financial": "Significant"
+    },
+    "tags": [
+      "cascading-failure",
+      "config-propagation",
+      "global-outage",
+      "feature-file-poisoning",
+      "2025-active"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://blog.cloudflare.com/outage-report-november-18-2025/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "Cloudflare \u2014 Bot Management Feature File Corruption",
+    "summary": "A database permission change caused the Bot Management feature file to double in size. This oversized file exceeded the size limits of routing software deployed across Cloudflare's global network.",
+    "root_cause": "A change to database system permissions unexpectedly multiplied feature file entries. The software had a hard limit on file size that was not enforced upstream. No size-limit validation caught the problem before propagation.",
+    "lessons": [
+      "Configuration changes can have exponential downstream effects; test at scale before global rollout",
+      "Size limits and capacity checks must be enforced at the source, not at consumption",
+      "Distinguish DDoS attack signatures from internal cascading failures early"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Automation Without Reversal"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "cloudflare-bot-management-feature-file-corruption-2025"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Significant"
+    },
+    "tags": [
+      "cascading-failure",
+      "shared-dependency",
+      "global-outage",
+      "social-media",
+      "2024-major"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.cnbc.com/2024/12/11/metas-facebook-instagram-go-down.html",
+        "kind": "primary"
+      }
+    ],
+    "year": 2024,
+    "title": "Meta \u2014 Shared Infrastructure Cascading Failure",
+    "summary": "A technical issue in Meta's infrastructure caused cascading failures across Facebook, Instagram, Threads, WhatsApp, and Messenger.",
+    "root_cause": "Infrastructure-level issue cascaded across multiple services due to shared backend dependencies.",
+    "lessons": [
+      "Shared infrastructure creates cascading risk; failures in one service ripple to others",
+      "Complex interdependencies are invisible until they fail",
+      "Long MTTR indicates poor incident detection or response coordination"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Overconfidence From Past Success"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "meta-shared-infrastructure-cascading-failure-2024"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "visibility-loss"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Indirect"
+    },
+    "tags": [
+      "observability-gap",
+      "architecture",
+      "visibility-loss",
+      "regional-outage",
+      "2025-critical"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.linkedin.com/pulse/when-observability-fails-what-we-can-learn-from-aws-outage/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "AWS \u2014 CloudWatch & Health Dashboard Co-Located Failure",
+    "summary": "An AWS outage in US-East-1 took down production workloads and simultaneously took down the observability stack (CloudWatch, Health Dashboard) hosted in the same region.",
+    "root_cause": "Architectural decision to co-locate monitoring infrastructure with production workloads. Observability systems lacked geographic redundancy.",
+    "lessons": [
+      "Observability must be external to the systems being monitored",
+      "Regional failures require monitoring in separate regions or managed third-party services",
+      "AI and automation cannot help if you are blind during the incident"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Decision-Making by Proxy"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "aws-cloudwatch-health-dashboard-co-located-failure-2025"
+  },
+  {
+    "cause": "deployment-validation",
+    "stage": "scale",
+    "impact": [
+      "systemic-outage"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "$5B+"
+    },
+    "tags": [
+      "rollback-failure",
+      "cause:deployment-validation",
+      "systemic-outage",
+      "endpoint-security",
+      "2024-worst"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.crowdstrike.com/blog/falcon-content-update-remediation-and-guidance-hub/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2024,
+    "title": "CrowdStrike \u2014 Faulty Falcon Sensor Update",
+    "summary": "CrowdStrike deployed a faulty update to its Falcon sensor, triggering system crashes on millions of Windows devices globally. Rollback required physical access to machines.",
+    "root_cause": "Insufficient pre-deployment testing or staged rollout. The update was deployed globally without canary validation. Rollback required human intervention at scale.",
+    "lessons": [
+      "Endpoint agent updates require the most rigorous testing; global blast radius is total",
+      "Canary deployments are non-negotiable for critical infrastructure",
+      "Rollbacks that require physical access are not rollbacks; they are disasters"
+    ],
+    "patterns": [
+      "Automation Without Reversal",
+      "Overconfidence From Past Success"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "crowdstrike-faulty-falcon-sensor-update-2024"
+  },
+  {
+    "cause": "latent-bug",
+    "stage": "scale",
+    "impact": [
+      "error-spike"
+    ],
+    "severity": {
+      "level": "medium",
+      "score": 7,
+      "financial": "Significant"
+    },
+    "tags": [
+      "rollback-failure",
+      "cause:latent-bug",
+      "error-spike",
+      "ddos-rule",
+      "2024-major"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://blog.cloudflare.com/incident-report-june-20-2024/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2024,
+    "title": "Cloudflare \u2014 DDoS Rule Deployment Failure",
+    "summary": "A new DDoS mitigation rule triggered a latent bug in the rate-limiting system, causing HTTP request handling processes to use excessive CPU globally.",
+    "root_cause": "New DDoS rule contained a broken cookie validation check that triggered an exception. Latent interaction was not exercised in pre-deployment testing.",
+    "lessons": [
+      "Latent bugs in stable code can be triggered by new code paths; interaction testing is essential",
+      "Gradual global rollout is good practice, but must include staged failure detection",
+      "Distinguish internal cascades from external attacks immediately"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Overconfidence From Past Success"
+    ],
+    "category": "outage",
+    "evidence_type": "direct_incident",
+    "id": "cloudflare-ddos-rule-deployment-failure-2024"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Significant"
+    },
+    "tags": [
+      "kubernetes",
+      "cascading-failure",
+      "control-plane",
+      "autoscaler",
+      "node-explosion",
+      "hidden-dependency"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://github.com/doy2020/mutiny",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.usenix.org/conference/fast24/presentation/paper-jiang",
+        "kind": "primary"
+      }
+    ],
+    "year": 2024,
+    "title": "Kubernetes \u2014 Cluster-Wide Failures (51% Dependency-Related)",
+    "summary": "Peer-reviewed research \"Mutiny! How does Kubernetes fail\" found that over half (51%) of cluster-wide failures are caused by interdependencies. A control plane timeout can cascade into complete clus...",
+    "root_cause": "- Hidden coupling between control plane and data plane components - Autoscalers that amplify failures by acting on bad health signals - Control plane timeouts interpreted as node failures by kubelets - Mass node deletion triggers cascading rescheduling that overwhelms remaining infrastructure",
+    "lessons": [
+      "Implement circuit breaker logic in autoscalers to prevent action on degraded signals",
+      "Separate control plane and data plane health monitoring to avoid false positives",
+      "Use dependency-aware scaling that understands control plane dependencies",
+      "Build observability specifically for interdependency detection, not just component health",
+      "Test failure modes that involve multiple component interactions, not just single components"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Hidden Single Point of Failure",
+      "Automation Without Reversal"
+    ],
+    "category": "outage",
+    "evidence_type": "repeated_pattern",
+    "id": "kubernetes-cluster-wide-failures-51-dependency-related-2024"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "tags": [
+      "misconfiguration",
+      "iam",
+      "ssrf",
+      "cloud-security",
+      "over-privileged-access"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.justice.gov/opa/press-release/file/1244101/download",
+        "kind": "primary"
+      }
+    ],
+    "year": 2019,
+    "title": "Capital One \u2014 Cloud Firewall Misconfiguration",
+    "summary": "An attacker exploited a misconfigured cloud firewall combined with a server-side request forgery (SSRF) vulnerability to access sensitive customer data stored in AWS.",
+    "root_cause": "Misconfigured IAM roles with over-privileged access; internal services assumed trusted without validation; firewall rules too permissive; SSRF vulnerability in web application firewall.",
+    "lessons": [
+      "Cloud security failures are often configuration, not complex exploits",
+      "Assume internal services will be abused \u2014 apply zero-trust principles",
+      "IAM permissions should follow least-privilege, always",
+      "Regular configuration audits catch what vulnerability scans miss"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "capital-one-cloud-firewall-misconfiguration-2019"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "data-loss"
+    ],
+    "tags": [
+      "unpatched",
+      "apache-struts",
+      "credential-lateral-movement",
+      "no-segmentation",
+      "regulatory-fine"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.breachsense.com/blog/equifax-data-breach/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2017,
+    "title": "Equifax \u2014 Unpatched Vulnerability",
+    "summary": "Attackers exploited a known Apache Struts vulnerability (CVE-2017-5638) that had a patch available for 2 months. The breach exposed 147.9 million Americans' data including SSNs, birth dates, and ad...",
+    "root_cause": "Failure to patch a critical vulnerability despite knowing about it. No network segmentation allowed lateral movement. Plaintext credentials enabled broader access. Existed for 76 days before detection.",
+    "lessons": [
+      "Patch critical vulnerabilities within hours/days, not weeks/months",
+      "Network segmentation limits blast radius of initial compromise",
+      "Store credentials securely; plaintext access enables lateral movement",
+      "Detection time matters as much as prevention"
+    ],
+    "patterns": [
+      "Patching Debt"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "equifax-unpatched-vulnerability-2017"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 9,
+      "financial": "Significant"
+    },
+    "tags": [
+      "cloud-misconfiguration",
+      "s3-public-access",
+      "source-code-leak",
+      "secrets-exposure",
+      "2021-major"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.bbc.com/news/technology-58817658",
+        "kind": "primary"
+      }
+    ],
+    "year": 2021,
+    "title": "Twitch \u2014 Source Code Leak via S3 Misconfiguration",
+    "summary": "A server configuration change exposed internal Twitch infrastructure. An attacker downloaded 125GB of data, including Twitch's complete source code, internal tools, and creator payouts.",
+    "root_cause": "Server configuration error during a system change made an S3 bucket or similar storage service publicly accessible.",
+    "lessons": [
+      "Configuration changes are the leading cause of cloud data exposure",
+      "Secrets embedded in source code are a systemic vulnerability, not an edge case",
+      "Once code is leaked, assume all embedded secrets are compromised; rotate aggressively"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "twitch-source-code-leak-via-s3-misconfiguration-2021"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "Massive"
+    },
+    "tags": [
+      "supply-chain",
+      "build-infrastructure-compromise",
+      "nation-state-access",
+      "solarwinds",
+      "2020-major"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://cloud.google.com/blog/topics/threat-intelligence/sunburst-backdoor-analysis",
+        "kind": "primary"
+      }
+    ],
+    "year": 2020,
+    "title": "SolarWinds \u2014 Orion Supply Chain Attack",
+    "summary": "APT29 (nation-state actor) compromised SolarWinds' software build process via SUNSPOT, injecting a backdoor (SUNBURST) into signed updates distributed to 30,000+ organizations.",
+    "root_cause": "Attackers compromised the automated build process\u2014a less obvious attack surface than source control. Malware masqueraded as legitimate traffic to hide exfiltration.",
+    "lessons": [
+      "Build infrastructure is as critical as source control; both require equal protection",
+      "Supply chain attacks succeed by exploiting trust in software updates",
+      "Cryptographic signing alone does not ensure integrity if the signing key is compromised"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure",
+      "Misconfigured Trust Boundaries"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "solarwinds-orion-supply-chain-attack-2020"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 9,
+      "financial": "Massive Potential"
+    },
+    "tags": [
+      "supply-chain",
+      "token-exposure",
+      "code-exfiltration",
+      "github-actions",
+      "2025-active"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.praetorian.com/blog/codeqleaked-public-secrets-exposure/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "GitHub \u2014 CodeQL Supply Chain Vulnerability",
+    "summary": "A GitHub token was exposed in CodeQL Actions workflow artifacts for ~1 second, allowing attackers to capture it and modify immutable tags to point to malicious code.",
+    "root_cause": "Non-immutable tags in official actions; token exposure in workflow artifacts; failure to use workflow pinning.",
+    "lessons": [
+      "Supply chain attacks on CI/CD are effective; even brief token exposures are dangerous",
+      "Immutable tags and workflow pinning are not optional for critical actions",
+      "Cache poisoning is a persistent threat; cache hygiene is essential"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries",
+      "Hidden Single Point of Failure"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "github-codeql-supply-chain-vulnerability-2025"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "Massive"
+    },
+    "tags": [
+      "zero-day",
+      "unsafe-feature",
+      "rce-global",
+      "log4j",
+      "2021-critical"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "kind": "primary"
+      }
+    ],
+    "year": 2021,
+    "title": "Log4Shell \u2014 Global Remote Code Execution (CVE-2021-44228)",
+    "summary": "A remote code execution vulnerability in Apache Log4j 2 allowed attackers to execute arbitrary code by crafting log messages that triggered malicious JNDI lookups.",
+    "root_cause": "Log4j's message lookup feature did not validate or sandbox JNDI references. The flaw existed unnoticed in a core library since 2013.",
+    "lessons": [
+      "Dynamic code execution features (JNDI, deserialization) are inherently dangerous",
+      "User-controlled input flowing to logging systems is a critical attack surface",
+      "Widespread usage increases blast radius; patching at scale takes weeks/months"
+    ],
+    "patterns": [
+      "Hidden Single Point of Failure"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "log4shell-global-remote-code-execution-cve-2021-44228-2021"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Significant"
+    },
+    "tags": [
+      "authentication-bypass",
+      "oauth-misconfiguration",
+      "account-takeover",
+      "redirect-uri",
+      "2023-pattern"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.descope.com/blog/post/oauth-vulnerabilities",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2023\u20132025) Booking.com \u2014 OAuth Redirect URI Misconfiguration",
+    "summary": "Booking.com's OAuth implementation allowed open redirect vulnerabilities via loose path matching on the `redirect_uri` parameter.",
+    "root_cause": "Application-layer implementation did not enforce exact path matching for redirect URIs, despite domain-level validation.",
+    "lessons": [
+      "OAuth provider validation alone is insufficient; client applications must validate strictly",
+      "Exact path matching is required; domain-only validation is too permissive",
+      "Open redirects are especially dangerous in OAuth flows"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "2023-2025-booking-com-oauth-redirect-uri-misconfiguration-2026"
+  },
+  {
+    "cause": "architecture",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Significant"
+    },
+    "tags": [
+      "authentication-bypass",
+      "oauth-parameter-injection",
+      "account-takeover",
+      "token-leakage",
+      "2023-pattern"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.descope.com/blog/post/oauth-vulnerabilities",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2023\u20132025) Expo \u2014 OAuth Token Exposure via Return URL",
+    "summary": "Expo's OAuth implementation allowed manipulation of the `returnURL` parameter to send OAuth tokens to attacker-controlled domains.",
+    "root_cause": "Insufficient validation of the `returnURL` parameter; trust in user-supplied redirect targets without verification.",
+    "lessons": [
+      "Return URL validation must be as strict as redirect URI validation",
+      "OAuth proxies introduce additional validation requirements"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "2023-2025-expo-oauth-token-exposure-via-return-url-2026"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 9,
+      "financial": "Significant"
+    },
+    "tags": [
+      "social-engineering",
+      "mfa-fatigue",
+      "privileged-access",
+      "human-factor",
+      "data-exposure"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.uber.com/newsroom/security-update/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2022,
+    "title": "Uber \u2014 MFA Fatigue & Social Engineering",
+    "summary": "An attacker gained access to an Uber employee's account by bombarding them with MFA push notifications (\"MFA fatigue\") and then posing as IT help desk.",
+    "root_cause": "Reliance on simple push-based MFA; lack of internal zero-trust; human vulnerability to social engineering.",
+    "lessons": [
+      "Shift from push-based MFA to security keys to prevent fatigue attacks",
+      "Apply zero-trust internally: password should not grant full access",
+      "Regularly train employees on social engineering tactics"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries",
+      "Overconfidence From Past Success"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "uber-mfa-fatigue-social-engineering-2022"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Global Trend"
+    },
+    "tags": [
+      "human-factor",
+      "trust-exploitation",
+      "data-exfiltration",
+      "bec",
+      "2025-trend"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://unit42.paloaltonetworks.com/global-incident-response-report/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2025,
+    "title": "Unit 42 \u2014 Social Engineering Trend Report",
+    "summary": "Social engineering became the #1 initial access vector in 2025 (36% of incidents). 66% targeted privileged accounts.",
+    "root_cause": "Attackers exploit human trust and urgency; weak access controls and over-permissioned accounts amplify initial compromises.",
+    "lessons": [
+      "Social engineering succeeds due to human behavior, not technical sophistication",
+      "Weak controls (missing MFA, over-permissions) amplify social engineering impact",
+      "Detection gaps and alert fatigue mask critical signals"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries",
+      "Decision-Making by Proxy"
+    ],
+    "category": "security",
+    "evidence_type": "repeated_pattern",
+    "id": "unit-42-social-engineering-trend-report-2025"
+  },
+  {
+    "cause": "human-error",
+    "stage": "scale",
+    "impact": [
+      "trust"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 9,
+      "financial": "Significant"
+    },
+    "tags": [
+      "social-engineering",
+      "credential-compromise",
+      "pii-exfiltration",
+      "github-access",
+      "2024-major"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://techcrunch.com/2025/05/27/data-broker-lexisnexis-breach-exposed-364k-people/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2024,
+    "title": "LexisNexis \u2014 GitHub Account Compromise via Social Engineering",
+    "summary": "An attacker gained access to LexisNexis's GitHub account via social engineering (pretext calls) and exfiltrated personal data for 364,000+ individuals.",
+    "root_cause": "Weak authentication controls on GitHub and human vulnerability to pretexting.",
+    "lessons": [
+      "GitHub access is equivalent to internal infrastructure access",
+      "Social engineering targets help desk and support; specific training is required",
+      "Third-party development platforms often hold sensitive data; access must be strict"
+    ],
+    "patterns": [
+      "Misconfigured Trust Boundaries",
+      "Overconfidence From Past Success"
+    ],
+    "category": "security",
+    "evidence_type": "direct_incident",
+    "id": "lexisnexis-github-account-compromise-via-social-engineering-2024"
+  },
+  {
+    "cause": "incentives",
+    "stage": "growth",
+    "impact": [
+      "money"
+    ],
+    "tags": [
+      "no-pmf",
+      "timing",
+      "distribution",
+      "wrong-assumptions",
+      "premium-content"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.theinformation.com/articles/quibi-the-rise-and-fall-of-a-1-75-billion-failure",
+        "kind": "primary"
+      }
+    ],
+    "year": 2020,
+    "title": "Quibi \u2014 $1.75B Burn in 6 Months",
+    "summary": "Quibi raised $1.75B to build \"Netflix for your phone\" with premium short-form content. Launched April 2020, shut down October 2020. Burned through nearly $2B in under 7 months.",
+    "root_cause": "No product-market fit; fundamentally wrong assumptions about mobile viewing habits; content didn't justify subscription; premium positioning meaningless without habit formation; distribution strategy failed.",
+    "lessons": [
+      "Money doesn't buy demand",
+      "\"Premium\" means nothing without habit",
+      "Timing assumptions must be tested, not assumed",
+      "Content differentiation must be obvious, not explained"
+    ],
+    "patterns": [
+      "Money \u2260 Product-Market Fit"
+    ],
+    "category": "startup",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "quibi-1-75b-burn-in-6-months-2020"
+  },
+  {
+    "cause": "incentives",
+    "stage": "growth",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "tags": [
+      "fraud",
+      "fake-technology",
+      "regulatory-failure",
+      "healthcare",
+      "due-diligence-failure"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "$9B valuation to zero"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.sec.gov/news/press-release/2018-41",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.wsj.com/articles/theranos-has-struggled-with-blood-tests-1444881901",
+        "kind": "primary"
+      }
+    ],
+    "year": 2018,
+    "title": "Theranos \u2014 $9B Fraud Built on Lies",
+    "summary": "Theranos claimed to revolutionize blood testing with proprietary technology that didn't work. Raised $9B in valuation before SEC fraud charges revealed the technology was fake.",
+    "root_cause": "Fake-it-until-you-make-it culture taken to criminal extremes; board lacked technical expertise; investors skipped due diligence because of founder charisma; \"stealth mode\" prevented scrutiny.",
+    "lessons": [
+      "Technical due diligence is not optional for deep-tech investments",
+      "Prestigious boards don't replace domain expertise",
+      "\"Stealth mode\" can hide fraud, not just competitive advantage",
+      "Healthcare technology requires regulatory validation, not just investor validation"
+    ],
+    "patterns": [
+      "Money \u2260 Product-Market Fit"
+    ],
+    "category": "startup",
+    "evidence_type": "direct_incident",
+    "id": "theranos-9b-fraud-built-on-lies-2018"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "tags": [
+      "governance-failure",
+      "valuation-bubble",
+      "founder-control",
+      "ipo-failure",
+      "burn-rate"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 9,
+      "financial": "$47B to $9B valuation collapse"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=wework&type=S-1",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.wsj.com/articles/this-is-not-the-way-everybody-behaves-how-adam-neumanns-over-the-top-style-built-wework-11568823827",
+        "kind": "primary"
+      }
+    ],
+    "year": 2019,
+    "title": "WeWork \u2014 Governance Failure at $47B Valuation",
+    "summary": "WeWork's IPO filing revealed massive losses, governance failures, and self-dealing. Valuation collapsed from $47B to $9B; founder forced out; IPO cancelled.",
+    "root_cause": "Founder had voting control without accountability; board failed oversight; investors prioritized growth over governance; \"tech company\" narrative masked real estate economics.",
+    "lessons": [
+      "Governance matters more at scale, not less",
+      "Dual-class shares concentrate power but also risk",
+      "Valuation is not validation",
+      "IPO scrutiny exposes what private markets ignore"
+    ],
+    "patterns": [
+      "Money \u2260 Product-Market Fit",
+      "The Innovator's Dilemma"
+    ],
+    "category": "startup",
+    "evidence_type": "direct_incident",
+    "id": "wework-governance-failure-at-47b-valuation-2019"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "money",
+      "trust",
+      "users"
+    ],
+    "tags": [
+      "fraud",
+      "no-controls",
+      "crypto",
+      "customer-funds",
+      "regulatory-evasion"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "$32B to zero"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://restructuring.ra.kroll.com/FTX/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.justice.gov/opa/pr/ftx-founder-sam-bankman-fried-sentenced-25-years-imprisonment",
+        "kind": "primary"
+      }
+    ],
+    "year": 2022,
+    "title": "FTX \u2014 $32B Collapse in 10 Days",
+    "summary": "FTX, valued at $32B, collapsed in 10 days when it was revealed that customer funds were misappropriated. Founder convicted of fraud; bankruptcy revealed no financial controls existed.",
+    "root_cause": "No financial controls; customer funds mixed with trading arm; board was nominal; regulatory arbitrage via offshore structure; \"effective altruism\" narrative masked fraud.",
+    "lessons": [
+      "Offshore structures don't eliminate accountability, they delay it",
+      "Customer fund segregation is not optional",
+      "Audits by small firms of large companies are red flags",
+      "Speed of growth doesn't excuse absence of controls"
+    ],
+    "patterns": [
+      "Money \u2260 Product-Market Fit",
+      "Misconfigured Trust Boundaries"
+    ],
+    "category": "startup",
+    "evidence_type": "direct_incident",
+    "id": "ftx-32b-collapse-in-10-days-2022"
+  },
+  {
+    "cause": "no-pmf",
+    "stage": "growth",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "tags": [
+      "over-engineering",
+      "no-pmf",
+      "hardware",
+      "silicon-valley-excess"
+    ],
+    "severity": {
+      "level": "medium",
+      "score": 6,
+      "financial": "$120M lost"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.bloomberg.com/news/features/2017-04-19/silicon-valley-s-400-juicer-may-be-feeling-the-squeeze",
+        "kind": "primary"
+      }
+    ],
+    "year": 2017,
+    "title": "Juicero \u2014 $120M for a Juice Bag Squeezer",
+    "summary": "Juicero raised $120M to build a $400 WiFi-connected juicer. Bloomberg revealed the proprietary juice bags could be squeezed by hand, rendering the machine pointless.",
+    "root_cause": "Solution looking for a problem; investors didn't ask \"can you just squeeze the bag?\"; over-engineering masked lack of product-market fit; premium pricing without premium value.",
+    "lessons": [
+      "Ask the dumb questions before funding",
+      "Hardware complexity doesn't equal value",
+      "Venture capital can fund solutions to non-problems",
+      "The Bloomberg Test: if a journalist can break your thesis in one paragraph, rethink"
+    ],
+    "patterns": [
+      "Money \u2260 Product-Market Fit"
+    ],
+    "category": "startup",
+    "evidence_type": "direct_incident",
+    "id": "juicero-120m-for-a-juice-bag-squeezer-2017"
+  },
+  {
+    "cause": "architecture",
+    "stage": "decline",
+    "impact": [
+      "money",
+      "users"
+    ],
+    "tags": [
+      "hardware",
+      "competition",
+      "quality-issues",
+      "market-timing",
+      "fitness-wearables"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "$3B+ raised, liquidated"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://techcrunch.com/2017/07/06/jawbone-is-going-out-of-business/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.theverge.com/2017/7/6/15929510/jawbone-going-out-of-business-fitness-tracking",
+        "kind": "primary"
+      }
+    ],
+    "year": 2017,
+    "title": "Jawbone \u2014 $3B Wearables Pioneer to Liquidation",
+    "summary": "Jawbone, once valued at $3B+ as a wearables pioneer, liquidated in 2017 after failing to compete with Fitbit and Apple Watch while struggling with hardware quality issues.",
+    "root_cause": "Hardware quality issues eroded trust; couldn't compete on price with Fitbit or features with Apple; pivoted too late to health-focused B2B; burned cash on legal battles with Fitbit.",
+    "lessons": [
+      "First-mover advantage is temporary in hardware",
+      "Quality issues in wearables destroy trust faster than software bugs",
+      "Litigation is not a business strategy",
+      "When the platform players enter your market, differentiate or die"
+    ],
+    "patterns": [
+      "Ecosystem Neglect",
+      "Overconfidence From Past Success"
+    ],
+    "category": "startup",
+    "evidence_type": "direct_incident",
+    "id": "jawbone-3b-wearables-pioneer-to-liquidation-2017"
+  },
+  {
+    "cause": "timing",
+    "stage": "growth",
+    "impact": [
+      "trust"
+    ],
+    "tags": [
+      "premature",
+      "privacy",
+      "fashion",
+      "user-acceptance",
+      "enterprise-pivot"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.investopedia.com/articles/investing/052115/how-why-google-glass-failed.asp",
+        "kind": "primary"
+      }
+    ],
+    "year": 2014,
+    "title": "Google Glass \u2014 Technology Ahead of Society",
+    "summary": "Google launched Glass as a consumer product in 2014 for $1,500. Pulled from market in 2015. Eventually pivoted to enterprise, then discontinued entirely in 2023.",
+    "root_cause": "Technology was 5-10 years ahead of social acceptance; no killer app justified the form factor; privacy concerns made people uncomfortable; $1,500 price point with no clear value; marketing couldn't manufacture \"cool.\"",
+    "lessons": [
+      "Technology readiness \u2260 market readiness",
+      "Social acceptance is as important as technical readiness",
+      "Privacy concerns are product risks, not edge cases",
+      "\"Cool\" can't be bought through influencer marketing"
+    ],
+    "patterns": [
+      "Overconfidence From Past Success"
+    ],
+    "category": "product",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "google-glass-technology-ahead-of-society-2014"
+  },
+  {
+    "cause": "incentives",
+    "stage": "growth",
+    "impact": [
+      "users"
+    ],
+    "tags": [
+      "ux-mismatch",
+      "wrong-market",
+      "documentation-heavy",
+      "collaboration-complexity"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://googleblog.blogspot.com/2012/08/update-on-google-wave.html",
+        "kind": "primary"
+      }
+    ],
+    "year": 2012,
+    "title": "Google Wave \u2014 Technically Impressive, User Failure",
+    "summary": "Google Wave launched as a \"revolutionary\" collaboration tool combining email, chat, and documents. Despite technical innovation, users couldn't understand its value proposition.",
+    "root_cause": "UX complexity too high; unclear value proposition; users needed tutorials just to understand the product; \"cool tech\" doesn't create demand; marketing confused novelty with value.",
+    "lessons": [
+      "Cool tech doesn't create demand",
+      "If users need tutorials, you're already in trouble",
+      "Value proposition must be obvious within seconds",
+      "Technical excellence \u2260 product success"
+    ],
+    "patterns": [
+      "Ecosystem Neglect"
+    ],
+    "category": "product",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "google-wave-technically-impressive-user-failure-2012"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "users"
+    ],
+    "tags": [
+      "ecosystem-failure",
+      "platform-risk",
+      "developer-trust",
+      "late-entry",
+      "app-gap"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.theverge.com/2017/10/8/16437700/microsoft-windows-phone-dead",
+        "kind": "primary"
+      }
+    ],
+    "year": 2017,
+    "title": "Windows Phone \u2014 Ecosystem Neglect",
+    "summary": "Windows Phone launched with a strong, innovative OS but failed to attract app developers. By 2017, the platform was abandoned, leaving users without support or apps.",
+    "root_cause": "Late market entry; developer ecosystem neglected; app gap persisted too long; developer trust is non-renewable; competing platforms had insurmountable network effects.",
+    "lessons": [
+      "Platforms live or die by ecosystems",
+      "Developer trust is non-renewable \u2014 once burned, they won't return",
+      "Late entry requires 10x better, not 10% better",
+      "App ecosystem gap is a death spiral, not a temporary problem"
+    ],
+    "patterns": [
+      "Ecosystem Neglect"
+    ],
+    "category": "product",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "windows-phone-ecosystem-neglect-2017"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "users",
+      "trust"
+    ],
+    "tags": [
+      "social-network",
+      "forced-integration",
+      "privacy-breach",
+      "network-effects",
+      "late-entry"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 7,
+      "financial": "Billions in investment"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://blog.google/technology/safety-security/project-strobe/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.theverge.com/2019/4/2/18290637/google-plus-shutdown-consumer-version-today",
+        "kind": "primary"
+      }
+    ],
+    "year": 2019,
+    "title": "Google+ \u2014 The Social Network Nobody Wanted",
+    "summary": "Google launched Google+ in 2011 to compete with Facebook, forcing integration across Google products. After years of low engagement, a privacy breach became the final trigger for shutdown in 2019.",
+    "root_cause": "Launched to compete, not to serve users; forced adoption created resentment; network effects favor incumbents; bolting social onto utility products doesn't create social behavior.",
+    "lessons": [
+      "Forced adoption creates usage, not engagement",
+      "Network effects mean second place often means zero",
+      "Social products require social DNA, not just social features",
+      "Internal metrics (signups) can mask external reality (nobody cares)"
+    ],
+    "patterns": [
+      "Ecosystem Neglect",
+      "Overconfidence From Past Success"
+    ],
+    "category": "product",
+    "evidence_type": "direct_incident",
+    "id": "google-the-social-network-nobody-wanted-2019"
+  },
+  {
+    "cause": "incentives",
+    "stage": "growth",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "tags": [
+      "hardware",
+      "wrong-market",
+      "amazon-ecosystem",
+      "premium-pricing",
+      "gimmick-features"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 7,
+      "financial": "$170M write-off"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.fastcompany.com/3039887/fire-phone-was-a-misfire-but-amazon-isnt-done-reinventing-the-smartphone",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.theverge.com/2014/12/16/7404231/amazon-fire-phone-83-million-loss",
+        "kind": "primary"
+      }
+    ],
+    "year": 2014,
+    "title": "Amazon Fire Phone \u2014 When Amazon Tried to Be Apple",
+    "summary": "Amazon launched the Fire Phone at $199 with gimmick features (Dynamic Perspective 3D) that nobody asked for. Within months, price dropped to $0.99; Amazon wrote off $170M in unsold inventory.",
+    "root_cause": "Built to drive Amazon shopping, not to be a great phone; gimmick features over core functionality; premium price without premium value; ignored what made Kindle successful (low price, single purpose).",
+    "lessons": [
+      "Gimmick features don't overcome fundamental value propositions",
+      "Amazon's ecosystem strength is low prices and convenience, not premium hardware",
+      "Copying Apple's playbook requires Apple's brand",
+      "Phones are commodities; differentiation must be 10x, not 10%"
+    ],
+    "patterns": [
+      "Money \u2260 Product-Market Fit",
+      "Overconfidence From Past Success"
+    ],
+    "category": "product",
+    "evidence_type": "direct_incident",
+    "id": "amazon-fire-phone-when-amazon-tried-to-be-apple-2014"
+  },
+  {
+    "cause": "timing",
+    "stage": "growth",
+    "impact": [
+      "users",
+      "trust"
+    ],
+    "tags": [
+      "mobile",
+      "ux-mismatch",
+      "user-rejection",
+      "forced-social",
+      "platform-overreach"
+    ],
+    "severity": {
+      "level": "medium",
+      "score": 5,
+      "financial": "Reputation damage"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.theverge.com/2013/5/13/4325050/htc-first-facebook-home-phone-report-card",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://techcrunch.com/2013/06/14/facebook-home-1-million/",
+        "kind": "primary"
+      }
+    ],
+    "year": 2013,
+    "title": "Facebook Home \u2014 Replacing Android, Alienating Users",
+    "summary": "Facebook launched \"Home\" \u2014 an Android launcher that replaced your home screen with Facebook content. The dedicated HTC First phone flopped; app removed from Play Store after abysmal ratings.",
+    "root_cause": "Users didn't want Facebook to own their phone experience; replaced useful home screen with content stream; privacy concerns in always-on Facebook mode; assumed users wanted more Facebook, not productivity.",
+    "lessons": [
+      "Owning the home screen requires earning trust, not forcing presence",
+      "Social content as default interface is exhausting, not engaging",
+      "Diminishing returns on Facebook surface area",
+      "Users will reject products that prioritize platform over user"
+    ],
+    "patterns": [
+      "Ecosystem Neglect"
+    ],
+    "category": "product",
+    "evidence_type": "direct_incident",
+    "id": "facebook-home-replacing-android-alienating-users-2013"
+  },
+  {
+    "cause": "timing",
+    "stage": "growth",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "tags": [
+      "overhype",
+      "wrong-market",
+      "regulation",
+      "infrastructure-dependency",
+      "premium-pricing"
+    ],
+    "severity": {
+      "level": "medium",
+      "score": 6,
+      "financial": "$100M+ investment"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.wired.com/story/rise-and-fall-of-the-segway/",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.bbc.com/news/technology-53181792",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2001-2020) Segway \u2014 The Future That Wasn't",
+    "summary": "Segway launched in 2001 with hype claiming it would \"change cities.\" It became a mall cop vehicle and tourist rental. Production ended in 2020 after selling ~140,000 units total.",
+    "root_cause": "Solved a problem (walking) that wasn't painful enough; premium pricing ($5,000) for marginal utility; required infrastructure (sidewalks, regulations) that didn't exist; hype created unrealistic expectations.",
+    "lessons": [
+      "Revolutionary tech requires revolutionary problems",
+      "Infrastructure dependencies can kill products",
+      "Hype creates expectations that poison adoption",
+      "Niche success (security, tourism) can mask mass-market failure"
+    ],
+    "patterns": [
+      "Money \u2260 Product-Market Fit",
+      "Overconfidence From Past Success"
+    ],
+    "category": "product",
+    "evidence_type": "direct_incident",
+    "id": "2001-2020-segway-the-future-that-wasn-t-2026"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "money"
+    ],
+    "tags": [
+      "innovators-dilemma",
+      "fear-of-cannibalization",
+      "short-term-incentives",
+      "missed-opportunity"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://quartr.com/insights/edge/the-dilemma-that-brought-down-kodak",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(1975-2012) Kodak \u2014 Invented Digital, Buried It",
+    "summary": "Kodak engineer Steve Sasson invented the digital camera in 1975. Kodak filed the patent and buried it for 20+ years, afraid it would destroy their film business. Filed for bankruptcy in 2012.",
+    "root_cause": "Leadership incentives tied to short-term film profits; fear of cannibalization; no ownership of digital transition; \"innovator's dilemma\" in pure form\u2014success blinded them to disruption.",
+    "lessons": [
+      "Incentives that reward defending the past will destroy the future",
+      "Cannibalization fear without action just delays the inevitable",
+      "Innovation requires ownership and metrics separate from legacy business",
+      "Market disruption doesn't wait for comfortable transitions"
+    ],
+    "patterns": [
+      "The Innovator's Dilemma"
+    ],
+    "category": "decision",
+    "evidence_type": "direct_incident",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "1975-2012-kodak-invented-digital-buried-it-2026"
+  },
+  {
+    "cause": "ai",
+    "stage": "scale",
+    "impact": [
+      "morale"
+    ],
+    "tags": [
+      "blind-trust",
+      "decision-degradation",
+      "ai-slop",
+      "delegation-thinking",
+      "leadership-failure"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-risk-of-relying-on-ai-summaries",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(Ongoing) AI Summaries Replaced Understanding",
+    "summary": "Teams across multiple organizations began relying on AI-generated summaries instead of reading source data, leading to cascading bad strategic decisions based on incomplete understanding.",
+    "root_cause": "Delegating thinking, not just toil; AI used to compress data but output treated as authoritative; leaders stopped verifying against sources; \"efficiency\" prioritized over accuracy.",
+    "lessons": [
+      "AI should compress data, not replace judgment",
+      "Leaders must still read the source for critical decisions",
+      "Summary is a starting point, not the endpoint of reasoning",
+      "Verify AI output against source material for high-stakes decisions"
+    ],
+    "patterns": [
+      "Decision-Making by Proxy"
+    ],
+    "category": "decision",
+    "evidence_type": "repeated_pattern",
+    "severity": {
+      "level": "medium"
+    },
+    "id": "ongoing-ai-summaries-replaced-understanding-2026"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "money",
+      "morale"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "Pilot investment losses"
+    },
+    "tags": [
+      "pilot-failure",
+      "integration-complexity",
+      "scale-failure",
+      "legacy-systems",
+      "ai-deployment"
+    ],
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.linkedin.com/pulse/gemini-3-continually-hallucinates-gaslights-face-rag-errors-jesse-vyete",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "AI Pilots Fail Due to Integration Complexity",
+    "summary": "The \"2025 AI Agent Report\" via Composio found that AI pilots succeed on curated data but fail to scale due to legacy system friction. Integration complexity is the primary blocker for pilot-to-prod...",
+    "root_cause": "- Pilots ignore legacy API unreliability during controlled testing - Data format mismatches that work with small datasets become fatal at production scale - Lack of infrastructure team involvement in pilot planning - Success on curated, clean data creates false confidence for production deployment",
+    "lessons": [
+      "Include infrastructure teams in the pilot phase from day one",
+      "Test agents on real, messy production data early, not just curated datasets",
+      "Map all integration dependencies before declaring pilot success",
+      "Plan for legacy system friction and edge cases in pilot design",
+      "\"Pilot success\" on clean data is not predictive of production success"
+    ],
+    "patterns": [
+      "Overconfidence From Past Success",
+      "Decision-Making by Proxy"
+    ],
+    "category": "decision",
+    "evidence_type": "repeated_pattern",
+    "id": "ai-pilots-fail-due-to-integration-complexity-2026"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "trust",
+      "users",
+      "money"
+    ],
+    "tags": [
+      "safety-over-profit",
+      "regulatory-capture",
+      "engineering-override",
+      "aviation",
+      "certification-failure"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "$20B+ costs"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.congress.gov/116/crpt/hrpt364/CRPT-116hrpt364.pdf",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.nytimes.com/2019/03/23/business/boeing-737-max-crash.html",
+        "kind": "primary"
+      }
+    ],
+    "year": 2019,
+    "title": "Boeing 737 MAX MCAS \u2014 When Safety Became Optional",
+    "summary": "Boeing's 737 MAX MCAS system was designed to mask aerodynamic changes from pilots. Two crashes killed 346 people. Congressional investigation revealed Boeing pressured engineers, misled regulators,...",
+    "root_cause": "Schedule and cost pressure overrode engineering concerns; regulatory capture allowed self-certification; MCAS was a software patch for a hardware problem; single-sensor design was known risk.",
+    "lessons": [
+      "When engineers raise safety concerns, listen or face catastrophic consequences",
+      "Self-certification creates conflicts of interest that can kill",
+      "Software cannot permanently fix hardware design decisions",
+      "\"Move fast\" cultures are incompatible with safety-critical systems"
+    ],
+    "patterns": [
+      "The Innovator's Dilemma",
+      "Decision-Making by Proxy"
+    ],
+    "category": "decision",
+    "evidence_type": "direct_incident",
+    "id": "boeing-737-max-mcas-when-safety-became-optional-2019"
+  },
+  {
+    "cause": "incentives",
+    "stage": "decline",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "tags": [
+      "acquisition-failure",
+      "culture-mismatch",
+      "content-moderation",
+      "valuation-destruction"
+    ],
+    "severity": {
+      "level": "high",
+      "score": 8,
+      "financial": "$1.1B to $3M"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.wsj.com/articles/verizon-sells-tumblr-to-wordpress-owner-11565627453",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.theverge.com/2019/8/12/20802639/tumblr-verizon-sold-wordpress-blogging-yahoo",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2013-2019) Yahoo Acquiring Tumblr \u2014 $1.1B to $3M",
+    "summary": "Yahoo acquired Tumblr for $1.1B in 2013. After mismanagement, content policy disasters, and user exodus, Verizon sold it to Automattic for $3M in 2019 \u2014 a 99.7% loss.",
+    "root_cause": "Yahoo didn't understand Tumblr's culture; content moderation decisions alienated core users; advertising strategy failed; NSFW ban killed differentiator.",
+    "lessons": [
+      "Acquiring a community means acquiring a culture \u2014 don't break it",
+      "Content moderation decisions are product decisions with business consequences",
+      "Paying premium price requires premium execution",
+      "What makes a platform unique is often what acquirers want to remove"
+    ],
+    "patterns": [
+      "Decision-Making by Proxy",
+      "Ecosystem Neglect"
+    ],
+    "category": "decision",
+    "evidence_type": "direct_incident",
+    "id": "2013-2019-yahoo-acquiring-tumblr-1-1b-to-3m-2026"
+  },
+  {
+    "cause": "incentives",
+    "stage": "decline",
+    "impact": [
+      "money",
+      "users",
+      "trust"
+    ],
+    "tags": [
+      "innovators-dilemma",
+      "smartphone",
+      "platform-transition",
+      "symbian",
+      "organizational-inertia"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 10,
+      "financial": "$250B+ market cap loss"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://knowledge.insead.edu/strategy/nokias-fall-grace",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://hbr.org/2010/07/how-nokia-lost-the-smartphone",
+        "kind": "primary"
+      }
+    ],
+    "year": 2026,
+    "title": "(2007-2013) Nokia Ignoring iPhone \u2014 The Fall of a Giant",
+    "summary": "Nokia was the world's largest phone maker in 2007. Despite seeing the iPhone threat, organizational inertia and Symbian investment prevented response. Sold mobile division to Microsoft in 2013 for ...",
+    "root_cause": "Middle management fear culture prevented bad news from reaching leadership; Symbian investment created sunk cost fallacy; hardware mindset couldn't adapt to software-defined future.",
+    "lessons": [
+      "Fear cultures filter information until it's too late",
+      "Installed base can become an anchor, not an asset",
+      "Platform transitions require burning boats, not hedging",
+      "The innovator's dilemma is real \u2014 you can see disruption and still fail"
+    ],
+    "patterns": [
+      "The Innovator's Dilemma",
+      "Overconfidence From Past Success"
+    ],
+    "category": "decision",
+    "evidence_type": "direct_incident",
+    "id": "2007-2013-nokia-ignoring-iphone-the-fall-of-a-giant-2026"
+  },
+  {
+    "cause": "incentives",
+    "stage": "scale",
+    "impact": [
+      "money",
+      "trust"
+    ],
+    "tags": [
+      "disruption",
+      "wrong-assumptions",
+      "franchise-model",
+      "streaming",
+      "late-fee-dependency"
+    ],
+    "severity": {
+      "level": "critical",
+      "score": 9,
+      "financial": "Bankruptcy"
+    },
+    "sources": [
+      {
+        "title": "Source",
+        "url": "https://www.inc.com/minda-zetlin/netflix-blockbuster-meeting-marc-randolph-reed-hastings-john-antioco.html",
+        "kind": "primary"
+      },
+      {
+        "title": "Source",
+        "url": "https://www.businessinsider.com/blockbuster-ceo-passed-up-chance-to-buy-netflix-for-50-million-2015-7",
+        "kind": "primary"
+      }
+    ],
+    "year": 2000,
+    "title": "Blockbuster Passing on Netflix \u2014 $50M Decision, $100B Cost",
+    "summary": "In 2000, Netflix offered to sell to Blockbuster for $50M. Blockbuster declined, calling it \"a very small niche business.\" Blockbuster filed for bankruptcy in 2010; Netflix is now worth $250B+.",
+    "root_cause": "Revenue model dependent on late fees (which Netflix eliminated); franchise owners opposed online shift; couldn't imagine customers preferring convenience over stores.",
+    "lessons": [
+      "The threat that seems \"too small to matter\" is the one that kills you",
+      "Business models built on customer pain (late fees) are disruption targets",
+      "Franchise models resist cannibalization even when necessary for survival",
+      "Never evaluate disruptors by current size, evaluate by trajectory"
+    ],
+    "patterns": [
+      "The Innovator's Dilemma",
+      "Overconfidence From Past Success"
+    ],
+    "category": "decision",
+    "evidence_type": "direct_incident",
+    "id": "blockbuster-passing-on-netflix-50m-decision-100b-cost-2000"
+  }
+]

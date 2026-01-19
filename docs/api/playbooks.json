@@ -1,0 +1,43 @@
+[
+  {
+    "id": "agent-deployment",
+    "title": "AI Agent Deployment Playbook",
+    "description": "Use this playbook when moving an AI agent from prototype to production. Covers environment isolation, budgeting, human-in-the-loop, and observability.",
+    "file": "playbooks/agent-deployment.md",
+    "related_patterns": [
+      "automation-without-reversal",
+      "blind-trust-in-ai-output",
+      "overconfidence-from-past-success"
+    ]
+  },
+  {
+    "id": "incident-response",
+    "title": "Incident Response Playbook",
+    "description": "Structured approach to handling production incidents. Covers detection, triage, mitigation, and post-incident review.",
+    "file": "playbooks/incident-response.md",
+    "related_patterns": [
+      "hidden-single-point-of-failure",
+      "overconfidence-from-past-success"
+    ]
+  },
+  {
+    "id": "production-deploy",
+    "title": "Production Deployment Playbook",
+    "description": "Safe deployment practices for production systems. Covers canary releases, rollback procedures, and blast radius control.",
+    "file": "playbooks/production-deploy.md",
+    "related_patterns": [
+      "automation-without-reversal",
+      "hidden-single-point-of-failure"
+    ]
+  },
+  {
+    "id": "production-outage",
+    "title": "Production Outage Response Playbook",
+    "description": "Emergency response procedures for production outages. Covers communication, escalation, and recovery.",
+    "file": "playbooks/production-outage.md",
+    "related_patterns": [
+      "hidden-single-point-of-failure",
+      "overconfidence-from-past-success"
+    ]
+  }
+]
