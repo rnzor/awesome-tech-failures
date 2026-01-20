@@ -76,7 +76,8 @@ def parse_markdown_entry(header_text, text_block, category_default):
     if 'root_cause' not in data and 'root-cause' not in data:
         rc_match = re.search(r'\*\*Root cause:\*\*\s*(.*?)(?:\s*\n\s*\*\*|$)', body_raw, re.DOTALL)
         if rc_match:
-            data['root_cause'] = rc_match.group(1).strip().replace('\n', ' ')
+            # Preserve newlines for multi-line root causes (bullet lists)
+            data['root_cause'] = rc_match.group(1).strip()
     
     # Lessons
     if 'lessons' not in data or not data['lessons']:
