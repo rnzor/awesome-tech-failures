@@ -77,7 +77,10 @@ def parse_markdown_entry(header_text, text_block, category_default):
         rc_match = re.search(r'\*\*Root cause:\*\*\s*(.*?)(?:\s*\n\s*\*\*|$)', body_raw, re.DOTALL)
         if rc_match:
             # Preserve newlines for multi-line root causes (bullet lists)
-            data['root_cause'] = rc_match.group(1).strip()
+            # Strip markdown bold markers (**text**)
+            root_cause_text = rc_match.group(1).strip()
+            root_cause_text = re.sub(r'\*\*([^*]+)\*\*', r'\1', root_cause_text)
+            data['root_cause'] = root_cause_text
     
     # Lessons
     if 'lessons' not in data or not data['lessons']:
